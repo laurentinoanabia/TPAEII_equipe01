@@ -25,11 +25,11 @@ Diagnosticar quanto estudantes de graduação sabem e praticam de educação fin
 
 | Item | Proposta |
 |---|---|
-| População | Graduandos maiores de 18 anos **[a confirmar: UFPB inteira ou só Economia]** |
+| População | Graduandos de Ciências Econômicas maiores de 18 anos |
 | Amostragem | Por conveniência (divulgação em turmas e canais dos cursos). **Não é representativa**; os resultados descrevem quem respondeu |
 | Aplicação | Formulário online, anônimo e voluntário; duração prevista de 8 a 10 minutos |
 | Meta de respostas | **[a definir]** |
-| Período | 17/11 a 30/11/2026, calendário do plano anterior da equipe (instrumento pronto até 10/11) |
+| Período | 01/11 a 20/11/2026, definido pela equipe em 27/10/2026 (o formulário no Google Forms precisa estar pronto antes de 01/11) |
 | Referência metodológica | Estrutura em conhecimento, comportamento e atitude, inspirada no OECD/INFE Toolkit. As perguntas abaixo são **redação própria** da equipe |
 
 ## 3. Termo de consentimento (texto da primeira tela)

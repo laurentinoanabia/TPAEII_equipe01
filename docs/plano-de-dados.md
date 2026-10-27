@@ -20,7 +20,7 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 
 | # | Base | Instituição / link | Cobertura | Formato | Acesso | Licença | Data de acesso | Uso no projeto |
 |---|---|---|---|---|---|---|---|---|
-| F1 | Questionário próprio | Equipe 01 · plataforma **[a confirmar]** (ex.: formulário online) | Graduandos **[a confirmar: UFPB inteira ou só Economia]** · coleta de 17/11 a 30/11/2026 | CSV exportado | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | — (coleta ainda não iniciada) | Base da pesquisa |
+| F1 | Questionário próprio | Equipe 01 · Google Forms | Graduandos do curso de Ciências Econômicas · coleta de 01/11 a 20/11/2026 | CSV exportado | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | — (coleta ainda não iniciada) | Base da pesquisa |
 | F2 | Verbetes do glossário | Elaboração da equipe · `data/glossario.json` | Termos escolhidos a partir da lista de demandas do CORECON-PB **[a confirmar a lista]** | JSON | Repositório | Autoria da equipe | 27/10/2026 | Conteúdo do site |
 | F3 | Lista de demandas do CORECON-PB | CORECON-PB (documento recebido pela equipe) | **[a registrar]** | **[a registrar]** | Documento institucional | **[a verificar]** se pode ser versionado; por padrão **não** vai ao repositório | **[a registrar]** | Origem dos termos do glossário |
 | F4 | Caderno de Cidadania Financeira | Banco Central do Brasil · <https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf> | Nacional · conceitos de educação e cidadania financeira | PDF | Público (web) | A verificar (documento ainda não aberto) | 27/10/2026 (link localizado, não aberto) | Conferência de conceitos dos verbetes |
@@ -36,7 +36,7 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 | Tabela | Unidade de análise | Chave | Periodicidade | Junções possíveis |
 |---|---|---|---|---|
 | `data/glossario.json` | Um verbete | `slug(termo)` (termo sem acentos, em minúsculas, com hífens) | Contínua: atualizada a cada novo verbete | `relacionados` aponta para outros `termo` da própria tabela. `tema` agrupa verbetes |
-| Respostas do questionário (`data/raw/`, não versionado) | Um respondente anônimo | `id_resposta` (número sequencial gerado no tratamento; **sem** vínculo com pessoa) | Coleta única, de 17/11 a 30/11/2026 | Não há junção entre respondentes e outras bases. Cada resposta é independente |
+| Respostas do questionário (`data/raw/`, não versionado) | Um respondente anônimo | `id_resposta` (número sequencial gerado no tratamento; **sem** vínculo com pessoa) | Coleta única, de 01/11 a 20/11/2026 | Não há junção entre respondentes e outras bases. Cada resposta é independente |
 | Tabelas agregadas (`data/processed/`) | Pergunta × categoria de resposta (e grupo, quando houver) | `variavel` + `categoria` (+ `grupo`) | Gerada após o fechamento da coleta | Junção **analítica** com o glossário pelo campo `tema`: o conceito avaliado em cada pergunta corresponde a um tema/termo do glossário (ver `docs/questionario.md`) |
 
 ## 4. Dicionário preliminar de variáveis
@@ -110,7 +110,7 @@ Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualida
 
 | Fonte | Método de obtenção | Arquivo / endpoint | Frequência | Parâmetros | Responsável | Data prevista | Atualização |
 |---|---|---|---|---|---|---|---|
-| F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 17/11 a 30/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur | Instrumento até 10/11/2026; coleta de 17/11 a 30/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
+| F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 01/11 a 20/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur | Formulário pronto antes de 01/11/2026 **[a confirmar]**; coleta de 01/11 a 20/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
 | F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (limpeza e validação; reutiliza as funções de agregação de `notebooks/02_tratamento_questionario.py`) → `data/processed/` (testado só com dados sintéticos) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
 | F2 Glossário | Redação dos verbetes e conferência em F4–F6 | `data/glossario.json` | Contínua até a entrega final | Validação com `notebooks/01_validar_glossario.py` | Todos | Versão revisada em 05/12/2026 | Ao incluir ou alterar verbete, rodar a validação |
 | F3 Lista de demandas | Solicitar ou confirmar a lista com o CORECON-PB | Documento institucional (não versionado por padrão) | Única | — | Ana | 03/11/2026 | Pedir nova versão se o CORECON atualizar |
@@ -126,8 +126,8 @@ Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualida
 
 ## 7. Pendências
 
-1. Definir a população (UFPB inteira ou só Economia) e a meta de respostas.
-2. Confirmar com o professor o enquadramento ético e a plataforma do formulário.
+1. Definir a meta de respostas (população definida pela equipe: graduandos de Ciências Econômicas; coleta de 01/11 a 20/11/2026).
+2. Confirmar com o professor o enquadramento ético (plataforma: Google Forms).
 3. Receber ou confirmar a lista de demandas do CORECON-PB e escolher os termos do glossário.
 4. Confirmar os responsáveis e prazos propostos (ver [`tarefas.md`](tarefas.md)).
 5. Abrir e ler integralmente F4 e F8 e reconferir os valores do PISA; checar os termos de uso da OCDE antes de reproduzir qualquer item.
