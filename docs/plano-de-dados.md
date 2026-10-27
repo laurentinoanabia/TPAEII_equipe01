@@ -16,18 +16,18 @@ Os resultados da pesquisa orientam quais termos e temas o glossário prioriza (p
 
 ## 2. Inventário de fontes
 
-Status geral: os links abaixo foram **localizados por busca em 27/10/2026**. A leitura integral e a verificação da licença de uso ainda estão pendentes, por isso a coluna "Licença" traz "a verificar" onde não há confirmação.
+Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma traz aviso de licença**; por isso o uso se limita a **citar a fonte, sem versionar os arquivos**. F4 e F8 foram apenas localizados e ainda não foram abertos. O inventário do projeto anterior (escolas) está arquivado em [`arquivo/escolas/inventario_fontes.md`](arquivo/escolas/inventario_fontes.md).
 
 | # | Base | Instituição / link | Cobertura | Formato | Acesso | Licença | Data de acesso | Uso no projeto |
 |---|---|---|---|---|---|---|---|---|
-| F1 | Questionário próprio | Equipe 01 · plataforma **[a confirmar]** (ex.: formulário online) | Graduandos **[a confirmar: UFPB inteira ou só Economia]** · coleta em nov/2026 (proposta) | CSV exportado | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | — (coleta ainda não iniciada) | Base da pesquisa |
+| F1 | Questionário próprio | Equipe 01 · plataforma **[a confirmar]** (ex.: formulário online) | Graduandos **[a confirmar: UFPB inteira ou só Economia]** · coleta de 17/11 a 30/11/2026 | CSV exportado | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | — (coleta ainda não iniciada) | Base da pesquisa |
 | F2 | Verbetes do glossário | Elaboração da equipe · `data/glossario.json` | Termos escolhidos a partir da lista de demandas do CORECON-PB **[a confirmar a lista]** | JSON | Repositório | Autoria da equipe | 27/10/2026 | Conteúdo do site |
 | F3 | Lista de demandas do CORECON-PB | CORECON-PB (documento recebido pela equipe) | **[a registrar]** | **[a registrar]** | Documento institucional | **[a verificar]** se pode ser versionado; por padrão **não** vai ao repositório | **[a registrar]** | Origem dos termos do glossário |
-| F4 | Caderno de Cidadania Financeira | Banco Central do Brasil · <https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf> | Nacional · conceitos de educação e cidadania financeira | PDF | Público (web) | A verificar | 27/10/2026 (link localizado) | Conferência de conceitos dos verbetes |
-| F5 | Estratégia Nacional de Educação Financeira (ENEF) | Banco Central · <https://www.bcb.gov.br/pre/pef/PORT/enef.asp?frame=1> | Nacional | Página web | Público (web) | A verificar | 27/10/2026 (link localizado) | Contexto e referência institucional |
-| F6 | Plano Diretor da ENEF | gov.br/investidor · <https://www.gov.br/investidor/pt-br/educacional/plano-diretor-enef-estrategia-nacional-de-educacao-financeira.pdf/@@display-file/file> | Nacional | PDF | Público (web) | A verificar | 27/10/2026 (link localizado) | Referência de temas e conteúdos |
-| F7 | OECD/INFE Toolkit for Measuring Financial Literacy and Financial Inclusion (edição 2022) | OCDE · <https://www.oecd.org/en/publications/oecd-infe-toolkit-for-measuring-financial-literacy-and-financial-inclusion-2022_cbc4114f-en.html> | Internacional · metodologia | PDF / web | Público (web) | A verificar | 27/10/2026 (link localizado) | Referência metodológica para os blocos de conhecimento, comportamento e atitude do questionário. Existe uma edição mais recente (2026), a conferir |
-| F8 | PISA 2022 – letramento financeiro | OCDE / Inep | Internacional, jovens de 15 anos | **[a registrar]** | Público | A verificar | **[a registrar]** | Contexto (já citado na Entrega 3) |
+| F4 | Caderno de Cidadania Financeira | Banco Central do Brasil · <https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf> | Nacional · conceitos de educação e cidadania financeira | PDF | Público (web) | A verificar (documento ainda não aberto) | 27/10/2026 (link localizado, não aberto) | Conferência de conceitos dos verbetes |
+| F5 | Estratégia Nacional de Educação Financeira (ENEF) | Banco Central · <https://www.bcb.gov.br/pre/pef/PORT/enef.asp?frame=1> | Nacional | Página web | Público (web) | Sem aviso de licença na página; citar a fonte, não versionar | 27/10/2026 (página aberta) | Contexto institucional. A página descreve a ENEF (criada por decreto, ações gratuitas e de interesse público) e **não menciona reserva de emergência** |
+| F6 | Proposta da Estratégia Nacional de Educação Financeira (Coremec) | gov.br/investidor · <https://www.gov.br/investidor/pt-br/educacional/plano-diretor-enef-estrategia-nacional-de-educacao-financeira.pdf/@@display-file/file> | Nacional · documento histórico (dados de cerca de 2008); **não é o plano vigente** | PDF | Público (web) | Sem aviso de licença no trecho lido; citar a fonte, não versionar | 27/10/2026 (aberto, leitura parcial) | Referência histórica de temas. O trecho lido fala em poupar para imprevistos, **sem indicar número de meses** |
+| F7 | OECD/INFE Toolkit for Measuring Financial Literacy and Financial Inclusion (edição 2022, publicada em 27/03/2022) | OCDE · <https://www.oecd.org/en/publications/oecd-infe-toolkit-for-measuring-financial-literacy-and-financial-inclusion-2022_cbc4114f-en.html> | Internacional · metodologia | PDF / web | Público (web) | Página sem informação de licença; consultar os termos da OCDE antes de reproduzir itens | 27/10/2026 (página aberta) | Referência metodológica (conhecimento, comportamento e atitude). As perguntas do questionário são de redação própria. Existe uma edição mais recente (2026), a conferir |
+| F8 | PISA 2022, Vol. IV (letramento financeiro) | OCDE · <https://www.oecd.org/en/publications/pisa-2022-results-volume-iv_5a849c2a-en.html> (link do inventário anterior da equipe) | Internacional, jovens de 15 anos. Brasil: 45,1% abaixo do nível 2 (valor do inventário anterior, **a reconferir**) | Relatório HTML/PDF | Público | Direitos da OCDE: citar; não versionar o PDF, só os valores usados (conforme inventário anterior) | Não reaberto em 27/10/2026 | Contexto (já citado na Entrega 3) |
 
 **Referência normativa (não é base de dados):** Resolução CNS nº 510/2016 e Ofício Circular CONEP nº 17/2022 (orientações sobre o art. 1º), usados para decidir o enquadramento ético da pesquisa: <https://fcfrp.usp.br/wp-content/uploads/sites/528/2024/12/Oficio-Circular-17-2022.pdf>. A equipe deve **confirmar com o professor** se o enquadramento como pesquisa de opinião com participantes não identificados dispensa análise do sistema CEP/CONEP no contexto da disciplina.
 
@@ -36,7 +36,7 @@ Status geral: os links abaixo foram **localizados por busca em 27/10/2026**. A l
 | Tabela | Unidade de análise | Chave | Periodicidade | Junções possíveis |
 |---|---|---|---|---|
 | `data/glossario.json` | Um verbete | `slug(termo)` (termo sem acentos, em minúsculas, com hífens) | Contínua: atualizada a cada novo verbete | `relacionados` aponta para outros `termo` da própria tabela. `tema` agrupa verbetes |
-| Respostas do questionário (`data/raw/`, não versionado) | Um respondente anônimo | `id_resposta` (número sequencial gerado no tratamento; **sem** vínculo com pessoa) | Coleta única, em janela de datas **[a confirmar]** | Não há junção entre respondentes e outras bases. Cada resposta é independente |
+| Respostas do questionário (`data/raw/`, não versionado) | Um respondente anônimo | `id_resposta` (número sequencial gerado no tratamento; **sem** vínculo com pessoa) | Coleta única, de 17/11 a 30/11/2026 | Não há junção entre respondentes e outras bases. Cada resposta é independente |
 | Tabelas agregadas (`data/processed/`) | Pergunta × categoria de resposta (e grupo, quando houver) | `variavel` + `categoria` (+ `grupo`) | Gerada após o fechamento da coleta | Junção **analítica** com o glossário pelo campo `tema`: o conceito avaliado em cada pergunta corresponde a um tema/termo do glossário (ver `docs/questionario.md`) |
 
 ## 4. Dicionário preliminar de variáveis
@@ -65,13 +65,13 @@ Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
 | `a4_ocupacao` | Situação de estudo e trabalho | Categórica | Só estuda; estuda e trabalha ou estagia; outra | F1 |
 | `a5_renda_propria` | Renda própria mensal (opcional) | Categórica ordinal | Faixas em salários mínimos; "prefiro não responder" | F1 |
 | `b1_reserva_def` | Escolha da definição de reserva de emergência | Categórica | Correta / incorreta / não sei | F1 |
-| `b2_reserva_meses` | Meses de despesas recomendados como reserva | Categórica | Faixas; gabarito **[a confirmar nas fontes F4–F6]** | F1 |
+| `b2_reserva_meses` | Quantos meses de despesas o respondente acha adequado guardar como reserva | Categórica | Faixas de meses; **não pontuada** (nenhuma fonte oficial consultada traz um número único). Só distribuição | F1 |
 | `b3_inflacao` | Item sobre inflação e poder de compra | Categórica | Correta / incorreta / não sei | F1 |
 | `b4_juros_compostos` | Item sobre dívida com juros compostos | Categórica | Correta / incorreta / não sei | F1 |
 | `b5_diversificacao` | Item sobre risco e diversificação | Categórica | Correta / incorreta / não sei | F1 |
 | `b6_autoavaliacao` | Autoavaliação do conhecimento financeiro | Ordinal | 1 a 5 | F1 |
-| `escore_conhecimento` | Soma dos acertos em b1, b3, b4 e b5 (e b2, se confirmado) | Numérica | Pontos, 0 a 4 (ou 5) | Calculada |
-| `nivel_conhecimento` | Faixa do escore | Ordinal | Baixo / médio / alto (cortes **[a confirmar]**) | Calculada |
+| `escore_conhecimento` | Soma dos acertos em b1, b3, b4 e b5 | Numérica | Pontos, 0 a 4 | Calculada |
+| `nivel_conhecimento` | Faixa do escore | Ordinal | Baixo (0–1) / médio (2–3) / alto (4); cortes propostos, **a confirmar** | Calculada |
 | `c1_orcamento` | Frequência com que faz orçamento | Ordinal | Nunca / às vezes / sempre | F1 |
 | `c2_tem_reserva` | Possui reserva de emergência | Categórica | Sim / parcial / não | F1 |
 | `c3_reserva_cobertura` | Meses de despesas que a reserva cobre | Ordinal | Menos de 1; 1–3; 3–6; mais de 6 (só quem tem reserva) | F1 |
@@ -95,11 +95,11 @@ Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
 
 | Fonte | Método de obtenção | Arquivo / endpoint | Frequência | Parâmetros | Responsável | Data prevista | Atualização |
 |---|---|---|---|---|---|---|---|
-| F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta **[a confirmar]**; meta de respostas **[a confirmar]** | **[a definir]** | Aplicação a partir de 04/11/2026 (proposta) | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
-| F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/02_tratamento_questionario.py` **[a criar]** → `data/processed/` | Uma vez, após o fechamento | Células com menos de 5 respondentes são agrupadas ou omitidas | **[a definir]** | 18/11/2026 (proposta) | Reexecutar o script se o CSV mudar |
-| F2 Glossário | Redação dos verbetes e conferência em F4–F6 | `data/glossario.json` | Contínua até a entrega final | Validação com `notebooks/01_validar_glossario.py` | **[a definir]** | Versão revisada em 05/12/2026 (proposta) | Ao incluir ou alterar verbete, rodar a validação |
-| F3 Lista de demandas | Solicitar ou confirmar a lista com o CORECON-PB | Documento institucional (não versionado por padrão) | Única | — | **[a definir]** | **[a definir]** | Pedir nova versão se o CORECON atualizar |
-| F4–F8 Referências | Acesso manual aos links do inventário; registrar data de acesso e licença | Links da seção 2 | Única, com releitura antes da banca | — | **[a definir]** | 03/11/2026 (proposta) | Conferir se os links continuam ativos antes de 15/12/2026 |
+| F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 17/11 a 30/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur | Instrumento até 10/11/2026; coleta de 17/11 a 30/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
+| F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/02_tratamento_questionario.py` → `data/processed/` (script pronto, testado só com dados sintéticos) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
+| F2 Glossário | Redação dos verbetes e conferência em F4–F6 | `data/glossario.json` | Contínua até a entrega final | Validação com `notebooks/01_validar_glossario.py` | Todos | Versão revisada em 05/12/2026 | Ao incluir ou alterar verbete, rodar a validação |
+| F3 Lista de demandas | Solicitar ou confirmar a lista com o CORECON-PB | Documento institucional (não versionado por padrão) | Única | — | Ana | 03/11/2026 | Pedir nova versão se o CORECON atualizar |
+| F4–F8 Referências | Acesso manual aos links do inventário; registrar data de acesso e licença | Links da seção 2 | Única, com releitura antes da banca | — | Todos | 03/11/2026 | Conferir se os links continuam ativos antes de 15/12/2026 |
 
 ## 6. Segurança e proteção de dados
 
@@ -114,6 +114,6 @@ Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
 1. Definir a população (UFPB inteira ou só Economia) e a meta de respostas.
 2. Confirmar com o professor o enquadramento ético e a plataforma do formulário.
 3. Receber ou confirmar a lista de demandas do CORECON-PB e escolher os termos do glossário.
-4. Definir responsáveis e prazos (ver [`tarefas.md`](tarefas.md)).
-5. Verificar licença de uso e ler integralmente as fontes F4–F8.
-6. Confirmar o gabarito do item `b2_reserva_meses` nas fontes oficiais.
+4. Confirmar os responsáveis e prazos propostos (ver [`tarefas.md`](tarefas.md)).
+5. Abrir e ler integralmente F4 e F8 e reconferir os valores do PISA; checar os termos de uso da OCDE antes de reproduzir qualquer item.
+6. Se a equipe quiser pontuar `b2_reserva_meses`, encontrar uma fonte oficial com número de meses (as consultadas em 27/10/2026 não trazem).

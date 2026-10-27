@@ -7,7 +7,7 @@
 | 1 | 09/09/2026 | Prospecção de potenciais demandantes | Entregue |
 | 2 | 21/09/2026 | Escuta e compreensão da demanda | Demandante definido: CORECON-PB. Memória e roteiro: **[a registrar]** |
 | 3 | 01/10/2026 | Definição do problema e plano de pesquisa | Entregue, com o projeto de educação financeira em escolas |
-| 4 | 20/10/2026 | Repositório e plano de dados | Em elaboração (este repositório e `docs/plano-de-dados.md`) |
+| 4 | 20/10/2026 | Repositório e plano de dados | Repositório, plano de dados e PDF prontos em 27/10/2026. Falta o acesso do professor ao repositório e o envio do PDF |
 | Final | 15/12/2026 | Apresentação com banca no CORECON-PB | Pendente |
 
 ## Entrega 1: prospecção (09/09/2026)
@@ -22,7 +22,7 @@ Priorização: Emlur como indicação mais promissora, com a Ascare-JP como font
 
 ## Entrega 2: escuta (21/09/2026)
 
-Demandante definido pela equipe: **CORECON-PB**. Roteiro de perguntas e memória da reunião: **[a registrar neste repositório, se a equipe autorizar]**.
+Demandante definido pela equipe: **CORECON-PB**. Roteiro de perguntas e memória da reunião: **[a registrar neste repositório, se a equipe autorizar]**. Os materiais internos do CORECON-PB não devem ser versionados.
 
 ## Entrega 3: problema e plano de pesquisa (01/10/2026)
 
@@ -34,7 +34,7 @@ Demandante definido pela equipe: **CORECON-PB**. Roteiro de perguntas e memória
 
 ## Mudança de rumo (22/10/2026)
 
-A equipe trocou o projeto das escolas por um **site de conhecimento para o CORECON-PB**, a partir da lista de demandas do Conselho, em apoio ao programa "PB sem dívidas". O site virou um **glossário de termos da economia**, para a população em geral, com acessibilidade. O repositório `TPAE-II-` foi substituído por este.
+A equipe trocou o projeto das escolas por um **site de conhecimento para o CORECON-PB**, a partir da lista de demandas do Conselho, em apoio ao programa "PB sem dívidas". O site virou um **glossário de termos da economia**, para a população em geral, com acessibilidade. O repositório anterior (`TPAE-II`, depois `TPAE-II-`) foi substituído por este. O material do projeto das escolas está preservado em [`arquivo/escolas/`](arquivo/escolas/README.md).
 
 ## Incorporação da pesquisa com graduandos (27/10/2026)
 
@@ -53,6 +53,6 @@ Exigências do guia e onde estão atendidas:
 | Dicionário das variáveis essenciais | `docs/plano-de-dados.md`, seção 4 |
 | Procedimento de aquisição | `docs/plano-de-dados.md`, seção 5 |
 | Segurança dos dados | `docs/plano-de-dados.md`, seção 6, e `.gitignore` |
-| Tarefas com responsável, prazo e situação | `docs/tarefas.md` |
-| Acesso do professor ao repositório | **Pendente:** adicionar o professor como colaborador |
-| PDF `E04_equipe01_plano_dados.pdf` | **Pendente:** gerar a partir de `plano-de-dados.md` |
+| Tarefas com responsável, prazo e situação | `docs/tarefas.md` (responsáveis herdados do plano anterior, a confirmar) |
+| Acesso do professor ao repositório | **Pendente:** adicionar o professor como colaborador (tarefa 2) |
+| PDF `E04_equipe01_plano_dados.pdf` | Gerado em 27/10/2026 a partir de `plano-de-dados.md`, em `docs/E04_equipe01_plano_dados.pdf` (regenerar se o plano mudar). **Pendente:** enviar ao professor (tarefa 5) |

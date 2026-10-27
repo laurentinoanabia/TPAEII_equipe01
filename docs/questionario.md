@@ -29,7 +29,7 @@ Diagnosticar quanto estudantes de graduação sabem e praticam de educação fin
 | Amostragem | Por conveniência (divulgação em turmas e canais dos cursos). **Não é representativa**; os resultados descrevem quem respondeu |
 | Aplicação | Formulário online, anônimo e voluntário; duração prevista de 8 a 10 minutos |
 | Meta de respostas | **[a definir]** |
-| Período | A partir de 04/11/2026 por 2 semanas (proposta) |
+| Período | 17/11 a 30/11/2026, calendário do plano anterior da equipe (instrumento pronto até 10/11) |
 | Referência metodológica | Estrutura em conhecimento, comportamento e atitude, inspirada no OECD/INFE Toolkit. As perguntas abaixo são **redação própria** da equipe |
 
 ## 3. Termo de consentimento (texto da primeira tela)
@@ -65,7 +65,7 @@ Todas as perguntas têm a opção **"Não sei"**, salvo onde indicado. As que tr
 
 ### Bloco B: conhecimento
 
-Itens com **uma resposta correta**; a resposta certa vale 1 ponto.
+Itens b1, b3, b4 e b5 têm **uma resposta correta** (✔), que vale 1 ponto; b2 e b6 não pontuam. No formulário, o valor exportado de cada opção deve ser a **letra** (a, b, c...), porque o script de tratamento usa esse código.
 
 **b1_reserva_def.** Qual alternativa melhor descreve uma reserva de emergência?
 - (a) Dinheiro guardado para comprar algo que você quer muito, como uma viagem.
@@ -74,9 +74,9 @@ Itens com **uma resposta correta**; a resposta certa vale 1 ponto.
 - (d) Limite do cartão de crédito ou do cheque especial.
 - (e) Não sei.
 
-**b2_reserva_meses.** Em geral, quantos meses de despesas as orientações de educação financeira recomendam guardar como reserva?
-- Opções: menos de 1 mês · de 3 a 6 meses · mais de 12 meses · não sei.
-- **Gabarito pendente:** confirmar nas fontes F4–F6 do plano de dados antes de aplicar. Até lá, esta pergunta **não entra no escore**.
+**b2_reserva_meses.** Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?
+- Opções: menos de 1 mês · de 1 a 3 meses · de 3 a 6 meses · mais de 6 meses · não sei.
+- **Não pontua.** As fontes oficiais consultadas em 27/10/2026 não trazem um número único de meses, então a pergunta é de **opinião**: só se mostra a distribuição das respostas. Se a equipe encontrar uma fonte oficial, pode passar a pontuá-la.
 
 **b3_inflacao.** Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:
 - (a) Mais do que hoje. (b) Exatamente o mesmo. (c) Menos do que hoje. **✔** (d) Não sei.
@@ -124,7 +124,9 @@ Estas perguntas pedem o **seu relato** sobre a família. Pode responder "Não se
 
 ## 5. Indicadores e análise
 
-**Pontuação.** `escore_conhecimento` = acertos em b1, b3, b4 e b5 (0 a 4). "Não sei" conta como erro. b2 entra apenas quando o gabarito for confirmado.
+O tratamento está automatizado em [`../notebooks/02_tratamento_questionario.py`](../notebooks/02_tratamento_questionario.py): lê o CSV bruto (fora do Git), descarta identificação, calcula o escore e grava só tabelas agregadas em `data/processed/`.
+
+**Pontuação.** `escore_conhecimento` = acertos em b1, b3, b4 e b5 (0 a 4). "Não sei" conta como erro. b2 e b6 não entram no escore.
 
 **Níveis (proposta, a confirmar):** baixo = 0 a 1 · médio = 2 a 3 · alto = 4.
 

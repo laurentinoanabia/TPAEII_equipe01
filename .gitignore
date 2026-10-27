@@ -3,9 +3,13 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/README.md
 
-# Respostas individuais do questionário, em qualquer pasta
+# Dados com informação pessoal ou restritos
+docs/internos/
+*.sav
+*.dta
 respostas*.csv
 respostas*.xlsx
+respostas_brutas*
 *respondentes*
 *_identificado*
 
@@ -15,8 +19,8 @@ respostas*.xlsx
 *.key
 *.pem
 *.token
-secrets/
-credentials*.json
+secrets*
+credentials*
 client_secret*.json
 
 # Python / notebooks
