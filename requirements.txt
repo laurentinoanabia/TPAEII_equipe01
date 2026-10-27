@@ -1,1 +1,4 @@
 pandas>=2.0
+nbconvert>=7.0
+nbclient>=0.9
+ipykernel>=6.0

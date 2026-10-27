@@ -1,0 +1,14 @@
+grupo,categoria,n,escore_medio
+a1_curso,administracao,13,2.69
+a1_curso,direito,11,2.09
+a1_curso,economia,23,2.3
+a1_curso,engenharia,9,2.22
+a2_periodo,1_4,20,2.25
+a2_periodo,5_8,16,2.62
+a2_periodo,9_mais,20,2.2
+d2_fam_conversa,as_vezes,22,2.5
+d2_fam_conversa,frequente,12,2.42
+d2_fam_conversa,nunca,21,2.1
+c2_tem_reserva,nao,23,2.61
+c2_tem_reserva,parcial,12,1.92
+c2_tem_reserva,sim,21,2.29

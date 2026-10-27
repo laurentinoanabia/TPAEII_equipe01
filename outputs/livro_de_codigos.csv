@@ -1,0 +1,109 @@
+variavel,tipo,codigo,rotulo
+consentimento,unica,aceito,Aceita participar
+consentimento,unica,nao_aceito,Não aceita participar
+a2_periodo,unica,1_4,1º ao 4º período
+a2_periodo,unica,5_8,5º ao 8º período
+a2_periodo,unica,9_mais,9º período ou mais
+a3_idade,unica,18_20,18 a 20 anos
+a3_idade,unica,21_23,21 a 23 anos
+a3_idade,unica,24_26,24 a 26 anos
+a3_idade,unica,27_mais,27 anos ou mais
+a4_ocupacao,unica,so_estuda,Só estuda
+a4_ocupacao,unica,estuda_trabalha,Estuda e trabalha ou estagia
+a4_ocupacao,unica,outra,Outra situação
+a5_renda_propria,unica,nenhuma,Nenhuma
+a5_renda_propria,unica,ate_1,Até 1 salário mínimo
+a5_renda_propria,unica,1_2,Mais de 1 até 2
+a5_renda_propria,unica,mais_2,Mais de 2
+a5_renda_propria,unica,pnr,Prefiro não responder
+b1_reserva_def,unica,a,Dinheiro guardado para comprar algo desejado
+b1_reserva_def,unica,b,Dinheiro de fácil acesso para imprevistos ou perda de renda (correta)
+b1_reserva_def,unica,c,Dinheiro investido em ações para ganhar o máximo
+b1_reserva_def,unica,d,Limite do cartão ou cheque especial
+b1_reserva_def,unica,e,Não sei
+b2_reserva_meses,unica,menos_1,Menos de 1 mês
+b2_reserva_meses,unica,1_3,De 1 a 3 meses
+b2_reserva_meses,unica,3_6,De 3 a 6 meses
+b2_reserva_meses,unica,mais_6,Mais de 6 meses
+b2_reserva_meses,unica,nao_sei,Não sei
+b3_inflacao,unica,a,Mais do que hoje
+b3_inflacao,unica,b,Exatamente o mesmo
+b3_inflacao,unica,c,Menos do que hoje (correta)
+b3_inflacao,unica,d,Não sei
+b4_juros_compostos,unica,a,R$ 1.200
+b4_juros_compostos,unica,b,R$ 1.210 (correta)
+b4_juros_compostos,unica,c,R$ 1.100
+b4_juros_compostos,unica,d,Não sei
+b5_diversificacao,unica,a,Risco maior (correta)
+b5_diversificacao,unica,b,Risco menor
+b5_diversificacao,unica,c,O mesmo risco
+b5_diversificacao,unica,d,Não sei
+b6_autoavaliacao,unica,1,1 de 5
+b6_autoavaliacao,unica,2,2 de 5
+b6_autoavaliacao,unica,3,3 de 5
+b6_autoavaliacao,unica,4,4 de 5
+b6_autoavaliacao,unica,5,5 de 5
+c1_orcamento,unica,nunca,Nunca
+c1_orcamento,unica,as_vezes,Às vezes
+c1_orcamento,unica,sempre,Sempre
+c2_tem_reserva,unica,sim,Sim
+c2_tem_reserva,unica,parcial,Parcialmente
+c2_tem_reserva,unica,nao,Não
+c3_reserva_cobertura,unica,menos_1,Menos de 1 mês
+c3_reserva_cobertura,unica,1_3,De 1 a 3 meses
+c3_reserva_cobertura,unica,3_6,De 3 a 6 meses
+c3_reserva_cobertura,unica,mais_6,Mais de 6 meses
+c4_onde_guarda,multipla,poupanca,Poupança
+c4_onde_guarda,multipla,renda_fixa,Renda fixa
+c4_onde_guarda,multipla,conta_corrente,Conta corrente
+c4_onde_guarda,multipla,dinheiro_casa,Dinheiro em casa
+c4_onde_guarda,multipla,outro,Outro
+c5_dividas,multipla,cartao,Cartão de crédito
+c5_dividas,multipla,emprestimo,Empréstimo ou financiamento
+c5_dividas,multipla,atrasadas,Parcelas atrasadas
+c5_dividas,multipla,nenhuma,Nenhuma
+c5_dividas,multipla,pnr,Prefiro não responder
+c6_poupa_regular,unica,sim,Sim
+c6_poupa_regular,unica,as_vezes,Às vezes
+c6_poupa_regular,unica,nao,Não
+d1_renda_familiar,unica,ate_1,Até 1 salário mínimo
+d1_renda_familiar,unica,1_3,Mais de 1 até 3
+d1_renda_familiar,unica,3_6,Mais de 3 até 6
+d1_renda_familiar,unica,mais_6,Mais de 6
+d1_renda_familiar,unica,nao_sei,Não sei
+d1_renda_familiar,unica,pnr,Prefiro não responder
+d2_fam_conversa,unica,nunca,Nunca
+d2_fam_conversa,unica,as_vezes,Às vezes
+d2_fam_conversa,unica,frequente,Frequentemente
+d3_fam_orcamento,unica,sim,Sim
+d3_fam_orcamento,unica,nao,Não
+d3_fam_orcamento,unica,nao_sei,Não sei
+d4_fam_reserva,unica,sim,Sim
+d4_fam_reserva,unica,nao,Não
+d4_fam_reserva,unica,nao_sei,Não sei
+d5_fam_dividas,unica,sim,Sim
+d5_fam_dividas,unica,nao,Não
+d5_fam_dividas,unica,nao_sei,Não sei
+d5_fam_dividas,unica,pnr,Prefiro não responder
+d6_fam_conhecimento,unica,1,1 de 5
+d6_fam_conhecimento,unica,2,2 de 5
+d6_fam_conhecimento,unica,3,3 de 5
+d6_fam_conhecimento,unica,4,4 de 5
+d6_fam_conhecimento,unica,5,5 de 5
+d6_fam_conhecimento,unica,nao_sei,Não sei
+d7_educ_recebida,multipla,escola,Escola
+d7_educ_recebida,multipla,familia,Família
+d7_educ_recebida,multipla,curso,Curso ou faculdade
+d7_educ_recebida,multipla,internet,Internet e redes sociais
+d7_educ_recebida,multipla,nunca,Nunca tive
+e1_temas_interesse,multipla,orcamento,Orçamento
+e1_temas_interesse,multipla,reserva,Reserva de emergência
+e1_temas_interesse,multipla,credito_juros,Crédito e juros
+e1_temas_interesse,multipla,dividas,Dívidas e renegociação
+e1_temas_interesse,multipla,investimentos,Investimentos
+e1_temas_interesse,multipla,inflacao_selic,Inflação e Selic
+e1_temas_interesse,multipla,impostos,Impostos
+e1_temas_interesse,multipla,outro,Outro
+e2_usaria_glossario,unica,sim,Sim
+e2_usaria_glossario,unica,talvez,Talvez
+e2_usaria_glossario,unica,nao,Não

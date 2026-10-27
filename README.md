@@ -41,11 +41,13 @@ data/
   processed/               dados tratados e agregados, sem informação pessoal
 notebooks/
   01_validar_glossario.py        valida o glossário
-  02_tratamento_questionario.py  trata o questionário e gera tabelas agregadas
+  02_tratamento_questionario.py  funções de agregação do questionário (usadas pelo notebook 03)
+  03_obtencao_limpeza_tratamento.ipynb  Entrega 5: obtenção, limpeza, validação e exportação
   arquivo/                       script do projeto anterior (escolas)
 docs/                      plano de dados, questionário, histórico e tarefas
   arquivo/escolas/         material do projeto anterior, preservado
-outputs/                   tabelas, gráficos e produtos finais
+outputs/                   relatório de qualidade, funil, testes, livro de códigos
+  sintetico_teste/         teste das regras com dados SINTÉTICOS (não é resultado)
 ```
 
 ## Documentação
@@ -55,6 +57,7 @@ outputs/                   tabelas, gráficos e produtos finais
 | [`docs/plano-de-dados.md`](docs/plano-de-dados.md) | Inventário de fontes, unidades e chaves, dicionário de variáveis, plano de aquisição e segurança (Entrega 4) |
 | [`docs/questionario.md`](docs/questionario.md) | Questionário, termo de consentimento, indicadores e plano de análise |
 | [`docs/E04_equipe01_plano_dados.pdf`](docs/E04_equipe01_plano_dados.pdf) | PDF de síntese do plano de dados, no formato pedido para a submissão da Entrega 4 |
+| [`docs/E05_equipe01_qualidade_dados.pdf`](docs/E05_equipe01_qualidade_dados.pdf) | Relatório de qualidade dos dados (Entrega 5) |
 | [`docs/entregas.md`](docs/entregas.md) | Histórico das entregas 1 a 4 e decisões da equipe |
 | [`docs/tarefas.md`](docs/tarefas.md) | Tarefas com responsável, prazo e situação |
 | [`docs/arquivo/escolas/`](docs/arquivo/escolas/README.md) | Projeto anterior (educação financeira em escolas): E03, inventário, chaves, aquisição e dicionário, preservados para histórico |
@@ -74,13 +77,16 @@ python3 -m http.server 8000
 python3 notebooks/01_validar_glossario.py
 ```
 
-**Tratar o questionário** (depois da coleta; exige `pip install -r requirements.txt`). Coloque o CSV exportado do formulário em `data/raw/respostas_questionario.csv` (fica fora do Git) e rode:
+**Obter, limpar e tratar os dados (Entrega 5).** Exige `pip install -r requirements.txt`. Executa do início ao fim, sem intervenção manual:
 
 ```bash
-python3 notebooks/02_tratamento_questionario.py
+jupyter nbconvert --to notebook --execute --inplace notebooks/03_obtencao_limpeza_tratamento.ipynb
 ```
 
-O script descarta campos de identificação, calcula o escore de conhecimento e grava em `data/processed/` apenas tabelas agregadas (células com menos de 5 respondentes aparecem como `<5`). Foi testado só com dados sintéticos; confira os nomes das colunas do formulário real antes de usar.
+- O **glossário** é sempre tratado (dado real) e gera 3 tabelas em `data/processed/`.
+- Para o **questionário**, coloque o CSV exportado do formulário em `data/raw/respostas_questionario.csv` (fica fora do Git) e reexecute. **Sem esse arquivo, o notebook usa uma base sintética só para testar as regras** e grava em `outputs/sintetico_teste/`. Quando for usar dados reais, apague essa pasta para não confundir.
+- Os códigos de resposta que o formulário deve exportar estão em `outputs/livro_de_codigos.csv`.
+- As tabelas agregadas só entram em `data/processed/` com dados reais; células com menos de 5 respondentes aparecem como `<5`.
 
 ## Segurança e ética
 
@@ -97,7 +103,7 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 | Estrutura do repositório e plano de dados (Entrega 4) | Pronta, com o PDF `docs/E04_equipe01_plano_dados.pdf`; faltam o acesso do professor e o envio |
 | Glossário (site) | Funcionando, com 6 verbetes de rascunho; faltam os demais termos |
 | Questionário | Rascunho em `docs/questionario.md`; ainda não aplicado |
-| Tratamento dos dados | Script pronto, testado só com dados sintéticos |
+| Tratamento dos dados (Entrega 5) | Notebook executável e reprodutível; glossário tratado (dado real); regras do questionário testadas só com dados sintéticos |
 
 ## Contato acadêmico
 

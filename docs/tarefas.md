@@ -16,7 +16,8 @@ Calendário: entrega final com banca no CORECON-PB em **15/12/2026**.
 | 8 | Revisar o questionário em equipe e montar o formulário online (valor exportado das opções = letra a, b, c...) | Gabriel e Arthur | 10/11/2026 | A fazer | herdada |
 | 9 | Teste-piloto do formulário com poucas pessoas e ajuste das perguntas | Gabriel e Arthur | 13/11/2026 | A fazer | proposta |
 | 10 | Aplicar o questionário e conferir a anonimização das respostas | Gabriel e Arthur | 17/11 a 30/11/2026 | A fazer | herdada |
-| 11 | Testar `02_tratamento_questionario.py` com a exportação real e gerar as tabelas agregadas | Gabriel e Arthur | 04/12/2026 | A fazer | proposta |
+| 11 | Reexecutar o notebook `03_obtencao_limpeza_tratamento.ipynb` com a exportação real (ajustar `DOMINIOS` se o formulário exportar outros códigos) e gerar as tabelas agregadas | Gabriel e Arthur | 04/12/2026 | A fazer | proposta |
+| 11a | Entrega 5: notebook, base processada do glossário e relatório de qualidade | Todos | 29/10/2026 | **Concluída** em 27/10/2026 (PDF a enviar) | herdada do guia |
 | 12 | Escrever os verbetes do glossário, priorizando os temas da pesquisa | Todos | 05/12/2026 | Em andamento (6 verbetes de rascunho) | proposta |
 | 13 | Revisar acessibilidade e conteúdo do site | Todos | 08/12/2026 | A fazer | proposta |
 | 14 | Relatório final e apresentação para a banca | Todos | 10/12/2026 | A fazer | proposta |

@@ -1,0 +1,13 @@
+item_questionario,verbete_necessario,slug,existe_no_glossario
+b1_reserva_def,Reserva de emergência,reserva-de-emergencia,True
+b2_reserva_meses,Reserva de emergência,reserva-de-emergencia,True
+b3_inflacao,Inflação,inflacao,True
+b3_inflacao,Taxa Selic,taxa-selic,True
+b4_juros_compostos,Juros,juros,True
+b4_juros_compostos,Endividamento,endividamento,True
+b5_diversificacao,Investimentos,investimentos,False
+c1_orcamento,Orçamento pessoal,orcamento-pessoal,True
+c2_tem_reserva,Reserva de emergência,reserva-de-emergencia,True
+c5_dividas,Juros,juros,True
+c5_dividas,Endividamento,endividamento,True
+c6_poupa_regular,Orçamento pessoal,orcamento-pessoal,True

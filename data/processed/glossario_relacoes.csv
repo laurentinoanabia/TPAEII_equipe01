@@ -1,0 +1,15 @@
+slug_origem,termo_origem,termo_destino,slug_destino,destino_existe,reciproca
+reserva-de-emergencia,Reserva de emergência,Orçamento pessoal,orcamento-pessoal,True,True
+reserva-de-emergencia,Reserva de emergência,Endividamento,endividamento,True,True
+reserva-de-emergencia,Reserva de emergência,Juros,juros,True,False
+orcamento-pessoal,Orçamento pessoal,Reserva de emergência,reserva-de-emergencia,True,True
+orcamento-pessoal,Orçamento pessoal,Endividamento,endividamento,True,True
+juros,Juros,Endividamento,endividamento,True,True
+juros,Juros,Inflação,inflacao,True,True
+endividamento,Endividamento,Juros,juros,True,True
+endividamento,Endividamento,Orçamento pessoal,orcamento-pessoal,True,True
+endividamento,Endividamento,Reserva de emergência,reserva-de-emergencia,True,True
+inflacao,Inflação,Juros,juros,True,True
+inflacao,Inflação,Taxa Selic,taxa-selic,True,True
+taxa-selic,Taxa Selic,Juros,juros,True,False
+taxa-selic,Taxa Selic,Inflação,inflacao,True,True

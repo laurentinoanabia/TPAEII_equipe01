@@ -1,0 +1,43 @@
+teste,resultado,detalhe
+Glossário: chave (slug) única e não vazia,OK,
+Questionário: nenhuma coluna de identificação sobrou,OK,
+Domínio respeitado: a2_periodo,OK,
+Domínio respeitado: a3_idade,OK,
+Domínio respeitado: a4_ocupacao,OK,
+Domínio respeitado: a5_renda_propria,OK,
+Domínio respeitado: b1_reserva_def,OK,
+Domínio respeitado: b2_reserva_meses,OK,
+Domínio respeitado: b3_inflacao,OK,
+Domínio respeitado: b4_juros_compostos,OK,
+Domínio respeitado: b5_diversificacao,OK,
+Domínio respeitado: b6_autoavaliacao,OK,
+Domínio respeitado: c1_orcamento,OK,
+Domínio respeitado: c2_tem_reserva,OK,
+Domínio respeitado: c3_reserva_cobertura,OK,
+Domínio respeitado: c6_poupa_regular,OK,
+Domínio respeitado: d1_renda_familiar,OK,
+Domínio respeitado: d2_fam_conversa,OK,
+Domínio respeitado: d3_fam_orcamento,OK,
+Domínio respeitado: d4_fam_reserva,OK,
+Domínio respeitado: d5_fam_dividas,OK,
+Domínio respeitado: d6_fam_conhecimento,OK,
+Domínio respeitado: e2_usaria_glossario,OK,
+Glossário: hash do arquivo original inalterado (preservação),OK,
+Glossário: contagem preservada (bruto = tratado),OK,6 → 6
+"Glossário: 1 verbete por linha, slug único",OK,
+Glossário: relações = soma de n_relacionados,OK,14 relações
+Glossário: tipos esperados,OK,
+Junção cobertura: contagem antes = linhas da tabela,OK,
+Questionário: funil fecha (bruto − duplicados − sem consentimento = base limpa),OK,63 − 3 − 4 = 56
+Questionário: id_resposta único e sequencial,OK,
+Questionário: escore entre 0 e 4,OK,
+Questionário: nível definido para todos,OK,
+Questionário: tabela longa só tem categorias válidas,OK,
+Questionário: ninguém sem reserva tem c3/c4,OK,
+Questionário: 'nenhuma' não aparece junto de outras dívidas,OK,
+Teste sintético: 3 duplicatas plantadas foram removidas,OK,removidas 3
+Teste sintético: 4 sem consentimento removidos,OK,removidos 4
+Teste sintético: 6 códigos inválidos detectados,OK,detectados 6
+Teste sintético: colunas de identificação descartadas,OK,"['carimbo de data/hora', 'nome']"
+Frequências: 'base' de cada variável = respostas válidas,OK,
+Frequências: nenhuma célula com n < 5 exposta,OK,

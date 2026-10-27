@@ -1,0 +1,13 @@
+base,etapa,linhas
+glossario,bruto,6
+glossario,após G2 (duplicidades),6
+glossario_relacoes,após G3 (explodir relacionados),14
+glossario_verbetes,após G4 (tabela final),6
+cobertura,pares item-verbete (antes da junção),12
+cobertura,pares item-verbete com verbete existente (depois da junção),11
+questionario,bruto,63
+questionario,após Q1 (envios duplicados),60
+questionario,após Q2 (consentimento),56
+questionario,após Q6 (base limpa),56
+questionario_respostas,tabela final (1 linha por respondente),56
+questionario_multipla,tabela longa (1 linha por opção marcada),320

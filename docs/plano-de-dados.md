@@ -89,14 +89,29 @@ Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
 | `e2_usaria_glossario` | Usaria um glossário online | Categórica | Sim / talvez / não | F1 |
 | `e3_termo_dificil` | Termo que gostaria de ver explicado (resposta curta, sem dados pessoais) | Texto | — | F1 |
 
+Os **códigos válidos de cada resposta** (o contrato entre o formulário e o tratamento) estão em [`outputs/livro_de_codigos.csv`](../outputs/livro_de_codigos.csv).
+
 **Limite importante:** as variáveis `d3` a `d6` são o **relato do estudante** sobre a família, não uma medida feita com a própria família. As conclusões sobre "o que as famílias sabem" devem dizer isso.
+
+### 4.3 Tabelas tratadas (Entrega 5)
+
+Geradas por [`notebooks/03_obtencao_limpeza_tratamento.ipynb`](../notebooks/03_obtencao_limpeza_tratamento.ipynb). Cada variável ocupa uma coluna, cada observação uma linha e cada tipo de unidade uma tabela.
+
+| Tabela (`data/processed/`) | Unidade (1 linha =) | Chave | Variáveis |
+|---|---|---|---|
+| `glossario_verbetes.csv` | Um verbete | `slug` | `termo`, `slug`, `tema`, `definicao`, `exemplo`, `importa`, `fonte` (texto); `n_relacionados`, `n_caracteres_definicao` (inteiro); `tem_exemplo`, `tem_importa`, `tem_fonte` (lógico) |
+| `glossario_relacoes.csv` | Uma relação "Veja também" | `slug_origem` + `slug_destino` | `termo_origem`, `termo_destino` (texto); `destino_existe`, `reciproca` (lógico, derivadas) |
+| `glossario_cobertura_questionario.csv` | Um par item do questionário × verbete necessário | `item_questionario` + `slug` | `verbete_necessario` (texto); `existe_no_glossario` (lógico) |
+| `frequencias.csv`, `escore_distribuicao.csv`, `cruzamentos.csv`, `escore_medio_por_grupo.csv` | Pergunta × categoria (e grupo) | `variavel` + `categoria` (+ grupo) | `n` (inteiro ou `<5`), `pct`, `base`. **Só existem em `data/processed/` depois da coleta real** |
+
+Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualidade.csv`, `outputs/funil_contagens.csv`, `outputs/testes_integridade.csv`. Até a aplicação do questionário, o notebook testa as regras com uma base **sintética** e grava o resultado em `outputs/sintetico_teste/` (nunca em `data/processed/`).
 
 ## 5. Plano de aquisição
 
 | Fonte | Método de obtenção | Arquivo / endpoint | Frequência | Parâmetros | Responsável | Data prevista | Atualização |
 |---|---|---|---|---|---|---|---|
 | F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 17/11 a 30/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur | Instrumento até 10/11/2026; coleta de 17/11 a 30/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
-| F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/02_tratamento_questionario.py` → `data/processed/` (script pronto, testado só com dados sintéticos) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
+| F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (limpeza e validação; reutiliza as funções de agregação de `notebooks/02_tratamento_questionario.py`) → `data/processed/` (testado só com dados sintéticos) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
 | F2 Glossário | Redação dos verbetes e conferência em F4–F6 | `data/glossario.json` | Contínua até a entrega final | Validação com `notebooks/01_validar_glossario.py` | Todos | Versão revisada em 05/12/2026 | Ao incluir ou alterar verbete, rodar a validação |
 | F3 Lista de demandas | Solicitar ou confirmar a lista com o CORECON-PB | Documento institucional (não versionado por padrão) | Única | — | Ana | 03/11/2026 | Pedir nova versão se o CORECON atualizar |
 | F4–F8 Referências | Acesso manual aos links do inventário; registrar data de acesso e licença | Links da seção 2 | Única, com releitura antes da banca | — | Todos | 03/11/2026 | Conferir se os links continuam ativos antes de 15/12/2026 |

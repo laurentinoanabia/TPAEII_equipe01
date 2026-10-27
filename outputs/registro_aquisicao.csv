@@ -1,0 +1,3 @@
+fonte,arquivo,tamanho_bytes,sha256,parametros,origem
+F2 glossario.json,data/glossario.json,2835,688481a2ba274403d320ee3fc1941f00e9bde594e22c92b53bb25440f2ccb989,"leitura integral, sem filtros",REAL
+F1 questionario,(gerado em memória),0,,"gerar_sintetico(n=60, semente=20261029)",SINTETICO
