@@ -1,0 +1,38 @@
+# Dados brutos de pesquisa (podem conter informação pessoal): nunca versionar
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+
+# Respostas individuais do questionário, em qualquer pasta
+respostas*.csv
+respostas*.xlsx
+*respondentes*
+*_identificado*
+
+# Credenciais e segredos
+.env
+.env.*
+*.key
+*.pem
+*.token
+secrets/
+credentials*.json
+client_secret*.json
+
+# Python / notebooks
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Arquivos de sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivos grandes ou temporários
+*.zip
+*.tmp
+~$*

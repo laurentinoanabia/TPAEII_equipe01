@@ -1,0 +1,50 @@
+[
+  {
+    "termo": "Reserva de emergência",
+    "tema": "Planejamento financeiro",
+    "definicao": "Dinheiro guardado, com acesso rápido, para cobrir gastos inesperados ou a perda de renda, sem precisar recorrer a empréstimos.",
+    "exemplo": "Quem guarda dinheiro para pagar o conserto urgente de um equipamento de trabalho não precisa usar o cheque especial.",
+    "importa": "Evita que um imprevisto vire dívida.",
+    "relacionados": ["Orçamento pessoal", "Endividamento", "Juros"]
+  },
+  {
+    "termo": "Orçamento pessoal",
+    "tema": "Planejamento financeiro",
+    "definicao": "Plano que compara o que a pessoa ganha com o que gasta, para decidir quanto pode consumir, guardar e pagar de dívidas.",
+    "exemplo": "Anotar todas as receitas e despesas do mês e separar o valor da poupança antes de gastar.",
+    "importa": "É o primeiro passo para controlar o dinheiro e evitar dívidas.",
+    "relacionados": ["Reserva de emergência", "Endividamento"]
+  },
+  {
+    "termo": "Juros",
+    "tema": "Crédito e dívidas",
+    "definicao": "Preço do dinheiro no tempo: valor pago por quem toma dinheiro emprestado, ou recebido por quem empresta ou aplica.",
+    "exemplo": "Se uma dívida de R$ 100 cobra 10% de juros ao mês, no mês seguinte ela passa a ser de R$ 110.",
+    "importa": "Juros altos fazem uma dívida crescer rápido; por isso comparar o custo antes de contratar crédito é importante.",
+    "relacionados": ["Endividamento", "Inflação"]
+  },
+  {
+    "termo": "Endividamento",
+    "tema": "Crédito e dívidas",
+    "definicao": "Situação de quem tem compromissos financeiros a pagar, como parcelas, empréstimos e cartão de crédito.",
+    "exemplo": "Parcelar compras no cartão e ainda pagar um empréstimo ao mesmo tempo.",
+    "importa": "Quando as parcelas pesam demais no orçamento, aumenta o risco de inadimplência.",
+    "relacionados": ["Juros", "Orçamento pessoal", "Reserva de emergência"]
+  },
+  {
+    "termo": "Inflação",
+    "tema": "Economia geral",
+    "definicao": "Aumento geral e contínuo dos preços, que reduz o poder de compra do dinheiro ao longo do tempo.",
+    "exemplo": "Com inflação alta, a mesma quantia compra menos itens no mercado do que no ano anterior.",
+    "importa": "Dinheiro parado perde valor real se rende menos do que a inflação.",
+    "relacionados": ["Juros", "Taxa Selic"]
+  },
+  {
+    "termo": "Taxa Selic",
+    "tema": "Economia geral",
+    "definicao": "Taxa básica de juros da economia brasileira, definida pelo Banco Central, que serve de referência para os demais juros.",
+    "exemplo": "Quando a Selic sobe, o crédito tende a ficar mais caro e algumas aplicações passam a render mais.",
+    "importa": "Influencia o custo dos empréstimos e o rendimento de aplicações.",
+    "relacionados": ["Juros", "Inflação"]
+  }
+]

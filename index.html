@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossário da Economia – CORECON-PB</title>
+<meta name="description" content="Termos da economia explicados de forma simples. Uma iniciativa do CORECON-PB em apoio ao “PB sem dívidas”.">
+<style>
+  :root { --fundo:#ffffff; --texto:#1b1b1b; --suave:#555; --destaque:#0b5d3b; --borda:#d8d8d8; --marca:#fff2a8; --realce:#eef7f2; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fundo:#14181a; --texto:#f0f0f0; --suave:#b5b5b5; --destaque:#6fd3a0; --borda:#3a3f42; --marca:#5a4f12; --realce:#1d2a24; }
+  }
+  html { scroll-behavior:smooth; scroll-padding-top:4.5rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--fundo); color:var(--texto); font:18px/1.6 system-ui, sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:1.5rem 1rem 3rem; }
+  h1 { font-size:1.8rem; margin:0 0 .25rem; }
+  .sub { color:var(--suave); margin:0 0 1.5rem; }
+  label { display:block; font-weight:600; margin-bottom:.35rem; }
+  input, select, button { font:inherit; }
+  input, select { width:100%; box-sizing:border-box; padding:.6rem; border:2px solid var(--borda); border-radius:8px; background:var(--fundo); color:var(--texto); }
+  input:focus, select:focus, button:focus-visible, a:focus-visible { outline:3px solid var(--destaque); outline-offset:2px; }
+  a { color:var(--destaque); }
+  .filtros { display:grid; gap:1rem; margin-bottom:1rem; }
+  @media (min-width:36rem) { .filtros { grid-template-columns:2fr 1fr; } }
+  .acoes { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.5rem; }
+  #contagem { margin:0; color:var(--suave); }
+  button { cursor:pointer; padding:.35rem .8rem; border:2px solid var(--borda); border-radius:8px; background:var(--fundo); color:var(--texto); }
+  button:hover { border-color:var(--destaque); }
+  #limpar[hidden] { display:none; }
+  nav.letras { position:sticky; top:0; z-index:1; background:var(--fundo); border-bottom:1px solid var(--borda); padding:.5rem 0; margin-bottom:.5rem; display:flex; flex-wrap:nowrap; overflow-x:auto; gap:.15rem; }
+  @media (min-width:36rem) { nav.letras { flex-wrap:wrap; } }
+  nav.letras a, nav.letras span { flex:none; min-width:1.9rem; text-align:center; padding:.1rem .2rem; border-radius:6px; font-weight:600; text-decoration:none; }
+  nav.letras span { color:var(--borda); }
+  nav.letras a:hover { background:var(--realce); }
+  .grupo > h2 { font-size:1.1rem; color:var(--suave); margin:1.5rem 0 0; }
+  article { border-top:1px solid var(--borda); padding:1rem .5rem; margin:0 -.5rem; border-radius:4px; }
+  article:target { background:var(--realce); }
+  article h3 { margin:0 0 .25rem; font-size:1.3rem; color:var(--destaque); }
+  .tema { font-size:.85rem; color:var(--suave); margin:0 0 .5rem; }
+  p { margin:.3rem 0; }
+  .rotulo { font-weight:600; }
+  .fonte { font-size:.85rem; color:var(--suave); }
+  .rodape-verbete { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.6rem; }
+  .rodape-verbete button { font-size:.85rem; }
+  mark { background:var(--marca); color:inherit; border-radius:2px; }
+  .vazio { border-top:1px solid var(--borda); padding:1rem 0; }
+  footer { max-width:44rem; margin:0 auto; padding:1rem 1rem 2rem; color:var(--suave); font-size:.85rem; border-top:1px solid var(--borda); }
+  @media print {
+    .filtros, .acoes, nav.letras, .rodape-verbete { display:none; }
+    article { break-inside:avoid; }
+    body { font-size:12pt; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Glossário da Economia</h1>
+  <p class="sub">Termos da economia explicados de forma simples. Uma iniciativa do CORECON-PB em apoio ao “PB sem dívidas”.</p>
+
+  <div class="filtros" role="search">
+    <div>
+      <label for="busca">Buscar um termo</label>
+      <input id="busca" type="search" placeholder="Ex.: juros" autocomplete="off">
+    </div>
+    <div>
+      <label for="tema">Tema</label>
+      <select id="tema"><option value="">Todos</option></select>
+    </div>
+  </div>
+
+  <div class="acoes">
+    <p id="contagem" aria-live="polite"></p>
+    <button id="limpar" type="button" hidden>Limpar filtros</button>
+  </div>
+
+  <nav class="letras" id="letras" aria-label="Índice alfabético"></nav>
+  <section id="lista" aria-label="Verbetes"></section>
+  <noscript><p>Ative o JavaScript para ver o glossário.</p></noscript>
+</main>
+<footer>
+  CORECON-PB – Conselho Regional de Economia da Paraíba. Conteúdo educativo; não substitui orientação profissional.
+</footer>
+
+<script>
+let verbetes = [];
+const lista = document.getElementById('lista');
+const busca = document.getElementById('busca');
+const tema = document.getElementById('tema');
+const contagem = document.getElementById('contagem');
+const letras = document.getElementById('letras');
+const limpar = document.getElementById('limpar');
+
+function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function inicial(s) { const c = norm(s).charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : '#'; }
+
+// Escreve o texto em el, destacando com <mark> os trechos que casam com q (ignorando acentos)
+function escrever(el, texto, q) {
+  texto = String(texto || '');
+  if (!q) { el.append(texto); return; }
+  let n = '', mapa = [];
+  for (let i = 0; i < texto.length; i++) {
+    const c = norm(texto[i]);
+    for (let k = 0; k < c.length; k++) { n += c[k]; mapa.push(i); }
+  }
+  let pos = 0, ini;
+  while ((ini = n.indexOf(q, pos)) !== -1) {
+    const a = mapa[ini], b = mapa[ini + q.length - 1] + 1;
+    const ant = mapa[pos] ?? texto.length;
+    el.append(texto.slice(ant, a));
+    const m = document.createElement('mark'); m.textContent = texto.slice(a, b); el.append(m);
+    pos = ini + q.length;
+  }
+  el.append(texto.slice(mapa[pos] ?? texto.length));
+}
+
+function paragrafo(rotulo, texto, q) {
+  const p = document.createElement('p');
+  if (rotulo) { const r = document.createElement('span'); r.className = 'rotulo'; r.textContent = rotulo + ': '; p.append(r); }
+  escrever(p, texto, q);
+  return p;
+}
+
+function linkDe(v) { return location.href.split('#')[0].split('?')[0] + '#' + slug(v.termo); }
+
+async function compartilhar(v, botao) {
+  const url = linkDe(v);
+  const texto = v.termo + ': ' + v.definicao;
+  try {
+    if (navigator.share) { await navigator.share({ title: v.termo, text: texto, url }); return; }
+    await navigator.clipboard.writeText(texto + '\n' + url);
+    botao.textContent = 'Link copiado!';
+  } catch (e) {
+    if (e.name === 'AbortError') return;
+    window.prompt('Copie o link:', url);
+  }
+  setTimeout(() => { botao.textContent = 'Compartilhar'; }, 2000);
+}
+
+function salvarNaUrl() {
+  const p = new URLSearchParams();
+  if (busca.value.trim()) p.set('q', busca.value.trim());
+  if (tema.value) p.set('tema', tema.value);
+  const qs = p.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+}
+
+function mostrar() {
+  const q = norm(busca.value.trim());
+  const t = tema.value;
+  const achados = verbetes
+    .filter(v => (!t || v.tema === t) && (!q || norm(v.termo + ' ' + v.definicao + ' ' + (v.exemplo || '')).includes(q)))
+    .sort((a, b) => a.termo.localeCompare(b.termo, 'pt-BR'));
+  contagem.textContent = achados.length + (achados.length === 1 ? ' termo encontrado' : ' termos encontrados');
+  limpar.hidden = !q && !t;
+  lista.innerHTML = '';
+
+  if (!achados.length) {
+    const p = document.createElement('p'); p.className = 'vazio';
+    p.textContent = 'Nenhum termo encontrado. Tente outra palavra, confira a grafia ou escolha “Todos” os temas.';
+    lista.append(p);
+  }
+
+  const grupos = new Map();
+  for (const v of achados) {
+    const l = inicial(v.termo);
+    if (!grupos.has(l)) grupos.set(l, []);
+    grupos.get(l).push(v);
+  }
+
+  letras.innerHTML = '';
+  for (const l of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#') {
+    if (l === '#' && !grupos.has('#')) continue;
+    let el;
+    if (grupos.has(l)) { el = document.createElement('a'); el.href = '#letra-' + (l === '#' ? 'outros' : l); }
+    else { el = document.createElement('span'); el.setAttribute('aria-hidden', 'true'); }
+    el.textContent = l;
+    letras.append(el);
+  }
+  letras.hidden = achados.length < 2;
+
+  for (const [l, itens] of grupos) {
+    const g = document.createElement('section'); g.className = 'grupo';
+    const hl = document.createElement('h2'); hl.id = 'letra-' + (l === '#' ? 'outros' : l); hl.textContent = l;
+    g.append(hl);
+    for (const v of itens) {
+      const el = document.createElement('article'); el.id = slug(v.termo);
+      const h = document.createElement('h3'); escrever(h, v.termo, q);
+      el.append(h);
+      if (v.tema) { const tm = document.createElement('p'); tm.className = 'tema'; tm.textContent = v.tema; el.append(tm); }
+      el.append(paragrafo('', v.definicao, q));
+      if (v.exemplo) el.append(paragrafo('Exemplo', v.exemplo, q));
+      if (v.importa) el.append(paragrafo('Por que importa', v.importa));
+      if (Array.isArray(v.relacionados)) {
+        const rel = v.relacionados.filter(r => verbetes.some(x => slug(x.termo) === slug(r)));
+        if (rel.length) {
+          const p = document.createElement('p');
+          const r = document.createElement('span'); r.className = 'rotulo'; r.textContent = 'Veja também: '; p.append(r);
+          rel.forEach((nome, i) => {
+            const a = document.createElement('a'); a.href = '#' + slug(nome); a.textContent = nome;
+            p.append(a); if (i < rel.length - 1) p.append(', ');
+          });
+          el.append(p);
+        }
+      }
+      if (v.fonte) { const f = document.createElement('p'); f.className = 'fonte'; f.textContent = 'Fonte: ' + v.fonte; el.append(f); }
+      const rod = document.createElement('div'); rod.className = 'rodape-verbete';
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Compartilhar';
+      b.setAttribute('aria-label', 'Compartilhar o termo ' + v.termo);
+      b.addEventListener('click', () => compartilhar(v, b));
+      rod.append(b); el.append(rod);
+      g.append(el);
+    }
+    lista.append(g);
+  }
+}
+
+// Se o link aponta para um termo escondido pelos filtros, limpa os filtros para exibi-lo
+function irParaHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id || id.startsWith('letra-')) return;
+  if (!document.getElementById(id) && verbetes.some(v => slug(v.termo) === id)) {
+    busca.value = ''; tema.value = ''; salvarNaUrl(); mostrar();
+  }
+  const alvo = document.getElementById(id);
+  if (alvo) alvo.scrollIntoView();
+}
+
+function aoFiltrar() { salvarNaUrl(); mostrar(); }
+
+fetch('data/glossario.json')
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(dados => {
+    verbetes = dados.filter(v => v && v.termo);
+    [...new Set(verbetes.map(v => v.tema).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR')).forEach(t => {
+      const o = document.createElement('option'); o.value = t; o.textContent = t; tema.append(o);
+    });
+    const p = new URLSearchParams(location.search);
+    busca.value = p.get('q') || '';
+    if ([...tema.options].some(o => o.value === p.get('tema'))) tema.value = p.get('tema');
+    mostrar();
+    irParaHash();
+  })
+  .catch(() => { contagem.textContent = 'Não foi possível carregar o glossário. Tente recarregar a página.'; });
+
+busca.addEventListener('input', aoFiltrar);
+tema.addEventListener('change', aoFiltrar);
+limpar.addEventListener('click', () => { busca.value = ''; tema.value = ''; aoFiltrar(); busca.focus(); });
+window.addEventListener('hashchange', irParaHash);
+</script>
+</body>
+</html>
