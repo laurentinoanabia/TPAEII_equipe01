@@ -107,4 +107,5 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 
 ## Contato acadêmico
 
-Prof. Alessio · Curso de Ciências Econômicas, Universidade Federal da Paraíba (UFPB). Os contatos da equipe ficam no material entregue ao professor, não neste repositório público.
+Prof. Alessio · Curso de Ciências Econômicas, Universidade Federal da Paraíba (UFPB). 
+Email abeatriz.laurentino@gmail.com
