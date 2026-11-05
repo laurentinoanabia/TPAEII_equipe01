@@ -1,6 +1,10 @@
 variavel,tipo,codigo,rotulo
 consentimento,unica,aceito,Aceita participar
 consentimento,unica,nao_aceito,Não aceita participar
+a1_curso,unica,ciencias_economicas,Ciências Econômicas
+a1_curso,unica,administracao,Administração
+a1_curso,unica,ciencias_contabeis,Ciências Contábeis
+a1_curso,unica,outro,Outro curso (campo de texto livre no formulário; o texto digitado não é guardado)
 a2_periodo,unica,1_4,1º ao 4º período
 a2_periodo,unica,5_8,5º ao 8º período
 a2_periodo,unica,9_mais,9º período ou mais
@@ -26,6 +30,11 @@ b2_reserva_meses,unica,1_3,De 1 a 3 meses
 b2_reserva_meses,unica,3_6,De 3 a 6 meses
 b2_reserva_meses,unica,mais_6,Mais de 6 meses
 b2_reserva_meses,unica,nao_sei,Não sei
+b7_reserva_local,unica,a,"Investimento de longo prazo, sem resgate por anos"
+b7_reserva_local,unica,b,Ações da bolsa
+b7_reserva_local,unica,c,"Aplicação segura, resgatável rapidamente (adequada)"
+b7_reserva_local,unica,d,Limite de crédito pré-aprovado
+b7_reserva_local,unica,e,Não sei
 b3_inflacao,unica,a,Mais do que hoje
 b3_inflacao,unica,b,Exatamente o mesmo
 b3_inflacao,unica,c,Menos do que hoje (correta)
@@ -104,6 +113,14 @@ e1_temas_interesse,multipla,investimentos,Investimentos
 e1_temas_interesse,multipla,inflacao_selic,Inflação e Selic
 e1_temas_interesse,multipla,impostos,Impostos
 e1_temas_interesse,multipla,outro,Outro
+e3_termo_prioritario,unica,juros_compostos,Juros compostos
+e3_termo_prioritario,unica,inflacao,Inflação
+e3_termo_prioritario,unica,taxa_selic,Taxa Selic
+e3_termo_prioritario,unica,renda_fixa,Renda fixa
+e3_termo_prioritario,unica,diversificacao,Diversificação
+e3_termo_prioritario,unica,endividamento,Endividamento
+e3_termo_prioritario,unica,orcamento_pessoal,Orçamento pessoal
+e3_termo_prioritario,unica,nenhum,Nenhum deles
 e2_usaria_glossario,unica,sim,Sim
 e2_usaria_glossario,unica,talvez,Talvez
 e2_usaria_glossario,unica,nao,Não

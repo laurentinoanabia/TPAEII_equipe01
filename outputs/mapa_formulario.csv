@@ -1,0 +1,126 @@
+variavel,titulo_no_formulario,tipo,opcao_no_formulario,codigo
+consentimento,Consentimento,unica,"Tenho 18 anos ou mais, li as informações acima e aceito participar.",aceito
+consentimento,Consentimento,unica,Não aceito participar.,nao_aceito
+a1_curso,"Qual é o seu curso de graduação? / Se diferente das opções, por favor informar",unica,Ciências Econômicas,ciencias_economicas
+a1_curso,"Qual é o seu curso de graduação? / Se diferente das opções, por favor informar",unica,Administração,administracao
+a1_curso,"Qual é o seu curso de graduação? / Se diferente das opções, por favor informar",unica,Ciências Contábeis,ciencias_contabeis
+a2_periodo,Em que período você está?,unica,1º ao 4º,1_4
+a2_periodo,Em que período você está?,unica,5º ao 8º,5_8
+a2_periodo,Em que período você está?,unica,9º ou mais,9_mais
+a3_idade,Qual é a sua faixa de idade?,unica,18 a 20,18_20
+a3_idade,Qual é a sua faixa de idade?,unica,21 a 23,21_23
+a3_idade,Qual é a sua faixa de idade?,unica,24 a 26,24_26
+a3_idade,Qual é a sua faixa de idade?,unica,27 ou mais,27_mais
+a4_ocupacao,Qual é a sua situação atual?,unica,Só estudo,so_estuda
+a4_ocupacao,Qual é a sua situação atual?,unica,Estudo e trabalho ou estágio,estuda_trabalha
+a4_ocupacao,Qual é a sua situação atual?,unica,Outra,outra
+a5_renda_propria,"Qual é a sua renda própria mensal (trabalho, estágio, bolsa)?",unica,Nenhuma,nenhuma
+a5_renda_propria,"Qual é a sua renda própria mensal (trabalho, estágio, bolsa)?",unica,Até 1 salário mínimo,ate_1
+a5_renda_propria,"Qual é a sua renda própria mensal (trabalho, estágio, bolsa)?",unica,Mais de 1 até 2 salários mínimos,1_2
+a5_renda_propria,"Qual é a sua renda própria mensal (trabalho, estágio, bolsa)?",unica,Mais de 2 salários mínimos,mais_2
+a5_renda_propria,"Qual é a sua renda própria mensal (trabalho, estágio, bolsa)?",unica,Prefiro não responder,pnr
+b1_reserva_def,Qual alternativa melhor descreve uma reserva de emergência?,unica,"a) Dinheiro guardado para comprar algo que você quer muito, como uma viagem.",a
+b1_reserva_def,Qual alternativa melhor descreve uma reserva de emergência?,unica,b) Dinheiro guardado e de fácil acesso para cobrir imprevistos ou perda de renda.,b
+b1_reserva_def,Qual alternativa melhor descreve uma reserva de emergência?,unica,c) Dinheiro investido em ações para ganhar o máximo possível.,c
+b1_reserva_def,Qual alternativa melhor descreve uma reserva de emergência?,unica,d) Limite do cartão de crédito ou do cheque especial.,d
+b1_reserva_def,Qual alternativa melhor descreve uma reserva de emergência?,unica,e) Não sei,e
+b2_reserva_meses,"Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?",unica,Menos de 1 mês,menos_1
+b2_reserva_meses,"Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?",unica,De 1 a 3 meses,1_3
+b2_reserva_meses,"Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?",unica,De 3 a 6 meses,3_6
+b2_reserva_meses,"Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?",unica,Mais de 6 meses,mais_6
+b2_reserva_meses,"Na sua opinião, quantos meses de despesas seria adequado guardar como reserva de emergência?",unica,Não sei,nao_sei
+b7_reserva_local,Qual destes lugares é mais adequado para a reserva de emergência?,unica,"a) Um investimento de longo prazo, sem possibilidade de resgate por anos.",a
+b7_reserva_local,Qual destes lugares é mais adequado para a reserva de emergência?,unica,"b) Ações da bolsa, que podem render muito.",b
+b7_reserva_local,Qual destes lugares é mais adequado para a reserva de emergência?,unica,"c) Uma aplicação segura, que possa ser resgatada rapidamente quando necessário.",c
+b7_reserva_local,Qual destes lugares é mais adequado para a reserva de emergência?,unica,d) Um limite de crédito pré-aprovado no banco.,d
+b7_reserva_local,Qual destes lugares é mais adequado para a reserva de emergência?,unica,e) Não sei,e
+b3_inflacao,"Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:",unica,a) Mais do que hoje.,a
+b3_inflacao,"Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:",unica,b) Exatamente o mesmo.,b
+b3_inflacao,"Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:",unica,c) Menos do que hoje.,c
+b3_inflacao,"Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:",unica,d) Não sei,d
+b4_juros_compostos,Você deve R$ 1.000 em uma dívida com juros de 10% ao mês e não paga nada por 2 meses. Quanto você deverá no fim do segundo mês?,unica,a) R$ 1.200,a
+b4_juros_compostos,Você deve R$ 1.000 em uma dívida com juros de 10% ao mês e não paga nada por 2 meses. Quanto você deverá no fim do segundo mês?,unica,b) R$ 1.210,b
+b4_juros_compostos,Você deve R$ 1.000 em uma dívida com juros de 10% ao mês e não paga nada por 2 meses. Quanto você deverá no fim do segundo mês?,unica,c) R$ 1.100,c
+b4_juros_compostos,Você deve R$ 1.000 em uma dívida com juros de 10% ao mês e não paga nada por 2 meses. Quanto você deverá no fim do segundo mês?,unica,d) Não sei,d
+b5_diversificacao,"Colocar todo o seu dinheiro em um único investimento, em vez de dividi-lo em vários, em geral significa:",unica,a) Risco maior.,a
+b5_diversificacao,"Colocar todo o seu dinheiro em um único investimento, em vez de dividi-lo em vários, em geral significa:",unica,b) Risco menor.,b
+b5_diversificacao,"Colocar todo o seu dinheiro em um único investimento, em vez de dividi-lo em vários, em geral significa:",unica,c) O mesmo risco.,c
+b5_diversificacao,"Colocar todo o seu dinheiro em um único investimento, em vez de dividi-lo em vários, em geral significa:",unica,d) Não sei,d
+b6_autoavaliacao,"De 1 (nenhum) a 5 (muito alto), como você avalia o seu conhecimento sobre finanças pessoais?",unica,1,1
+b6_autoavaliacao,"De 1 (nenhum) a 5 (muito alto), como você avalia o seu conhecimento sobre finanças pessoais?",unica,2,2
+b6_autoavaliacao,"De 1 (nenhum) a 5 (muito alto), como você avalia o seu conhecimento sobre finanças pessoais?",unica,3,3
+b6_autoavaliacao,"De 1 (nenhum) a 5 (muito alto), como você avalia o seu conhecimento sobre finanças pessoais?",unica,4,4
+b6_autoavaliacao,"De 1 (nenhum) a 5 (muito alto), como você avalia o seu conhecimento sobre finanças pessoais?",unica,5,5
+c1_orcamento,Você anota ou planeja seus gastos e receitas do mês?,unica,Nunca,nunca
+c1_orcamento,Você anota ou planeja seus gastos e receitas do mês?,unica,Às vezes,as_vezes
+c1_orcamento,Você anota ou planeja seus gastos e receitas do mês?,unica,Sempre,sempre
+c2_tem_reserva,Você tem uma reserva de emergência?,unica,Sim,sim
+c2_tem_reserva,Você tem uma reserva de emergência?,unica,Parcialmente,parcial
+c2_tem_reserva,Você tem uma reserva de emergência?,unica,Não,nao
+c3_reserva_cobertura,Sua reserva cobre aproximadamente quantos meses das suas despesas?,unica,Menos de 1 mês,menos_1
+c3_reserva_cobertura,Sua reserva cobre aproximadamente quantos meses das suas despesas?,unica,De 1 a 3 meses,1_3
+c3_reserva_cobertura,Sua reserva cobre aproximadamente quantos meses das suas despesas?,unica,De 3 a 6 meses,3_6
+c3_reserva_cobertura,Sua reserva cobre aproximadamente quantos meses das suas despesas?,unica,Mais de 6 meses,mais_6
+c4_onde_guarda,Onde você guarda esse dinheiro?,multipla,Poupança,poupanca
+c4_onde_guarda,Onde você guarda esse dinheiro?,multipla,"Renda fixa (CDB, Tesouro etc.)",renda_fixa
+c4_onde_guarda,Onde você guarda esse dinheiro?,multipla,Conta corrente,conta_corrente
+c4_onde_guarda,Onde você guarda esse dinheiro?,multipla,Dinheiro em casa,dinheiro_casa
+c4_onde_guarda,Onde você guarda esse dinheiro?,multipla,Outro,outro
+c5_dividas,Você tem alguma dessas dívidas hoje?,multipla,Cartão de crédito,cartao
+c5_dividas,Você tem alguma dessas dívidas hoje?,multipla,Empréstimo ou financiamento,emprestimo
+c5_dividas,Você tem alguma dessas dívidas hoje?,multipla,Parcelas atrasadas,atrasadas
+c5_dividas,Você tem alguma dessas dívidas hoje?,multipla,Nenhuma,nenhuma
+c5_dividas,Você tem alguma dessas dívidas hoje?,multipla,Prefiro não responder,pnr
+c6_poupa_regular,Você guarda uma parte do que recebe todo mês?,unica,Sim,sim
+c6_poupa_regular,Você guarda uma parte do que recebe todo mês?,unica,Às vezes,as_vezes
+c6_poupa_regular,Você guarda uma parte do que recebe todo mês?,unica,Não,nao
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Até 1 salário mínimo,ate_1
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Mais de 1 até 3,1_3
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Mais de 3 até 6,3_6
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Mais de 6,mais_6
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Não sei,nao_sei
+d1_renda_familiar,"Qual é, aproximadamente, a renda mensal total da sua família?",unica,Prefiro não responder,pnr
+d2_fam_conversa,"Na sua casa, vocês conversam sobre dinheiro e contas?",unica,Nunca,nunca
+d2_fam_conversa,"Na sua casa, vocês conversam sobre dinheiro e contas?",unica,Às vezes,as_vezes
+d2_fam_conversa,"Na sua casa, vocês conversam sobre dinheiro e contas?",unica,Frequentemente,frequente
+d3_fam_orcamento,Sua família controla o orçamento (anota ou planeja os gastos)?,unica,Sim,sim
+d3_fam_orcamento,Sua família controla o orçamento (anota ou planeja os gastos)?,unica,Não,nao
+d3_fam_orcamento,Sua família controla o orçamento (anota ou planeja os gastos)?,unica,Não sei,nao_sei
+d4_fam_reserva,Sua família tem dinheiro guardado para emergências?,unica,Sim,sim
+d4_fam_reserva,Sua família tem dinheiro guardado para emergências?,unica,Não,nao
+d4_fam_reserva,Sua família tem dinheiro guardado para emergências?,unica,Não sei,nao_sei
+d5_fam_dividas,Sua família tem dívidas em atraso?,unica,Sim,sim
+d5_fam_dividas,Sua família tem dívidas em atraso?,unica,Não,nao
+d5_fam_dividas,Sua família tem dívidas em atraso?,unica,Não sei,nao_sei
+d5_fam_dividas,Sua família tem dívidas em atraso?,unica,Prefiro não responder,pnr
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,1 – Nenhum,1
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,2,2
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,3,3
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,4,4
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,5 – Muito alto,5
+d6_fam_conhecimento,"De 1 (nenhum) a 5 (muito alto), como você avalia o conhecimento da sua família sobre finanças?",unica,Não sei,nao_sei
+d7_educ_recebida,Onde você já teve contato com educação financeira?,multipla,Escola,escola
+d7_educ_recebida,Onde você já teve contato com educação financeira?,multipla,Família,familia
+d7_educ_recebida,Onde você já teve contato com educação financeira?,multipla,Curso ou faculdade,curso
+d7_educ_recebida,Onde você já teve contato com educação financeira?,multipla,Internet e redes sociais,internet
+d7_educ_recebida,Onde você já teve contato com educação financeira?,multipla,Nunca tive,nunca
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Orçamento,orcamento
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Reserva de emergência,reserva
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Crédito e juros,credito_juros
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Dívidas e renegociação,dividas
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Investimentos,investimentos
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Inflação e Selic,inflacao_selic
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Impostos,impostos
+e1_temas_interesse,Que temas você gostaria de ver explicados no glossário?,multipla,Outro,outro
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Juros compostos,juros_compostos
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Inflação,inflacao
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Taxa Selic,taxa_selic
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Renda fixa,renda_fixa
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Diversificação,diversificacao
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Endividamento,endividamento
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Orçamento pessoal,orcamento_pessoal
+e3_termo_prioritario,Qual destes termos você mais gostaria de ver explicado?,unica,Nenhum deles,nenhum
+e2_usaria_glossario,"Você usaria um glossário online de termos da economia? / Considere um site interativo que deve ampliar o conhecimento comum sobre termos econômicos, educação financeira e macroeconomia.",unica,Sim,sim
+e2_usaria_glossario,"Você usaria um glossário online de termos da economia? / Considere um site interativo que deve ampliar o conhecimento comum sobre termos econômicos, educação financeira e macroeconomia.",unica,Talvez,talvez
+e2_usaria_glossario,"Você usaria um glossário online de termos da economia? / Considere um site interativo que deve ampliar o conhecimento comum sobre termos econômicos, educação financeira e macroeconomia.",unica,Não,nao
+a1_curso,"Qual é o seu curso de graduação? / Se diferente das opções, por favor informar",unica,Outro (texto livre; não é guardado),outro

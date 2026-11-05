@@ -4,9 +4,14 @@
 Lê o CSV exportado do formulário, remove campos de identificação, calcula o escore
 de conhecimento e grava SOMENTE tabelas agregadas, com supressão de células pequenas.
 
-ANTES DE USAR: testado apenas com um CSV sintético, nunca com a exportação real do
-formulário. Confira se os nomes das colunas e os códigos das respostas (a, b, c...) do
-formulário coincidem com docs/questionario.md e ajuste GABARITO e as listas abaixo se preciso.
+O Google Forms exporta o TEXTO das opções (não códigos) e usa o título da pergunta como
+cabeçalho. Este script detecta esse formato e o traduz com notebooks/02a_formulario_google.py
+(mapa conferido com o formulário publicado em 05/11/2026); um CSV já em códigos também é aceito.
+O caminho completo, com relatório de qualidade e testes, é o notebook 03_obtencao_limpeza_tratamento.ipynb;
+este script fornece as funções de agregação que o notebook reutiliza.
+
+AINDA NÃO FOI RODADO COM RESPOSTAS REAIS: só com bases sintéticas e com uma exportação simulada
+no formato do Forms. Confira o resultado nas primeiras respostas reais.
 
 Uso (a partir da raiz do repositório):
     python3 notebooks/02_tratamento_questionario.py [ENTRADA.csv] [PASTA_DE_SAIDA]
@@ -17,6 +22,7 @@ Padrões:
 
 Nada que identifique pessoas é gravado: as respostas individuais nunca saem de data/raw/.
 """
+import importlib.util
 import sys
 from pathlib import Path
 
@@ -56,6 +62,14 @@ CRUZAMENTOS = [
 ]
 # Médias do escore por grupo
 MEDIAS_POR = ["a1_curso", "a2_periodo", "d2_fam_conversa", "c2_tem_reserva"]
+
+
+def carregar_adaptador():
+    """Carrega notebooks/02a_formulario_google.py (tradução do formato do Google Forms)."""
+    spec = importlib.util.spec_from_file_location("forms", Path(__file__).with_name("02a_formulario_google.py"))
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+    return modulo
 
 
 def limpar_colunas(df):
@@ -141,10 +155,19 @@ def main(entrada, saida):
     entrada, saida = Path(entrada), Path(saida)
     if not entrada.exists():
         sys.exit(f"Arquivo não encontrado: {entrada}\nExporte as respostas do formulário (CSV, UTF-8) para esse caminho.")
-    df = pd.read_csv(entrada, dtype=str, keep_default_na=False, na_values=[""])
+    df = pd.read_csv(entrada, dtype=str, keep_default_na=False, na_values=[""], encoding="utf-8-sig")
+    forms = carregar_adaptador()
+    if forms.e_exportacao_do_forms(df):
+        df, info = forms.adaptar(df)
+        print(f"Exportação do Google Forms traduzida: {info['perguntas_reconhecidas']} perguntas reconhecidas")
     df, descartadas = limpar_colunas(df)
     if descartadas:
         print("Colunas de identificação/rastreio descartadas:", descartadas)
+    conhecidas = {v for v, *_ in forms.QUESTOES}
+    fora = [c for c in df.columns if c not in conhecidas]     # texto livre ou campo inesperado nunca entra nas tabelas
+    if fora:
+        df = df.drop(columns=fora)
+        print("Colunas fora do livro de códigos descartadas:", fora)
 
     if "consentimento" in df.columns:
         antes = len(df)
@@ -160,7 +183,8 @@ def main(entrada, saida):
     if faltando:
         sys.exit(f"Colunas de conhecimento ausentes (confira docs/questionario.md): {faltando}")
 
-    acertos = pd.DataFrame({c: (como_texto(df[c]) == g).astype(int) for c, g in GABARITO.items()})
+    # resposta ausente ou inválida conta como não-acerto (mesma regra de "não sei"); sem o fillna, NA quebraria o astype
+    acertos = pd.DataFrame({c: (como_texto(df[c]) == g).fillna(False).astype(int) for c, g in GABARITO.items()})
     df["escore_conhecimento"] = acertos.sum(axis=1)
     df["nivel_conhecimento"] = df["escore_conhecimento"].map(nivel)
     df["b1_acertou"] = acertos["b1_reserva_def"].map({1: "acertou", 0: "nao_acertou"})

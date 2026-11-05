@@ -1,7 +1,7 @@
 # Plano de dados (Entrega 4)
 
 **TPAE II – PSAE00320 · Equipe 01** · Ana Beatriz Laurentino, Arthur Almeida e Gabriel Pinheiro · Orientador: Alessio
-Demandante: CORECON-PB · Última atualização: 27/10/2026
+Demandante: CORECON-PB · Última atualização: 05/11/2026 (formulário publicado; ver seções 2, 4.2, 5 e 7)
 
 > Este plano cobre os **dois produtos** do projeto: (1) o glossário da economia (site) e (2) a pesquisa com estudantes de graduação sobre educação financeira. Itens marcados **[a confirmar]** dependem de decisão da equipe, do professor ou do CORECON-PB e não foram preenchidos por suposição.
 
@@ -20,7 +20,7 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 
 | # | Base | Instituição / link | Cobertura | Formato | Acesso | Licença | Data de acesso | Uso no projeto |
 |---|---|---|---|---|---|---|---|---|
-| F1 | Questionário próprio | Equipe 01 · Google Forms | Graduandos do curso de Ciências Econômicas · coleta de 01/11 a 20/11/2026 | CSV exportado | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | — (coleta ainda não iniciada) | Base da pesquisa |
+| F1 | Questionário próprio | Equipe 01 · Google Forms, formulário publicado (link em [`questionario.md`](questionario.md)) | Graduandos; o formulário aceita Ciências Econômicas, Administração, Ciências Contábeis e Outro (população definida em 27/10: Ciências Econômicas **[a confirmar]**) · coleta de 01/11 a 20/11/2026 | CSV exportado do Forms (texto das opções; o tratamento traduz para códigos) | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | 05/11/2026 (formulário lido e conferido; exportação de respostas ainda não tratada) | Base da pesquisa |
 | F2 | Verbetes do glossário | Elaboração da equipe · `data/glossario.json` | Termos escolhidos a partir da lista de demandas do CORECON-PB **[a confirmar a lista]** | JSON | Repositório | Autoria da equipe | 27/10/2026 | Conteúdo do site |
 | F3 | Lista de demandas do CORECON-PB | CORECON-PB (documento recebido pela equipe) | **[a registrar]** | **[a registrar]** | Documento institucional | **[a verificar]** se pode ser versionado; por padrão **não** vai ao repositório | **[a registrar]** | Origem dos termos do glossário |
 | F4 | Caderno de Cidadania Financeira | Banco Central do Brasil · <https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf> | Nacional · conceitos de educação e cidadania financeira | PDF | Público (web) | A verificar (documento ainda não aberto) | 27/10/2026 (link localizado, não aberto) | Conferência de conceitos dos verbetes |
@@ -55,17 +55,18 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 
 ### 4.2 Questionário (variáveis essenciais)
 
-Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
+Redação exata das perguntas e opções: [`questionario.md`](questionario.md). O Google Forms exporta o **texto** das opções; a tradução para os códigos abaixo está em [`../outputs/mapa_formulario.csv`](../outputs/mapa_formulario.csv) e é feita por `notebooks/02a_formulario_google.py`.
 
 | Variável | Descrição | Tipo | Unidade / categorias | Fonte / cobertura |
 |---|---|---|---|---|
-| `a1_curso` | Curso de graduação | Categórica | Lista de cursos | F1 |
+| `a1_curso` | Curso de graduação | Categórica | Ciências Econômicas, Administração, Ciências Contábeis, Outro (texto livre, **não guardado**) | F1 |
 | `a2_periodo` | Faixa de período cursado | Categórica | 1º–4º, 5º–8º, 9º ou mais | F1 |
 | `a3_idade` | Faixa etária | Categórica | 18–20, 21–23, 24–26, 27 ou mais | F1 |
 | `a4_ocupacao` | Situação de estudo e trabalho | Categórica | Só estuda; estuda e trabalha ou estagia; outra | F1 |
 | `a5_renda_propria` | Renda própria mensal (opcional) | Categórica ordinal | Faixas em salários mínimos; "prefiro não responder" | F1 |
 | `b1_reserva_def` | Escolha da definição de reserva de emergência | Categórica | Correta / incorreta / não sei | F1 |
 | `b2_reserva_meses` | Quantos meses de despesas o respondente acha adequado guardar como reserva | Categórica | Faixas de meses; **não pontuada** (nenhuma fonte oficial consultada traz um número único). Só distribuição | F1 |
+| `b7_reserva_local` | Lugar adequado para a reserva de emergência (pergunta incluída no formulário publicado) | Categórica | Opções a–e; adequada: c; **não pontuada** por decisão provisória, a confirmar | F1 |
 | `b3_inflacao` | Item sobre inflação e poder de compra | Categórica | Correta / incorreta / não sei | F1 |
 | `b4_juros_compostos` | Item sobre dívida com juros compostos | Categórica | Correta / incorreta / não sei | F1 |
 | `b5_diversificacao` | Item sobre risco e diversificação | Categórica | Correta / incorreta / não sei | F1 |
@@ -85,9 +86,9 @@ Redação exata das perguntas e opções: [`questionario.md`](questionario.md).
 | `d5_fam_dividas` | Família com dívidas em atraso | Categórica | Sim / não / não sei / prefiro não responder | F1 (relato do estudante) |
 | `d6_fam_conhecimento` | Nível de conhecimento financeiro percebido na família | Ordinal | 1 a 5 / não sei | F1 (relato do estudante) |
 | `d7_educ_recebida` | Onde já teve contato com educação financeira | Categórica múltipla | Escola, família, curso, internet, nunca | F1 |
-| `e1_temas_interesse` | Temas de interesse para o glossário | Categórica múltipla | Lista de temas | F1 |
+| `e1_temas_interesse` | Temas de interesse para o glossário (no máximo 3, imposto pelo formulário) | Categórica múltipla | Lista de temas | F1 |
 | `e2_usaria_glossario` | Usaria um glossário online | Categórica | Sim / talvez / não | F1 |
-| `e3_termo_dificil` | Termo que gostaria de ver explicado (resposta curta, sem dados pessoais) | Texto | — | F1 |
+| `e3_termo_prioritario` | Termo que mais gostaria de ver explicado (antes resposta aberta; no formulário publicado é escolha entre 7 termos) | Categórica | Juros compostos, inflação, taxa Selic, renda fixa, diversificação, endividamento, orçamento pessoal, nenhum deles | F1 |
 
 Os **códigos válidos de cada resposta** (o contrato entre o formulário e o tratamento) estão em [`outputs/livro_de_codigos.csv`](../outputs/livro_de_codigos.csv).
 
@@ -104,14 +105,14 @@ Geradas por [`notebooks/03_obtencao_limpeza_tratamento.ipynb`](../notebooks/03_o
 | `glossario_cobertura_questionario.csv` | Um par item do questionário × verbete necessário | `item_questionario` + `slug` | `verbete_necessario` (texto); `existe_no_glossario` (lógico) |
 | `frequencias.csv`, `escore_distribuicao.csv`, `cruzamentos.csv`, `escore_medio_por_grupo.csv` | Pergunta × categoria (e grupo) | `variavel` + `categoria` (+ grupo) | `n` (inteiro ou `<5`), `pct`, `base`. **Só existem em `data/processed/` depois da coleta real** |
 
-Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualidade.csv`, `outputs/funil_contagens.csv`, `outputs/testes_integridade.csv`. Até a aplicação do questionário, o notebook testa as regras com uma base **sintética** e grava o resultado em `outputs/sintetico_teste/` (nunca em `data/processed/`).
+Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualidade.csv`, `outputs/funil_contagens.csv`, `outputs/testes_integridade.csv`. Tradução do formulário: `outputs/mapa_formulario.csv`. Até a aplicação do questionário, o notebook testa as regras com uma base **sintética** e grava o resultado em `outputs/sintetico_teste/` (nunca em `data/processed/`).
 
 ## 5. Plano de aquisição
 
 | Fonte | Método de obtenção | Arquivo / endpoint | Frequência | Parâmetros | Responsável | Data prevista | Atualização |
 |---|---|---|---|---|---|---|---|
-| F1 Questionário | Aplicação online anônima, divulgada por turmas e canais dos cursos **[a confirmar]**; exportar CSV ao fechar | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 01/11 a 20/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur | Formulário pronto antes de 01/11/2026 **[a confirmar]**; coleta de 01/11 a 20/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
-| F1 Tratamento | Script que remove carimbo de data/hora, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (limpeza e validação; reutiliza as funções de agregação de `notebooks/02_tratamento_questionario.py`) → `data/processed/` (testado só com dados sintéticos) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
+| F1 Questionário | Formulário publicado no Google Forms, divulgado por turmas e canais dos cursos **[a confirmar]**; baixar as respostas em CSV (aba *Respostas*), ao fechar ou antes, para um tratamento parcial | `data/raw/respostas_questionario.csv` (local, não versionado) | Coleta única | Público: graduandos maiores de 18 anos; janela de coleta 01/11 a 20/11/2026; meta de respostas **[a confirmar]** | Gabriel e Arthur **[a confirmar]** | Formulário publicado (conferido em 05/11/2026); coleta de 01/11 a 20/11/2026 | Sem atualização após o fechamento; nova rodada só com decisão da equipe |
+| F1 Tratamento | Traduz o texto das opções do Forms para códigos, remove carimbo de data/hora e qualquer coluna fora do livro de códigos, gera `id_resposta`, calcula escore e nível e produz tabelas agregadas | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (limpeza e validação; usa o mapa de `notebooks/02a_formulario_google.py` e reutiliza as funções de agregação de `notebooks/02_tratamento_questionario.py`) → `data/processed/` (testado com dados sintéticos e com uma exportação simulada no formato do Forms; ainda não com respostas reais) | Uma vez, após o fechamento | Células com menos de 5 respondentes são suprimidas ("<5") | Gabriel e Arthur | 01/12 a 04/12/2026 | Reexecutar o script se o CSV mudar |
 | F2 Glossário | Redação dos verbetes e conferência em F4–F6 | `data/glossario.json` | Contínua até a entrega final | Validação com `notebooks/01_validar_glossario.py` | Todos | Versão revisada em 05/12/2026 | Ao incluir ou alterar verbete, rodar a validação |
 | F3 Lista de demandas | Solicitar ou confirmar a lista com o CORECON-PB | Documento institucional (não versionado por padrão) | Única | — | Ana | 03/11/2026 | Pedir nova versão se o CORECON atualizar |
 | F4–F8 Referências | Acesso manual aos links do inventário; registrar data de acesso e licença | Links da seção 2 | Única, com releitura antes da banca | — | Todos | 03/11/2026 | Conferir se os links continuam ativos antes de 15/12/2026 |
@@ -121,14 +122,16 @@ Relatório de qualidade, funil de contagens e testes: `outputs/relatorio_qualida
 - **Não versionar:** respostas individuais, carimbos de data/hora, e-mails, nomes, matrículas, documentos internos do CORECON-PB, senhas, tokens e chaves. O `.gitignore` bloqueia `data/raw/*`, `respostas*.csv`, `.env*`, chaves e credenciais.
 - O questionário **não pergunta** nome, e-mail, CPF nem matrícula. Perguntas sensíveis (renda, dívidas da família) são **opcionais**, com "prefiro não responder".
 - Só entram no repositório tabelas **agregadas**, sem células com menos de 5 respondentes.
-- Respostas abertas (`e3_termo_dificil`) devem ser revisadas manualmente e qualquer dado pessoal removido antes de qualquer publicação.
+- O formulário publicado tem um único campo de texto livre ("Outro" em curso); o tratamento **não guarda** o texto digitado, e qualquer coluna fora do livro de códigos é descartada antes das tabelas.
 - Participação restrita a maiores de 18 anos, voluntária, com consentimento no início do formulário.
 
 ## 7. Pendências
 
-1. Definir a meta de respostas (população definida pela equipe: graduandos de Ciências Econômicas; coleta de 01/11 a 20/11/2026).
+1. Definir a meta de respostas e **confirmar a população**: a equipe definiu graduandos de Ciências Econômicas em 27/10/2026, mas o formulário publicado aceita também Administração, Ciências Contábeis e Outro (coleta de 01/11 a 20/11/2026).
 2. Confirmar com o professor o enquadramento ético (plataforma: Google Forms).
 3. Receber ou confirmar a lista de demandas do CORECON-PB e escolher os termos do glossário.
 4. Confirmar os responsáveis e prazos propostos (ver [`tarefas.md`](tarefas.md)).
 5. Abrir e ler integralmente F4 e F8 e reconferir os valores do PISA; checar os termos de uso da OCDE antes de reproduzir qualquer item.
 6. Se a equipe quiser pontuar `b2_reserva_meses`, encontrar uma fonte oficial com número de meses (as consultadas em 27/10/2026 não trazem).
+7. Decidir se `b7_reserva_local` (pergunta que o formulário publicado tem e o rascunho não tinha) entra no escore. Hoje não entra; pontuar muda o escore para 0 a 5 e exige novos cortes dos níveis.
+8. Conferir o mapa do formulário com a primeira exportação real de respostas (`outputs/mapa_formulario.csv`).

@@ -1,12 +1,15 @@
 teste,resultado,detalhe
 Glossário: chave (slug) única e não vazia,OK,
 Questionário: nenhuma coluna de identificação sobrou,OK,
+Questionário: só restam colunas do livro de códigos,OK,
+Domínio respeitado: a1_curso,OK,
 Domínio respeitado: a2_periodo,OK,
 Domínio respeitado: a3_idade,OK,
 Domínio respeitado: a4_ocupacao,OK,
 Domínio respeitado: a5_renda_propria,OK,
 Domínio respeitado: b1_reserva_def,OK,
 Domínio respeitado: b2_reserva_meses,OK,
+Domínio respeitado: b7_reserva_local,OK,
 Domínio respeitado: b3_inflacao,OK,
 Domínio respeitado: b4_juros_compostos,OK,
 Domínio respeitado: b5_diversificacao,OK,
@@ -21,6 +24,7 @@ Domínio respeitado: d3_fam_orcamento,OK,
 Domínio respeitado: d4_fam_reserva,OK,
 Domínio respeitado: d5_fam_dividas,OK,
 Domínio respeitado: d6_fam_conhecimento,OK,
+Domínio respeitado: e3_termo_prioritario,OK,
 Domínio respeitado: e2_usaria_glossario,OK,
 Glossário: hash do arquivo original inalterado (preservação),OK,
 Glossário: contagem preservada (bruto = tratado),OK,6 → 6
@@ -38,6 +42,10 @@ Questionário: 'nenhuma' não aparece junto de outras dívidas,OK,
 Teste sintético: 3 duplicatas plantadas foram removidas,OK,removidas 3
 Teste sintético: 4 sem consentimento removidos,OK,removidos 4
 Teste sintético: 6 códigos inválidos detectados,OK,detectados 6
+Teste sintético: coluna de texto livre fora do livro de códigos descartada,OK,['comentario_livre']
 Teste sintético: colunas de identificação descartadas,OK,"['carimbo de data/hora', 'nome']"
+Formulário: mapa de opções e livro de códigos têm exatamente as mesmas variáveis e códigos,OK,29 perguntas
+Formulário: ida e volta (códigos → texto do Forms → códigos) devolve a mesma tabela,OK,29 perguntas × 56 respondentes
+Formulário: todos os cabeçalhos de pergunta são reconhecidos (só o carimbo fica de fora),OK,
 Frequências: 'base' de cada variável = respostas válidas,OK,
 Frequências: nenhuma célula com n < 5 exposta,OK,

@@ -8,7 +8,7 @@
 | 2 | 21/09/2026 | Escuta e compreensão da demanda | Demandante definido: CORECON-PB. Memória e roteiro: **[a registrar]** |
 | 3 | 01/10/2026 | Definição do problema e plano de pesquisa | Entregue, com o projeto de educação financeira em escolas |
 | 4 | 20/10/2026 | Repositório e plano de dados | Repositório, plano de dados e PDF prontos em 27/10/2026. Falta o acesso do professor ao repositório e o envio do PDF |
-| 5 | 29/10/2026 | Obtenção, limpeza e tratamento dos dados | Notebook, base processada do glossário e relatório de qualidade prontos em 27/10/2026. O questionário ainda não foi aplicado: suas regras foram testadas com dados sintéticos |
+| 5 | 29/10/2026 | Obtenção, limpeza e tratamento dos dados | Notebook, base processada do glossário e relatório de qualidade prontos em 27/10/2026; atualizados em 05/11/2026 para o formulário publicado. Nenhuma exportação de respostas foi tratada ainda: as regras foram testadas com dados sintéticos e com uma exportação simulada no formato do Forms |
 | Final | 15/12/2026 | Apresentação com banca no CORECON-PB | Pendente |
 
 ## Entrega 1: prospecção (09/09/2026)
@@ -47,13 +47,15 @@ Entregáveis do guia e onde estão:
 
 | Exigência | Onde |
 |---|---|
-| Notebook que executa do início ao fim | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (estrutura obrigatória de 7 seções) |
+| Notebook que executa do início ao fim | `notebooks/03_obtencao_limpeza_tratamento.ipynb` (estrutura obrigatória de 7 seções), com o tradutor do formulário em `notebooks/02a_formulario_google.py` |
 | Base processada | `data/processed/glossario_*.csv` (dado real). Questionário: só depois da coleta |
 | Relatório de qualidade | `outputs/relatorio_qualidade.csv` e `docs/E05_equipe01_qualidade_dados.pdf` |
-| Dicionário atualizado | `docs/plano-de-dados.md`, seção 4.3, e `outputs/livro_de_codigos.csv` |
+| Dicionário atualizado | `docs/plano-de-dados.md`, seções 4.2 e 4.3, `outputs/livro_de_codigos.csv` e `outputs/mapa_formulario.csv` |
 | Testes e contagens antes/depois | `outputs/testes_integridade.csv` e `outputs/funil_contagens.csv` |
 
-**Limite a declarar ao professor:** o questionário ainda não foi aplicado. A única base real é o glossário (6 verbetes de rascunho). Para o questionário, o notebook foi testado com dados sintéticos com defeitos plantados, e também com um arquivo no formato real em uma cópia descartável, que ativa o caminho de dados reais.
+**Atualização de 05/11/2026 (formulário publicado).** O formulário do Google Forms foi publicado e lido. Ele difere do rascunho em três pontos (pergunta nova b7; termo e3 virou múltipla escolha; curso virou lista fechada) e, sobretudo, o Google Forms exporta o **texto** das opções, não códigos. O notebook passou a traduzir a exportação (`02a_formulario_google.py`), o mapa foi conferido contra o formulário publicado e foi testado com uma exportação simulada no formato do Forms, em uma cópia descartável, que ativa o caminho de dados reais.
+
+**Limite a declarar ao professor:** nenhuma exportação real de respostas foi tratada. A única base real é o glossário (6 verbetes de rascunho). Para o questionário, o notebook foi testado com dados sintéticos com defeitos plantados e com a exportação simulada. O PDF `docs/E04_equipe01_plano_dados.pdf` é o retrato de 27/10/2026 e não reflete o formulário publicado.
 
 ## Entrega 4: repositório e plano de dados
 

@@ -7,6 +7,13 @@ b4_juros_compostos,Juros,juros,True
 b4_juros_compostos,Endividamento,endividamento,True
 b5_diversificacao,Investimentos,investimentos,False
 c1_orcamento,Orçamento pessoal,orcamento-pessoal,True
+e3_termo_prioritario,Juros compostos,juros-compostos,False
+e3_termo_prioritario,Inflação,inflacao,True
+e3_termo_prioritario,Taxa Selic,taxa-selic,True
+e3_termo_prioritario,Renda fixa,renda-fixa,False
+e3_termo_prioritario,Diversificação,diversificacao,False
+e3_termo_prioritario,Endividamento,endividamento,True
+e3_termo_prioritario,Orçamento pessoal,orcamento-pessoal,True
 c2_tem_reserva,Reserva de emergência,reserva-de-emergencia,True
 c5_dividas,Juros,juros,True
 c5_dividas,Endividamento,endividamento,True
