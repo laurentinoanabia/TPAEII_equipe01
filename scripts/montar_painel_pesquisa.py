@@ -4,6 +4,9 @@ Entrada: tabelas agregadas do questionário em data/processed/questionario/ (ger
 análise da Entrega 6 a partir da exportação do Google Forms; células com menos de 5
 respondentes já vêm como "<5"). Nenhuma resposta individual é lida aqui.
 
+O site mostra só percentuais: por decisão da equipe, o JSON não traz o total de
+respostas nem contagens absolutas (o relatório técnico continua informando o n).
+
 Uso (na raiz do repositório):
     python3 scripts/montar_painel_pesquisa.py
 """
@@ -34,9 +37,13 @@ def virgula(texto):
 
 
 def item(rot, n, pct, base=None):
-    """n pode ser '<5'; nesse caso o percentual é omitido."""
+    """Só o percentual vai para o site. n = '<5' (grupo pequeno) deixa o percentual vazio."""
     oculto = str(n).strip() == "<5"
-    return {"rotulo": rot, "n": None if oculto else int(float(n)), "pct": None if oculto else num(pct), "base": int(float(base)) if base else None}
+    return {"rotulo": rot, "pct": None if oculto else num(pct)}
+
+
+def pct_de(partes, total):
+    return round(100 * sum(int(float(p)) for p in partes) / total, 1)
 
 
 def linhas(tab, indicador, coluna="indicador", nomes=None):
@@ -62,21 +69,20 @@ hip = ler("T11_hipoteses")
 N = int(funil["Base analítica"])
 
 painel = {
-    "_leia_me": "Gerado por scripts/montar_painel_pesquisa.py a partir de data/processed/questionario/. Não edite à mão.",
-    "n": N,
+    "_leia_me": "Gerado por scripts/montar_painel_pesquisa.py a partir de data/processed/questionario/. Não edite à mão. Só percentuais, sem contagens.",
     "coleta": "28/10 a 15/11/2026",
     "instrumento": "Questionário no Google Forms, anônimo e voluntário, 29 perguntas",
-    "versoes_formulario": {"v1": int(funil["respondidas na versão 1 do formulário (28/10 a 02/11)"]),
-                           "v2": int(funil["respondidas na versão 2 do formulário (05/11 a 15/11)"])},
+    "reserva_alguma_pct": pct_de([r["n"] for r in pratica if r["indicador"] == "Tem reserva (c2)" and r["categoria"] in ("Sim", "Parcialmente")], N),
+    "reserva_3meses_pct": pct_de([r["n"] for r in pratica if r["indicador"].startswith("Meses cobertos") and r["categoria"] in ("De 3 a 6 meses", "Mais de 6 meses")], N),
     "perfil": {
         "curso": [item(r["categoria"], r["n"], r["pct"], N) for r in perfil if r["dimensao"] == "Curso"],
         "periodo": [item(r["categoria"], r["n"], r["pct"], N) for r in perfil if r["dimensao"] == "Período"],
         "ocupacao": [item(r["categoria"], r["n"], r["pct"], N) for r in perfil if r["dimensao"] == "Ocupação"],
         "renda_propria": [item(r["categoria"], r["n"], r["pct"], N) for r in perfil if r["dimensao"] == "Renda própria"],
     },
-    "acertos": [{"rotulo": r["item"], "pct": num(r["acertos_pct_total"]), "n": int(r["acertos_n"]),
+    "acertos": [{"rotulo": r["item"], "pct": num(r["acertos_pct_total"]),
                  "economia": num(r["pct_economia_n32"]), "demais": num(r["pct_demais_n28"]), "pontua": "não pontua" not in r["item"]} for r in acertos],
-    "juros_simples_erro": {"n": 13, "pct": 21.7, "nota": "escolheram R$ 1.200, resultado de juros simples"},
+    "juros_simples_erro": {"pct": 21.7, "nota": "escolheram R$ 1.200, resultado de juros simples"},
     "escore": [item(f"{r['escore']} acerto{'s' if r['escore'] != '1' else ''}", r["n"], r["pct"], N) for r in escore],
     "escore_medio": num(curso["Total"]["escore_0a4"]),
     "pratica": {
@@ -95,10 +101,10 @@ painel = {
                               if r["indicador"].startswith("Estudante tem alguma reserva")],
         "poupa_por_conversa": [item(r["grupo"], r["n"], r["pct_ou_media"], r["n_grupo"]) for r in fam_est
                                if r["indicador"].startswith("Estudante poupa todo mês")],
-        "escore_por_conversa": [{"rotulo": r["grupo"], "base": int(r["n_grupo"]), "media": num(r["pct_ou_media"])} for r in fam_est
+        "escore_por_conversa": [{"rotulo": r["grupo"], "media": num(r["pct_ou_media"])} for r in fam_est
                                 if r["indicador"].startswith("Escore médio")],
     },
-    "curso": [{"rotulo": g, "n": int(curso[g]["n"]), "escore": num(curso[g]["escore_0a4"]), "autoavaliacao": num(curso[g]["autoavaliacao_1a5"])}
+    "curso": [{"rotulo": g, "escore": num(curso[g]["escore_0a4"]), "autoavaliacao": num(curso[g]["autoavaliacao_1a5"])}
               for g in ("Ciências Econômicas", "Demais cursos")],
     "curso_p": {"escore": num(curso["p (Mann-Whitney)"]["escore_0a4"]), "autoavaliacao": num(curso["p (Mann-Whitney)"]["autoavaliacao_1a5"])},
     "glossario": {
@@ -112,4 +118,4 @@ painel = {
 
 saida = RAIZ / "data" / "pesquisa.json"
 saida.write_text(json.dumps(painel, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(f"Gerado {saida.relative_to(RAIZ)} (n = {N})")
+print(f"Gerado {saida.relative_to(RAIZ)}")

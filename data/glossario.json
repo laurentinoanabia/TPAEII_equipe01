@@ -898,6 +898,7 @@
     "importa": "Está entre as linhas de crédito mais caras; deve ser evitado ou trocado por crédito mais barato.",
     "relacionados": [
       "Endividamento",
+      "Dívida barata e dívida cara",
       "Custo Efetivo Total (CET)",
       "Juros compostos",
       "Inadimplência",
@@ -1090,6 +1091,7 @@
     "importa": "Comparar só a taxa de juros esconde custos; o CET mostra quanto o crédito realmente custa.",
     "relacionados": [
       "Juros",
+      "Dívida barata e dívida cara",
       "Endividamento",
       "Spread bancário",
       "Juros compostos"
@@ -1709,6 +1711,7 @@
     "importa": "Quando as parcelas pesam demais no orçamento, aumenta o risco de inadimplência.",
     "relacionados": [
       "Juros",
+      "Dívida barata e dívida cara",
       "Orçamento pessoal",
       "Reserva de emergência",
       "Superendividamento",
@@ -5560,6 +5563,7 @@
     "importa": "Uma boa renegociação reduz o custo da dívida; uma ruim só adia o problema e pode aumentar o total pago.",
     "relacionados": [
       "Inadimplência",
+      "Dívida barata e dívida cara",
       "Superendividamento",
       "Custo Efetivo Total (CET)",
       "Orçamento pessoal",
@@ -5620,6 +5624,96 @@
     }
   },
   {
+    "termo": "Dívida barata e dívida cara",
+    "tema": "Crédito e dívidas",
+    "subtema": "Dívidas",
+    "nivel": "Básico",
+    "definicao": "Forma simples de comparar dívidas pelo custo total: dívida barata é a que cobra juros e encargos baixos (em geral, crédito com garantia ou com desconto em folha); dívida cara é a que cobra juros altos (em geral, crédito sem garantia e de uso automático, como o rotativo do cartão e o cheque especial).",
+    "exemplo": "Pegar um consignado para quitar o saldo do cheque especial troca uma dívida cara por uma mais barata: o valor devido é o mesmo, mas os juros que ele gera por mês caem.",
+    "importa": "Quem tem mais de uma dívida economiza mais pagando primeiro a mais cara. E, se for preciso tomar crédito, escolher a modalidade mais barata pode reduzir muito o total pago.",
+    "relacionados": [
+      "Custo Efetivo Total (CET)",
+      "Crédito rotativo do cartão",
+      "Cheque especial",
+      "Empréstimo consignado",
+      "Renegociação de dívidas",
+      "Endividamento",
+      "Juros compostos",
+      "Spread bancário"
+    ],
+    "fonte": "Banco Central do Brasil (Estatísticas monetárias e de crédito, nota de 29/09/2026; taxas de juros por modalidade e instituição); Resolução CMN nº 4.765/2019; Lei nº 14.690/2023, art. 28",
+    "sinonimos": [
+      "Dívida cara",
+      "Dívida barata",
+      "Crédito caro",
+      "Crédito barato"
+    ],
+    "simulador": "divida",
+    "referencias": [
+      {
+        "titulo": "Estatísticas monetárias e de crédito – nota para a imprensa de 29/09/2026 (dados de agosto de 2026)",
+        "orgao": "Banco Central do Brasil",
+        "url": "https://www.bcb.gov.br/content/estatisticas/hist_estatisticasmonetariascredito/202609_Texto_de_estatisticas_monetarias_e_de_credito.pdf"
+      },
+      {
+        "titulo": "Taxas de juros de operações de crédito por modalidade e instituição",
+        "orgao": "Banco Central do Brasil",
+        "url": "https://www.bcb.gov.br/estatisticas/txjuros"
+      },
+      {
+        "titulo": "Resolução CMN nº 4.765/2019 (limite do cheque especial)",
+        "orgao": "Conselho Monetário Nacional",
+        "url": "https://normativos.bcb.gov.br/Lists/Normativos/Attachments/50875/Res_4765_v2_P.pdf"
+      },
+      {
+        "titulo": "Lei nº 14.690/2023 (art. 28: limite de juros do rotativo e do parcelamento da fatura)",
+        "orgao": "Presidência da República",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14690.htm"
+      }
+    ],
+    "aprofundamento": {
+      "simples": [
+        "Toda dívida tem um preço: os juros e as tarifas que você paga por usar um dinheiro que não é seu. Esse preço muda muito de uma modalidade para outra.",
+        "Dívida barata é a de juros baixos, como o financiamento da casa ou o consignado. Dívida cara é a de juros altos, como o rotativo do cartão e o cheque especial, que crescem rápido quando ficam sem pagamento.",
+        "Barata não quer dizer boa: uma dívida de juros baixos que não cabe no orçamento também vira problema. O que importa é o custo e se a parcela cabe na renda."
+      ],
+      "tecnica": [
+        "[fato] O jeito correto de comparar é pelo Custo Efetivo Total (CET), que soma juros, tarifas, seguros e impostos e é informado em taxa ao ano. Comparar só a parcela engana, porque um prazo maior baixa a parcela e aumenta o total pago.",
+        "[fato] Nas estatísticas do Banco Central, as linhas com garantia (financiamento imobiliário, que tem o imóvel como garantia, e consignado, com desconto em folha ou no benefício) aparecem com as menores taxas para as famílias. As linhas sem garantia e de uso automático (rotativo do cartão e cheque especial) aparecem com as maiores.",
+        "[fato] Em agosto de 2026, a taxa média do crédito livre às famílias foi de 61,7% ao ano, segundo o Banco Central (nota de 29/09/2026). É uma média de todas as modalidades: as caras ficam muito acima dela e as baratas, abaixo.",
+        "[interpretação] A diferença de preço vem principalmente do risco: com garantia ou desconto em folha, o banco tem mais chance de receber, e cobra menos. Sem garantia, o banco embute no juro o risco de não receber, e o resultado é um spread bancário maior."
+      ],
+      "pratica": [
+        "Liste as dívidas com o CET de cada uma e pague primeiro a de maior custo, mantendo ao menos o mínimo das outras para não cair em atraso.",
+        "[fato] É possível trocar uma dívida cara por uma mais barata: pegar um crédito de CET menor para quitar a dívida cara, ou levar a dívida para outro banco que ofereça taxa menor (portabilidade de crédito: pelas regras do Banco Central, o banco de origem não pode cobrar pela transferência).",
+        "Antes de trocar, confira se a nova parcela cabe no orçamento e não volte a usar o limite que foi quitado. Trocar a dívida e depois usar o cheque especial de novo deixa você com duas dívidas.",
+        "As taxas médias de cada banco, por modalidade, estão na página de taxas de juros do Banco Central, atualizada com frequência."
+      ],
+      "impactos": {
+        "resumo": "A escolha entre dívida barata e cara pesa no orçamento das famílias: a mesma dívida pode custar algumas vezes mais conforme a modalidade.",
+        "consumidores": "Quem usa rotativo e cheque especial por vários meses compromete uma parte crescente da renda só com juros, o que aumenta o risco de inadimplência e de superendividamento."
+      },
+      "exemplos": [
+        "[exemplo] Dívida de R$ 1.000 por 12 meses, sem pagamentos. A 2% ao mês, ela chega a cerca de R$ 1.268. A 8% ao mês (o limite do cheque especial), chega a cerca de R$ 2.518. O valor emprestado é igual; só muda o preço.",
+        "[exemplo] Quem deve R$ 2.000 no cheque especial e R$ 2.000 num consignado e tem R$ 2.000 sobrando economiza mais quitando o cheque especial."
+      ],
+      "relacoes": [
+        "[fato] Há tetos legais para as dívidas mais caras: o cheque especial pode cobrar no máximo 8% ao mês, cerca de 152% ao ano (Resolução CMN nº 4.765/2019). Para o rotativo e o parcelamento da fatura, a Lei nº 14.690/2023 (art. 28) estabeleceu que, sem autorregulação aprovada pelo CMN, juros e encargos não podem passar do valor original da dívida. Mesmo com esses limites, essas linhas seguem entre as mais caras do mercado.",
+        "Todas as taxas partem da Selic e somam o spread bancário. Quando a Selic sobe, o crédito fica mais caro em geral, mas a distância entre a dívida barata e a cara continua grande."
+      ],
+      "mercado": [
+        "As taxas por modalidade mudam todo mês. O Banco Central divulga as médias nas Estatísticas monetárias e de crédito, perto do fim de cada mês."
+      ]
+    },
+    "formulas": [
+      {
+        "nome": "Saldo de uma dívida sem pagamentos",
+        "expressao": "S = D × (1 + i)^n",
+        "legenda": "D: valor devido; i: taxa mensal; n: meses. Compare o S de cada dívida para ver qual cresce mais rápido."
+      }
+    ]
+  },
+  {
     "termo": "Cheque especial",
     "tema": "Crédito e dívidas",
     "subtema": "Dívidas",
@@ -5629,6 +5723,7 @@
     "importa": "É uma das linhas de crédito mais caras e fácil de usar sem perceber; deve servir só para emergências de poucos dias.",
     "relacionados": [
       "Crédito rotativo do cartão",
+      "Dívida barata e dívida cara",
       "Custo Efetivo Total (CET)",
       "Juros compostos",
       "Reserva de emergência",
@@ -5839,6 +5934,7 @@
     "importa": "Costuma ter juros menores que o crédito pessoal, mas compromete a renda por muitos meses e não pode ser suspenso facilmente.",
     "relacionados": [
       "Crédito",
+      "Dívida barata e dívida cara",
       "Comprometimento de renda",
       "Custo Efetivo Total (CET)",
       "Renegociação de dívidas",

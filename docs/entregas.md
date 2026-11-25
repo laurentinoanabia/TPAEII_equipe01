@@ -41,6 +41,13 @@ A equipe trocou o projeto das escolas por um **site de conhecimento para o COREC
 
 A equipe decidiu somar ao glossário uma **pesquisa com estudantes de graduação** sobre educação financeira: quantos entendem e aplicam reserva de emergência, qual a situação financeira da família e qual o nível de conhecimento das famílias. A pesquisa orienta quais termos o glossário prioriza. Instrumento em [`questionario.md`](questionario.md).
 
+## Ajustes no site publicado (25/11/2026)
+
+- Site publicado no GitHub Pages (https://laurentinoanabia.github.io/TPAEII_equipe01/).
+- Novo verbete "Dívida barata e dívida cara", com dados do Banco Central e os limites legais do cheque especial e do rotativo, ligado aos verbetes de dívida e à trilha "Dívidas sob controle".
+- O painel da pesquisa passou a mostrar só percentuais, sem o total de respostas nem contagens, por decisão da equipe. O relatório técnico continua informando o n; as tabelas agregadas com contagens seguem em `data/processed/questionario/`.
+- Escala tipográfica do site reduzida (texto-base de 18 px para 16 px, títulos menores) e controle de tamanho da letra com quatro opções (normal, grande, muito grande, pequena).
+
 ## Painel "Resultados da pesquisa" no site (25/11/2026)
 
 - A demanda do CORECON-PB foi registrada nas palavras da equipe: um glossário econômico de fácil entendimento para quem navega pelo site.
