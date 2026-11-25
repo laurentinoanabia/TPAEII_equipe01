@@ -2,6 +2,8 @@
 
 Projeto aplicado de extensão da disciplina **PSAE00320 – Técnicas de Pesquisa e Análise Econômica II** (Turma 01, 2026.2, UFPB), desenvolvido a partir de uma demanda apresentada pelo **CORECON-PB** (Conselho Regional de Economia da Paraíba).
 
+**Site:** https://laurentinoanabia.github.io/TPAEII_equipe01/
+
 > **Autoria e vínculo.** O CORECON-PB apresentou a demanda. A pesquisa, o site e todo o conteúdo são de autoria da equipe; o site não é material oficial do Conselho, não usa a sua identidade visual e não tem a sua chancela.
 
 ## Equipe
@@ -76,7 +78,9 @@ outputs/                   relatório de qualidade, funil, testes, livro de cód
 
 ## Como rodar
 
-**Site do glossário.** O `index.html` lê os arquivos de `data/` com `fetch`, então precisa de um servidor local ou do GitHub Pages (abrir o arquivo direto no navegador não funciona):
+**Site do glossário.** A versão publicada fica em https://laurentinoanabia.github.io/TPAEII_equipe01/ (GitHub Pages, a partir da raiz do branch `main`; o arquivo `.nojekyll` faz o Pages servir os arquivos como estão). Cada merge na `main` atualiza o site em alguns minutos.
+
+Para rodar localmente: o `index.html` lê os arquivos de `data/` com `fetch`, então precisa de um servidor (abrir o arquivo direto no navegador não funciona):
 
 ```bash
 python3 -m http.server 8000
