@@ -7,7 +7,8 @@ Formulário: "Educação financeira entre estudantes de graduação (UFPB / CORE
 Por que este módulo existe. O Google Forms NÃO exporta códigos: a planilha de respostas tem
 uma coluna por pergunta, com o TÍTULO da pergunta como cabeçalho, e cada célula traz o TEXTO da
 opção escolhida ("b) Dinheiro guardado e de fácil acesso..."). Respostas de caixas de seleção
-vêm numa célula só, separadas por ", ". Já o tratamento (notebooks/02 e 03) trabalha com nomes
+vêm numa célula só. Na exportação real (baixada em 17/11 e de novo em 25/11/2026) o separador é ";";
+o adaptador também aceita ", " (formato de outras configurações de idioma). Já o tratamento (notebooks/02 e 03) trabalha com nomes
 de variável (b1_reserva_def) e códigos curtos (b, 1_3, nao_sei) listados em
 outputs/livro_de_codigos.csv. Este módulo faz a tradução, com o mapa abaixo transcrito do
 formulário publicado em 05/11/2026.
@@ -19,8 +20,14 @@ Regras de segurança desta tradução:
 - colunas que não são perguntas conhecidas passam sem alteração para o tratamento, que descarta
   identificação/rastreio e depois qualquer coluna fora do livro de códigos.
 
-Se o formulário mudar (pergunta nova, opção renomeada), atualize QUESTOES e rode de novo o
-notebook: o teste "mapa × livro de códigos" e o de ida e volta apontam o que ficou fora.
+Se o formulário mudar (pergunta nova, opção renomeada), atualize QUESTOES (ou VERSAO_2, se for só
+uma nova redação de opção que já existe) e rode de novo o notebook: o teste "mapa × livro de códigos"
+e o de ida e volta apontam o que ficou fora.
+
+Versões do formulário. O formulário foi editado durante a coleta, entre 02/11 e 05/11/2026 (a última
+resposta com o texto antigo é de 02/11 e a primeira com o texto novo, de 05/11). As 8 primeiras respostas
+usam o texto de QUESTOES (versão 1, conferida em 05/11/2026); as 52 seguintes usam o texto de VERSAO_2.
+Os dois textos levam ao mesmo código. versao_do_formulario() marca cada resposta pela redação exportada.
 """
 import re
 import unicodedata
@@ -28,7 +35,7 @@ import unicodedata
 import pandas as pd
 
 DESCONHECIDO = "__desconhecido__"
-SEPARADOR = ";"          # separador interno das respostas de múltipla escolha (o do Forms é ", ")
+SEPARADOR = ";"          # separador interno das respostas de múltipla escolha (o mesmo da exportação real)
 
 # (variável, título da pergunta no formulário, tipo, [(rótulo da opção no formulário, código)])
 # tipo: "unica" (uma opção) ou "multipla" (caixas de seleção).
@@ -113,6 +120,18 @@ QUESTOES = [
         ("Sim", "sim"), ("Talvez", "talvez"), ("Não", "nao")]),
 ]
 
+# Versão 2 do formulário: novas redações de opções que já existiam (mesmo código). Observadas na exportação real.
+VERSAO_2 = {
+    "a4_ocupacao": [("Estudo enquanto trabalho ou faço estágio", "estuda_trabalha")],
+    "b1_reserva_def": [
+        ("a) Dinheiro guardado para consumo ou bens que você planeja no futuro.", "a"),
+        ("c) Dinheiro investido em ações para acumular rentabilidade.", "c")],
+    "b7_reserva_local": [
+        ("a) Um investimento de longo prazo,  fixado em alguns meses ou anos.", "a"),
+        ("b) Ações da bolsa, buscando rentabilidade.", "b"),
+        ("c) Uma aplicação que possua liquidez imediata.", "c")],
+}
+
 # Perguntas em que "Outro" é um campo de texto livre: qualquer texto fora das opções vira este código.
 OUTRO_LIVRE = {"a1_curso": "outro"}
 
@@ -135,6 +154,10 @@ def norm(s):
 
 _TITULOS = {v: norm(t) for v, t, _, _ in QUESTOES}
 _MAPA = {v: {norm(r): c for r, c in ops} for v, _, _, ops in QUESTOES}
+for _v, _ops in VERSAO_2.items():
+    _MAPA[_v].update({norm(r): c for r, c in _ops})
+_SO_V1 = {v: {norm(r) for r, c in ops if c in {c2 for _, c2 in VERSAO_2[v]}} for v, _, _, ops in QUESTOES if v in VERSAO_2}
+_SO_V2 = {v: {norm(r) for r, _ in ops} for v, ops in VERSAO_2.items()}
 _TIPO = {v: t for v, _, t, _ in QUESTOES}
 
 
@@ -155,7 +178,20 @@ def _vazio(x):
 
 
 def _quebrar_multipla(texto, mapa):
-    """Separa 'A, B, Renda fixa (CDB, Tesouro etc.)' sem quebrar o rótulo que tem vírgula (tenta juntar partes)."""
+    """Separa 'A;B;Renda fixa (CDB, Tesouro etc.)' (exportação real) ou 'A, B, Renda fixa (CDB, Tesouro etc.)'.
+
+    Primeiro quebra em ';'; depois, dentro de cada pedaço, quebra em ', ' sem partir o rótulo que tem
+    vírgula (tenta juntar partes, do mais longo para o mais curto).
+    """
+    saida = []
+    for bloco in str(texto).split(";"):
+        bloco = bloco.strip()
+        if bloco:
+            saida.extend(_quebrar_virgula(bloco, mapa))
+    return SEPARADOR.join(dict.fromkeys(saida))
+
+
+def _quebrar_virgula(texto, mapa):
     partes = str(texto).split(", ")
     saida, i = [], 0
     while i < len(partes):
@@ -168,7 +204,7 @@ def _quebrar_multipla(texto, mapa):
         else:
             saida.append(DESCONHECIDO)
             i += 1
-    return SEPARADOR.join(dict.fromkeys(saida))
+    return saida
 
 
 def adaptar(bruto):
@@ -211,8 +247,25 @@ def adaptar(bruto):
     return saida, info
 
 
+def versao_do_formulario(bruto):
+    """Série 'v1' / 'v2' / NA por resposta, pela redação das opções exportadas (sem usar o carimbo).
+
+    'v2' se alguma resposta usa um texto que só existe na versão 2; 'v1' se usa um texto que só existe na
+    versão 1; NA se a resposta não permite distinguir (só marcou opções que não mudaram).
+    """
+    marca = pd.Series(pd.NA, index=bruto.index, dtype="object")
+    for col in bruto.columns:
+        var = variavel_do_cabecalho(col)
+        if var not in VERSAO_2:
+            continue
+        k = bruto[col].map(lambda x: norm(x) if not _vazio(x) else "")
+        marca[k.isin(_SO_V2[var])] = "v2"
+        marca[k.isin(_SO_V1[var]) & marca.isna()] = "v1"
+    return marca
+
+
 def simular_exportacao(cod):
-    """Faz o caminho inverso (códigos -> texto da opção, ', ' nas caixas de seleção, cabeçalho = título).
+    """Faz o caminho inverso (códigos -> texto da opção da versão 1, ';' nas caixas de seleção, cabeçalho = título).
 
     Serve ao teste de ida e volta: mostra que adaptar(simular_exportacao(x)) devolve x. Não é uma
     amostra de respostas reais.
@@ -228,7 +281,7 @@ def simular_exportacao(cod):
             if _vazio(x):
                 return ""
             if tipo == "multipla":
-                return ", ".join(rotulo[v][c] for c in str(x).split(SEPARADOR))
+                return ";".join(rotulo[v][c] for c in str(x).split(SEPARADOR))
             return rotulo[v].get(x, "Engenharia Civil" if v in OUTRO_LIVRE else DESCONHECIDO)   # "outro" = texto livre
         exp[titulos[v]] = cod[v].map(inverso)
     return exp

@@ -1,6 +1,6 @@
 # Questionário: educação financeira entre graduandos e suas famílias
 
-**Versão:** 2, alinhada ao formulário publicado no Google Forms · 05/11/2026 · **Status:** formulário publicado; nenhuma resposta tratada neste repositório (as respostas ficam fora do Git).
+**Versão:** 2, alinhada ao formulário publicado no Google Forms · 05/11/2026 · **Status:** coleta encerrada, com 60 respostas de 28/10 a 15/11/2026; respostas tratadas em 25/11/2026 (as respostas individuais ficam fora do Git).
 
 **Formulário:** "Educação financeira entre estudantes de graduação (UFPB / CORECON-PB)" · <https://docs.google.com/forms/d/e/1FAIpQLSel8h8rKd4svyMe79V1ME_7TQSW466HPaT5WGMpb-kU3PNWgg/viewform>
 
@@ -30,17 +30,32 @@ Diagnosticar quanto estudantes de graduação sabem e praticam de educação fin
 | População | Graduandos maiores de 18 anos. Em 27/10/2026 a equipe definiu **Ciências Econômicas**; o formulário publicado aceita Ciências Econômicas, Administração, Ciências Contábeis e "Outro" **[a confirmar com a equipe qual é a população]** |
 | Amostragem | Por conveniência (divulgação em turmas e canais dos cursos). **Não é representativa**; os resultados descrevem quem respondeu |
 | Aplicação | Google Forms, anônimo e voluntário; 8 páginas, 29 perguntas, todas obrigatórias, cerca de 8 minutos. O formulário não tem campo de e-mail |
-| Meta de respostas | **[a definir]** |
-| Período | 01/11 a 20/11/2026, definido pela equipe em 27/10/2026 |
+| Meta de respostas | Não definida. Respostas obtidas: 60 (32 de Ciências Econômicas, 28 de outros cursos) |
+| Período | Previsto: 01/11 a 20/11/2026 (definido em 27/10/2026). **Efetivo: 28/10 a 15/11/2026.** 7 respostas chegaram antes de 01/11 **[confirmar se foram pré-teste]**; 37 das 60 chegaram em 10/11; nenhuma depois de 15/11 (base final conferida em 25/11/2026) |
 | Referência metodológica | Estrutura em conhecimento, comportamento e atitude, inspirada no OECD/INFE Toolkit. As perguntas são **redação própria** da equipe |
 
 **Mudanças em relação ao rascunho de 27/10/2026**
 
-- Nova pergunta de conhecimento, **b7** (lugar adequado para a reserva de emergência), que não estava no rascunho. Ela é tabulada, mas **não entra no escore** (decisão pendente, ver seção 5).
+- Nova pergunta de conhecimento, **b7** (lugar adequado para a reserva de emergência), que não estava no rascunho. Ela é tabulada, mas **não entra no escore principal** (decisão da equipe em 25/11/2026, ver seção 5).
 - O item de termo (antes **e3**, texto livre) virou **múltipla escolha com 7 termos e "Nenhum deles"** (`e3_termo_prioritario`): não há mais resposta aberta com risco de dado pessoal.
 - Curso (a1) é uma lista fechada de 3 cursos mais "Outro" com campo de texto; o texto digitado **não é guardado** no tratamento.
 - O limite de 3 temas em e1 passou a ser **imposto pelo formulário**.
 - O rascunho dizia que o valor exportado de cada opção seria a letra (a, b, c...). O Google Forms **não permite isso**: ele exporta o texto da opção. A tradução para códigos é feita por `notebooks/02a_formulario_google.py` (ver seção 6).
+
+**Mudanças durante a coleta (versão 2 do formulário)**
+
+O formulário foi editado entre 02/11 e 05/11/2026 (a última resposta com o texto antigo é de 02/11 e a primeira com o texto novo, de 05/11). As 8 primeiras respostas, todas de Ciências Econômicas, usam o texto descrito na seção 4; as 52 seguintes usam o texto novo abaixo. O código de cada opção não mudou, e o tratamento reconhece as duas redações (`VERSAO_2` em `notebooks/02a_formulario_google.py`).
+
+| Pergunta | Opção | Versão 1 (até 02/11) | Versão 2 (desde 05/11) |
+|---|---|---|---|
+| a4_ocupacao | estuda_trabalha | Estudo e trabalho ou estágio | Estudo enquanto trabalho ou faço estágio |
+| b1_reserva_def | a | Dinheiro guardado para comprar algo que você quer muito, como uma viagem. | Dinheiro guardado para consumo ou bens que você planeja no futuro. |
+| b1_reserva_def | c | Dinheiro investido em ações para ganhar o máximo possível. | Dinheiro investido em ações para acumular rentabilidade. |
+| b7_reserva_local | a | Um investimento de longo prazo, sem possibilidade de resgate por anos. | Um investimento de longo prazo, fixado em alguns meses ou anos. |
+| b7_reserva_local | b | Ações da bolsa, que podem render muito. | Ações da bolsa, buscando rentabilidade. |
+| b7_reserva_local | c (adequada) | Uma aplicação segura, que possa ser resgatada rapidamente quando necessário. | Uma aplicação que possua liquidez imediata. |
+
+A mudança deixou os distratores de b1 e b7 mais plausíveis e a opção adequada de b7 mais técnica. Comparações de b1 e b7 entre as versões devem ser lidas com cautela; a mudança é uma limitação a declarar. As alternativas a e b de b7 não podem ser datadas com precisão (ninguém as marcou entre 05/11 e 10/11).
 
 ## 3. Termo de consentimento (primeira página)
 
@@ -90,7 +105,7 @@ Itens b1, b3, b4 e b5 têm **uma resposta correta** (✔), que vale 1 ponto. b2 
 - c) Uma aplicação segura, que possa ser resgatada rapidamente quando necessário. **(opção adequada)**
 - d) Um limite de crédito pré-aprovado no banco.
 - e) Não sei
-- **Não pontua por enquanto.** Pontuar mudaria o escore de 0 a 4 para 0 a 5 e exigiria redefinir os cortes dos níveis. **[decisão da equipe]**
+- **Não pontua no escore principal** (decisão da equipe em 25/11/2026). Entra só na nota de 0 a 6, usada como análise de sensibilidade (seção 5).
 
 **b3_inflacao.** Você tem R$ 100 guardados e eles rendem 2% em um ano. Nesse mesmo ano, os preços sobem 5%. Depois de um ano, com esse dinheiro você poderá comprar:
 - a) Mais do que hoje. b) Exatamente o mesmo. c) Menos do que hoje. **✔** d) Não sei
@@ -140,6 +155,8 @@ Instrução do formulário: *"Estas perguntas pedem o seu relato sobre a sua fam
 
 **Pontuação.** `escore_conhecimento` = acertos em b1, b3, b4 e b5 (0 a 4). "Não sei" conta como erro, e resposta ausente ou inválida também. b2, b6 e b7 não entram no escore.
 
+**Decisão de 25/11/2026 (Entrega 6).** O escore de 0 a 4 é a medida principal do relatório. Como apoio: o **Big Three** (b3, b4 e b5; 0 a 3), comparável às perguntas clássicas de Lusardi e Mitchell, e a **nota de 0 a 6** (soma b2 = "De 3 a 6 meses" e b7 = c), usada só como análise de sensibilidade, porque b2 é opinião sem gabarito oficial e b7 mudou de redação durante a coleta. Cálculo em `notebooks/04_analise_e06.py`.
+
 **Níveis (proposta, a confirmar):** baixo = 0 a 1 · médio = 2 a 3 · alto = 4.
 
 | Pergunta | Indicador | Cruzamento previsto |
@@ -159,7 +176,7 @@ Regras de apresentação: percentuais com o **n** de cada base; "Não sei" e "Pr
 2. O notebook [`03_obtencao_limpeza_tratamento.ipynb`](../notebooks/03_obtencao_limpeza_tratamento.ipynb) traduz o texto das opções para códigos com [`02a_formulario_google.py`](../notebooks/02a_formulario_google.py), descarta identificação e qualquer coluna fora do livro de códigos, trata os dados e grava só tabelas agregadas em `data/processed/`.
 3. O mapa pergunta/opção → variável/código está em [`outputs/mapa_formulario.csv`](../outputs/mapa_formulario.csv); os códigos válidos, em [`outputs/livro_de_codigos.csv`](../outputs/livro_de_codigos.csv). Se o formulário mudar, atualize `QUESTOES` em `02a_formulario_google.py`: os testes do notebook apontam o que ficou fora.
 
-O mapa foi conferido contra o formulário publicado em 05/11/2026 (29 perguntas, títulos, tipos e todas as opções idênticos). Falta conferir com a exportação real das primeiras respostas.
+O mapa foi conferido contra o formulário publicado em 05/11/2026 (29 perguntas, títulos, tipos e todas as opções idênticos). Em 25/11/2026 foi conferido com a exportação real: as caixas de seleção vêm separadas por `;` e há redações da versão 2 (seção 2). Com o mapa atualizado, as 29 perguntas são reconhecidas e nenhum valor fica fora do livro de códigos.
 
 ## 7. Limitações a declarar no relatório
 

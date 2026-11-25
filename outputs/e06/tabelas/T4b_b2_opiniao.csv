@@ -1,0 +1,6 @@
+﻿variavel,categoria,n,pct,base
+b2_reserva_meses,Menos de 1 mês,0,0.0,60
+b2_reserva_meses,De 1 a 3 meses,<5,,60
+b2_reserva_meses,De 3 a 6 meses,27,45.0,60
+b2_reserva_meses,Mais de 6 meses,29,48.3,60
+b2_reserva_meses,Não sabe,<5,,60

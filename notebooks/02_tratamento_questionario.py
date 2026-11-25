@@ -10,8 +10,7 @@ cabeçalho. Este script detecta esse formato e o traduz com notebooks/02a_formul
 O caminho completo, com relatório de qualidade e testes, é o notebook 03_obtencao_limpeza_tratamento.ipynb;
 este script fornece as funções de agregação que o notebook reutiliza.
 
-AINDA NÃO FOI RODADO COM RESPOSTAS REAIS: só com bases sintéticas e com uma exportação simulada
-no formato do Forms. Confira o resultado nas primeiras respostas reais.
+Rodado com as respostas reais em 25/11/2026 (60 respostas, 28/10 a 15/11/2026), pelo notebook 03.
 
 Uso (a partir da raiz do repositório):
     python3 notebooks/02_tratamento_questionario.py [ENTRADA.csv] [PASTA_DE_SAIDA]

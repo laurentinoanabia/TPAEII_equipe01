@@ -1,0 +1,10 @@
+﻿indicador,grupo,n_grupo,n,pct_ou_media
+Estudante tem alguma reserva (c2 = Sim ou Parcialmente),Família tem reserva,39,33,84.6
+Estudante tem alguma reserva (c2 = Sim ou Parcialmente),Família não tem reserva,7,<5,
+Estudante tem alguma reserva (c2 = Sim ou Parcialmente),Não sabe se a família tem,14,7,50.0
+Estudante poupa todo mês (c6 = Sim),Conversam frequentemente,19,16,84.2
+Estudante poupa todo mês (c6 = Sim),Conversam às vezes,33,13,39.4
+Estudante poupa todo mês (c6 = Sim),Nunca conversam,8,<5,
+"Escore médio de conhecimento, 0 a 4 (H4)",Conversam frequentemente,19,,3.32
+"Escore médio de conhecimento, 0 a 4 (H4)",Conversam às vezes,33,,3.39
+"Escore médio de conhecimento, 0 a 4 (H4)",Nunca conversam,8,,3.75

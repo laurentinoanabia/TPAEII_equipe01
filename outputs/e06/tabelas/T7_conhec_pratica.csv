@@ -1,0 +1,13 @@
+﻿grupo,n_grupo,c2_tem_reserva,n,pct
+Acerta a definição (b1),54,Sim,16,29.6
+Acerta a definição (b1),54,Parcialmente,22,40.7
+Acerta a definição (b1),54,Não,16,29.6
+Não acerta b1,6,Sim,<5,
+Não acerta b1,6,Parcialmente,<5,
+Não acerta b1,6,Não,<5,
+Escore 4 (alto),38,Sim,13,34.2
+Escore 4 (alto),38,Parcialmente,15,39.5
+Escore 4 (alto),38,Não,10,26.3
+Escore 0 a 3,22,Sim,6,27.3
+Escore 0 a 3,22,Parcialmente,10,45.5
+Escore 0 a 3,22,Não,6,27.3
