@@ -534,6 +534,23 @@ details.expansivel > div { padding: 0 1rem 1rem; }
 }
 
 .texto-longo a { overflow-wrap: anywhere; }
+/* ---------- Painel da pesquisa ---------- */
+.painel-kpis { margin: 1.5rem 0; }
+.painel-kpis .metrica small:last-child { margin-top: .25rem; }
+.painel-metodo { margin-bottom: 1rem; }
+.painel-metodo ul { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--tinta-2); font-size: .92rem; }
+.painel-metodo li { margin-bottom: .35rem; }
+.painel-achado h2 { max-width: 48rem; }
+.painel-cartao { display: flex; flex-direction: column; }
+.painel-grade { grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr)); }
+.painel-cartao .painel-pergunta { font-size: .84rem; color: var(--tinta-3); }
+.painel-cartao .fonte { margin: auto 0 0; }
+.barras-pesquisa .barra-h { grid-template-columns: minmax(7rem, 11rem) 1fr 5.5rem; }
+.barras-pesquisa output small { color: var(--tinta-3); font-size: .72rem; }
+@media (max-width: 30rem) { .barras-pesquisa .barra-h { grid-template-columns: 6.5rem 1fr 4.6rem; } .barras-pesquisa output small { display: block; } }
+.painel-lista { columns: 2; margin: .25rem 0 .75rem; padding-left: 1.1rem; font-size: .92rem; }
+.tabela-rolavel { overflow-x: auto; }
+.painel-cartao .tabela-cenarios th { font-size: .72rem; }
 </style>
 <script>
   // Aplica tema e tamanho de letra salvos antes de desenhar a página (evita "piscar")
@@ -597,6 +614,7 @@ details.expansivel > div { padding: 0 1rem 1rem; }
       <a href="#/trilhas" data-secao="trilhas"><svg class="ic"><use href="#i-trilha"/></svg>Trilhas</a>
       <a href="#/glossario" data-secao="glossario"><svg class="ic"><use href="#i-az"/></svg>Glossário A–Z</a>
       <a href="#/quiz" data-secao="quiz"><svg class="ic"><use href="#i-quiz"/></svg>Quiz</a>
+      <a href="#/pesquisa" data-secao="pesquisa"><svg class="ic"><use href="#i-lupa-dados"/></svg>Pesquisa</a>
       <a href="#/sobre" data-secao="sobre"><svg class="ic"><use href="#i-equipe"/></svg>Sobre</a>
     </nav>
     <div class="ferramentas">
@@ -637,7 +655,7 @@ details.expansivel > div { padding: 0 1rem 1rem; }
     </div>
     <div>
       <p>Conteúdo educativo: não é recomendação de investimento nem substitui orientação profissional. Simulações usam valores hipotéticos e modelos simplificados.</p>
-      <p><a href="#/sobre">Sobre o projeto</a> · <a href="#/sobre?secao=equipe">Equipe e autoria</a> · <a href="#/sobre?secao=pesquisa">A pesquisa</a> · <a href="#/sobre?secao=metodologia">Metodologia e fontes</a></p>
+      <p><a href="#/sobre">Sobre o projeto</a> · <a href="#/sobre?secao=equipe">Equipe e autoria</a> · <a href="#/pesquisa">Resultados da pesquisa</a> · <a href="#/sobre?secao=metodologia">Metodologia e fontes</a></p>
     </div>
   </div>
 </footer>
@@ -770,7 +788,7 @@ function revelarAoRolar(raiz) {
 // Carrega os dados do site. O glossário continua em data/glossario.json
 // (o mesmo arquivo lido pelo notebook da Entrega 5).
 
-const D = { verbetes: [], porSlug: new Map(), trilhas: [], quiz: [], indicadores: null, temas: [], projeto: null };
+const D = { verbetes: [], porSlug: new Map(), trilhas: [], quiz: [], indicadores: null, temas: [], projeto: null, pesquisa: null };
 
 // Ordem de apresentação das categorias (temas). Temas novos entram no fim, em ordem alfabética.
 const ORDEM_TEMAS = ['Planejamento financeiro', 'Crédito e dívidas', 'Inflação', 'Juros e política monetária',
@@ -785,10 +803,11 @@ async function json(url, padrao) {
 }
 
 async function carregar() {
-  const [g, t, q, i, p] = await Promise.all([
-    json('data/glossario.json'), json('data/trilhas.json', []), json('data/quiz.json', []), json('data/indicadores.json', null), json('data/projeto.json', {}),
+  const [g, t, q, i, p, pq] = await Promise.all([
+    json('data/glossario.json'), json('data/trilhas.json', []), json('data/quiz.json', []), json('data/indicadores.json', null), json('data/projeto.json', {}), json('data/pesquisa.json', null),
   ]);
   D.projeto = p;
+  D.pesquisa = pq;
   D.verbetes = g.filter(v => v && v.termo).map(v => ({ ...v, slug: slug(v.termo) }));
   D.porSlug = new Map(D.verbetes.map(v => [v.slug, v]));
   // sinônimos também levam ao verbete
@@ -2087,13 +2106,14 @@ function paginaInicio(main) {
 
     h('section', { class: 'container secao', 'aria-labelledby': 'sobre-home' },
       h('div', { class: 'cartao revelar', style: 'padding:clamp(1.25rem, 3vw, 2.25rem)' },
-        h('div', { class: 'cabeca-secao' }, h('div', null, h('p', { class: 'sobretitulo' }, 'Sobre o projeto'), h('h2', { id: 'sobre-home' }, 'Feito por estudantes, a partir de uma demanda real')),
+        h('div', { class: 'cabeca-secao' }, h('div', null, h('p', { class: 'sobretitulo' }, 'Sobre o projeto'), h('h2', { id: 'sobre-home' }, 'Um glossário feito por estudantes, a partir de uma demanda real')),
           h('span', { class: 'selo-independente' }, 'Autoria da equipe · sem chancela institucional')),
-        h('p', { class: 'lead', style: 'font-size:1.02rem' }, 'Criado por três estudantes de Ciências Econômicas da UFPB como projeto de extensão da disciplina Técnicas de Pesquisa e Análise Econômica II, a partir de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB). O conteúdo é escrito pela equipe e orientado por uma pesquisa com estudantes de graduação sobre orçamento, dívidas e reserva de emergência. Não é material oficial do Conselho nem tem a sua chancela.'),
+        h('p', { class: 'lead', style: 'font-size:1.02rem' }, 'Criado por três estudantes de Ciências Econômicas da UFPB como projeto de extensão da disciplina Técnicas de Pesquisa e Análise Econômica II, a partir de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB). O conteúdo é escrito pela equipe e orientado por uma pesquisa com 60 estudantes de graduação sobre o que sabem e praticam de educação financeira. Não é material oficial do Conselho nem tem a sua chancela.'),
         h('div', { class: 'pilares' }, PILARES.slice(0, 3).map(([ic, t, d]) => h('div', { class: 'pilar' }, h('h3', null, icone(ic), t), h('p', null, d)))),
         h('p', { class: 'fonte' }, 'Para: qualquer pessoa que queira organizar a vida financeira e entender a economia, sem precisar ter estudado o assunto. Também serve a estudantes e a quem quer se aprofundar em economia e investimentos.'),
         h('div', { class: 'chips', style: 'margin-top:1rem' },
-          h('a', { class: 'botao', href: '#/sobre' }, 'Conheça o projeto', icone('seta')),
+          h('a', { class: 'botao', href: '#/pesquisa' }, 'Resultados da pesquisa', icone('seta')),
+          h('a', { class: 'botao secundario', href: '#/sobre' }, 'Conheça o projeto'),
           h('a', { class: 'botao secundario', href: '#/sobre?secao=metodologia' }, 'Metodologia e fontes'),
           h('a', { class: 'botao secundario', href: '#/sobre?secao=equipe' }, 'Equipe e autoria')))),
 
@@ -2301,7 +2321,7 @@ function paginaSobre(main, params = new URLSearchParams()) {
   const conteudo = h('div', { class: 'texto-longo', style: 'max-width:none' },
     bloco('sobre', 1, 'Sobre o projeto',
       h('p', null, `O ${nome} é uma plataforma de educação econômica e financeira criada por três estudantes de Ciências Econômicas da Universidade Federal da Paraíba (UFPB), como projeto de extensão da disciplina Técnicas de Pesquisa e Análise Econômica II.`),
-      h('p', null, 'O projeto nasceu de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB): levar conhecimento econômico e educação financeira à população, de forma acessível, em apoio a iniciativas de enfrentamento do endividamento das famílias. A equipe respondeu a essa demanda com dois produtos complementares: uma pesquisa com estudantes de graduação e esta plataforma.'),
+      h('p', null, 'O projeto nasceu de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB): a necessidade de um glossário econômico de fácil entendimento para quem navega pelo site. A equipe respondeu a essa demanda com dois produtos complementares: esta plataforma, cujo centro é o glossário, e uma pesquisa com estudantes de graduação que orienta quais termos e temas priorizar.'),
       h('div', { class: 'bloco-marcado fato' }, h('span', { class: 'marcador' }, 'Autoria e independência'),
         h('p', null, 'Os textos, os simuladores e o código são de autoria da equipe, que responde pela qualidade do que é publicado. O site não é material oficial do CORECON-PB, não usa a sua identidade visual e não tem aprovação, certificação ou chancela do Conselho, de órgãos públicos, de empresas ou de instituições financeiras. Banco Central, IBGE, CVM, B3, Tesouro Nacional e outras instituições aparecem apenas como fontes de dados, normas e estatísticas.')),
       h('h3', null, 'Para quem é'),
@@ -2313,12 +2333,12 @@ function paginaSobre(main, params = new URLSearchParams()) {
       h('table', { class: 'tabela-simples' }, h('tbody', null,
         [['Instrumento', 'Questionário no Google Forms, anônimo e voluntário, com termo de consentimento e 29 perguntas em cinco blocos: perfil, conhecimento, prática, família e interesse por temas do glossário'],
          ['Público', 'Estudantes de graduação maiores de 18 anos'],
-         ['Coleta', '1º a 20 de novembro de 2026, com divulgação em turmas e canais dos cursos'],
+         ['Coleta', 'Respostas de 28 de outubro a 15 de novembro de 2026, com divulgação em turmas e grupos de cursos; 60 respondentes'],
          ['Amostra', 'Por conveniência: descreve quem respondeu e não permite generalizar para todos os estudantes'],
          ['Privacidade', 'Não pede nome, e-mail, CPF nem matrícula; os resultados são divulgados só de forma agregada']].map(([a, b]) => h('tr', null, h('th', { scope: 'row' }, a), h('td', null, b))))),
       h('h3', null, 'Como a pesquisa orienta o site'),
       h('p', null, 'Cada pergunta de conhecimento do questionário (reserva de emergência, inflação, juros compostos e diversificação) corresponde a verbetes do site, e as perguntas sobre temas e termos de interesse indicam o que deve ser priorizado. Por isso o site dá destaque a orçamento, dívidas e reserva de emergência, com a trilha ', h('a', { href: '#/trilhas' }, 'Dívidas sob controle'), ' e as calculadoras de ', h('a', { href: '#/simuladores/divida' }, 'dívida'), ' e de ', h('a', { href: '#/simuladores/reserva' }, 'reserva'), '.'),
-      h('p', null, 'Os resultados estão em análise e serão publicados de forma agregada no relatório técnico da equipe. O questionário, o tratamento dos dados e o código estão documentados no repositório do projeto', P.repositorio ? [': ', h('a', { href: P.repositorio, target: '_blank', rel: 'noopener' }, P.repositorio)] : null, '.')),
+      h('p', null, 'Os principais resultados estão no painel ', h('a', { href: '#/pesquisa' }, 'Resultados da pesquisa'), ', sempre de forma agregada. O questionário, o tratamento dos dados e o código estão documentados no repositório do projeto', P.repositorio ? [': ', h('a', { href: P.repositorio, target: '_blank', rel: 'noopener' }, P.repositorio)] : null, '.')),
 
     bloco('proposta', 3, 'Nossa proposta',
       h('p', null, 'Unir a clareza de um bom material didático, a profundidade de um curso universitário e a experiência de uma ferramenta digital interativa.'),
@@ -2398,6 +2418,150 @@ function paginaSobre(main, params = new URLSearchParams()) {
   }
 }
 
+// ===== pesquisa.js =====
+// Painel "Resultados da pesquisa": descobertas do questionário com estudantes de graduação.
+// Lê data/pesquisa.json (gerado por scripts/montar_painel_pesquisa.py a partir de tabelas agregadas).
+// Células com menos de 5 respondentes chegam com n = null e aparecem como "<5", sem barra.
+
+const fmtPct = (x) => (x == null ? '<5' : num(x, 1) + '%');
+
+function barrasPesquisa(itens, opcoes = {}) {
+  const cor = opcoes.cor || 'var(--s1)';
+  const destaque = opcoes.destaque || (() => false);
+  return h('div', { class: 'barras-h barras-pesquisa', role: 'list' }, itens.map(i => {
+    const oculto = i.pct == null;
+    const w = oculto ? 0 : Math.max(0, Math.min(100, i.pct));
+    const rotuloValor = oculto ? '<5' : `${num(i.pct, 1)}%`;
+    return h('div', { class: 'barra-h', role: 'listitem', 'aria-label': `${i.rotulo}: ${oculto ? 'menos de 5 respostas' : rotuloValor + (i.n != null ? ` (${i.n} de ${i.base})` : '')}` },
+      h('span', null, i.rotulo),
+      h('div', { class: 'trilho', 'aria-hidden': 'true' }, oculto ? null : h('span', { style: `left:0;width:${w}%;background:${destaque(i) ? 'var(--s2)' : cor}` })),
+      h('output', null, rotuloValor, i.n != null ? h('small', null, ` ${i.n}/${i.base}`) : null));
+  }));
+}
+
+function cartaoPainel(titulo, pergunta, corpo, nota) {
+  return h('article', { class: 'cartao painel-cartao' },
+    h('h3', null, titulo),
+    pergunta ? h('p', { class: 'painel-pergunta' }, pergunta) : null,
+    corpo,
+    nota ? h('p', { class: 'fonte' }, nota) : null);
+}
+
+function achado(numero, titulo, texto, leitura, ...cartoes) {
+  return h('section', { class: 'secao painel-achado', 'aria-labelledby': 'achado-' + numero },
+    h('p', { class: 'sobretitulo' }, `Achado ${numero}`),
+    h('h2', { id: 'achado-' + numero }, titulo),
+    h('p', { class: 'lead', style: 'font-size:1.02rem' }, texto),
+    h('div', { class: 'grade painel-grade', style: 'margin-top:1rem' }, cartoes),
+    leitura ? h('div', { class: 'bloco-marcado interpretacao', style: 'margin-top:1rem' }, h('span', { class: 'marcador' }, 'Como ler'), h('p', null, leitura)) : null);
+}
+
+function linkConceito(nome) {
+  const v = achar(slug(nome));
+  return v ? h('a', { href: '#/conceito/' + v.slug }, v.termo) : nome;
+}
+
+function paginaPesquisa(main) {
+  const P = D.pesquisa;
+  document.title = 'Resultados da pesquisa – ' + (D.projeto?.nome || 'Glossário da Economia');
+  if (!P) {
+    main.replaceChildren(h('div', { class: 'estreito secao' }, h('h1', null, 'Resultados da pesquisa'), h('p', null, 'Os resultados ainda não estão disponíveis.')));
+    return;
+  }
+  const ac = Object.fromEntries(P.acertos.map(a => [a.rotulo.match(/\((b\d)/)?.[1], a]));
+  const pr = P.pratica, fa = P.familia, gl = P.glossario;
+  const pegar = (lista, rot) => lista.find(x => x.rotulo === rot) || {};
+  const reservaSim = pegar(pr.tem_reserva, 'Sim'), reservaParcial = pegar(pr.tem_reserva, 'Parcialmente');
+  const alguma = (reservaSim.n || 0) + (reservaParcial.n || 0);
+  const tresMeses = pr.cobertura.filter(c => /3 a 6|Mais de 6/.test(c.rotulo)).reduce((s, c) => s + (c.n || 0), 0);
+  const cartao = pegar(pr.dividas, 'Cartão de crédito');
+  const usaria = pegar(gl.usaria, 'Sim');
+  const curtoNome = (r) => r.replace(/\s*\(b\d.*$/, '');
+
+  const metricas = h('div', { class: 'metricas painel-kpis' },
+    [['Respondentes', String(P.n), true, `coleta de ${P.coleta}`],
+     ['Sabem o que é reserva de emergência', fmtPct(ac.b1?.pct), false, `${ac.b1?.n} de ${P.n}`],
+     ['Têm reserva que cobre 3 meses ou mais', fmtPct(100 * tresMeses / P.n), false, `${tresMeses} de ${P.n}`],
+     ['Têm dívida no cartão de crédito', fmtPct(cartao.pct), false, `${cartao.n} de ${P.n}`],
+     ['Usariam o glossário', fmtPct(usaria.pct), false, `${usaria.n} de ${P.n}; mais ${fmtPct(pegar(gl.usaria, 'Talvez').pct)} talvez`]]
+      .map(([rot, val, dest, sub]) => h('div', { class: 'metrica' + (dest ? ' destaque' : '') }, h('small', null, rot), h('b', null, val), h('small', null, sub))));
+
+  const sobreDados = h('div', { class: 'cartao painel-metodo' },
+    h('h2', { id: 'sobre-dados', style: 'font-size:1.25rem' }, 'Sobre estes dados'),
+    h('ul', null,
+      h('li', null, `${P.instrumento}, respondido por ${P.n} estudantes de graduação entre ${P.coleta}. A amostra é por conveniência (divulgação em turmas e grupos): os números descrevem quem respondeu e não representam todos os universitários.`),
+      h('li', null, 'Perfil: a maioria está no início do curso e tem de 18 a 20 anos; pouco mais da metade cursa Ciências Econômicas. Os "demais cursos" reúnem Administração, Ciências Contábeis e outros cursos, com poucos respondentes cada.'),
+      h('li', null, `O formulário teve a redação de algumas opções ajustada durante a coleta (${P.versoes_formulario.v1} respostas na primeira versão e ${P.versoes_formulario.v2} na segunda). As duas versões foram compatibilizadas, mas a pergunta sobre onde guardar a reserva deve ser lida com cautela.`),
+      h('li', null, 'Grupos com menos de 5 pessoas aparecem como "<5", sem percentual, para proteger o anonimato.'),
+      h('li', null, h('strong', null, 'Os resultados mostram associações, não causas.'), ' As respostas são autodeclaradas e coletadas uma única vez; o que se diz sobre a família é a percepção do estudante. Os testes estatísticos citados são exploratórios.')));
+
+  const conteudo = [
+    achado(1, 'Os conceitos básicos são conhecidos; juros compostos e onde guardar a reserva concentram os erros',
+      `Nove em cada dez respondentes acertam a definição de reserva de emergência e o efeito da diversificação. O menor acerto entre as perguntas que contam pontos é o de juros compostos: ${P.juros_simples_erro.n} pessoas (${num(P.juros_simples_erro.pct, 1)}%) ${P.juros_simples_erro.nota}. Na média, os respondentes acertam ${num(P.escore_medio, 2)} de 4 perguntas.`,
+      'Para o glossário, explicar como os juros se acumulam numa dívida e onde e quanto guardar tende a ser mais útil do que repetir a definição de reserva. A maioria gabarita as quatro perguntas, o que limita a comparação entre grupos.',
+      cartaoPainel('Acerto por pergunta', 'Percentual de respondentes que escolheram a resposta correta.',
+        barrasPesquisa(P.acertos.map(a => ({ rotulo: curtoNome(a.rotulo) + (a.pontua ? '' : ' *'), pct: a.pct, n: a.n, base: P.n })), { destaque: (i) => i.pct < 80 }),
+        '* Não entra na nota de 0 a 4. Em laranja, acerto abaixo de 80%.'),
+      cartaoPainel('Quantas das 4 perguntas cada pessoa acertou', 'Inflação, juros compostos, diversificação e definição de reserva.',
+        barrasPesquisa(P.escore), `Média: ${num(P.escore_medio, 2)} de 4.`)),
+
+    achado(2, 'Saber o que é reserva não acompanha tê-la',
+      `Enquanto ${fmtPct(ac.b1?.pct)} definem corretamente a reserva de emergência, ${fmtPct(reservaSim.pct)} dizem ter uma reserva completa e ${fmtPct(100 * tresMeses / P.n)} têm reserva que cobre 3 meses ou mais de gastos. Só ${fmtPct(pegar(pr.planeja, 'Sempre').pct)} planejam sempre os gastos do mês.`,
+      'Ter acertado as perguntas de conhecimento não diferencia quem tem reserva de quem não tem. Já os hábitos andam juntos: quem poupa todo mês e quem planeja os gastos relata ter reserva com mais frequência. Isso é associação: renda, idade e apoio da família podem influenciar tudo ao mesmo tempo.',
+      cartaoPainel('Tem reserva de emergência?', `Base: ${P.n} respondentes.`, barrasPesquisa(pr.tem_reserva)),
+      cartaoPainel('Quantos meses a reserva cobre', `Só quem tem reserva total ou parcial (${alguma} pessoas).`, barrasPesquisa(pr.cobertura)),
+      cartaoPainel('Planeja os gastos do mês?', null, barrasPesquisa(pr.planeja)),
+      cartaoPainel('Dívidas hoje', 'Pode marcar mais de uma; os percentuais não somam 100%.', barrasPesquisa(pr.dividas, { cor: 'var(--s4)' }))),
+
+    achado(3, 'Quando a família tem reserva, o estudante relata ter reserva com mais frequência',
+      `Entre os estudantes que dizem que a família tem reserva, ${fmtPct(pegar(fa.reserva_estudante, 'Família tem reserva').pct)} têm alguma reserva. Quando a família conversa sobre dinheiro com frequência, ${fmtPct(pegar(fa.poupa_por_conversa, 'Conversam frequentemente').pct)} poupam todo mês, contra ${fmtPct(pegar(fa.poupa_por_conversa, 'Conversam às vezes').pct)} quando a conversa é só às vezes.`,
+      'O padrão é compatível com a ideia de que hábitos financeiros se aprendem em casa, mas não prova esse efeito: a reserva da família e a do estudante podem ter a mesma origem (por exemplo, a renda da família), e as duas informações vêm do mesmo respondente. A conversa em casa não aparece ligada a mais acertos nas perguntas de conhecimento.',
+      cartaoPainel('Estudante com alguma reserva, segundo a família', 'Percentual dentro de cada grupo.', barrasPesquisa(fa.reserva_estudante, { cor: 'var(--s3)' })),
+      cartaoPainel('Estudante que poupa todo mês, segundo a conversa em casa', 'Percentual dentro de cada grupo.', barrasPesquisa(fa.poupa_por_conversa, { cor: 'var(--s3)' })),
+      cartaoPainel('A família tem reserva?', 'Relato do estudante.', barrasPesquisa(fa.reserva)),
+      cartaoPainel('A família controla o orçamento?', 'Relato do estudante.', barrasPesquisa(fa.orcamento))),
+
+    achado(4, 'Cursar Economia não está associado a mais acertos, mas a mais autoconfiança',
+      `A nota média é praticamente igual entre Ciências Econômicas e os demais cursos (${P.curso.map(c => num(c.escore, 2)).join(' × ')} de 4). Quem cursa Economia se avalia melhor (${P.curso.map(c => num(c.autoavaliacao, 2)).join(' × ')}, numa escala de 1 a 5) e acerta mais a pergunta sobre onde guardar a reserva.`,
+      'A amostra de Economia concentra calouros, e os demais cursos são heterogêneos e foram agrupados. A diferença de autoconfiança não autoriza dizer que o curso a provoca.',
+      cartaoPainel('Ciências Econômicas × demais cursos', null,
+        h('table', { class: 'tabela-cenarios' },
+          h('thead', null, h('tr', null, h('th', null, ''), ...P.curso.map(c => h('th', null, `${c.rotulo} (n = ${c.n})`)))),
+          h('tbody', null,
+            h('tr', null, h('td', null, 'Nota média (0 a 4)'), ...P.curso.map(c => h('td', null, num(c.escore, 2)))),
+            h('tr', null, h('td', null, 'Autoavaliação (1 a 5)'), ...P.curso.map(c => h('td', null, num(c.autoavaliacao, 2)))),
+            h('tr', null, h('td', null, 'Acerta onde guardar a reserva'), h('td', null, fmtPct(ac.b7?.economia)), h('td', null, fmtPct(ac.b7?.demais))))),
+        `Teste de Mann-Whitney (exploratório): nota, p = ${num(P.curso_p.escore, 3)}; autoavaliação, p = ${num(P.curso_p.autoavaliacao, 3)}.`)),
+
+    achado(5, 'Há interesse pelo glossário, com prioridade para investimentos, inflação e orçamento',
+      `Investimentos é o tema mais pedido (${fmtPct(pegar(gl.temas, 'Investimentos').pct)}), seguido de inflação e Selic. O termo que mais gente quer ver explicado é orçamento pessoal. A internet e as redes sociais são a fonte de contato com educação financeira mais citada (${fmtPct(pegar(gl.contato, 'Internet e redes sociais').pct)}).`,
+      null,
+      cartaoPainel('Temas que gostariam de ver no glossário', 'Até 3 por pessoa; os percentuais não somam 100%.', barrasPesquisa(gl.temas, { cor: 'var(--s2)' })),
+      cartaoPainel('Termo que mais gostariam de ver explicado', 'Uma escolha por pessoa.', barrasPesquisa(gl.termo, { cor: 'var(--s2)' })),
+      cartaoPainel('Onde já tiveram contato com educação financeira', 'Pode marcar mais de uma.', barrasPesquisa(gl.contato)),
+      cartaoPainel('O que fizemos com isso', null,
+        h('p', null, 'Os temas e termos mais pedidos têm verbete próprio, com explicação em níveis e simulador quando faz sentido:'),
+        h('ul', { class: 'painel-lista' }, ['Investimentos', 'Diversificação', 'Orçamento pessoal', 'Inflação', 'Taxa Selic', 'Juros compostos', 'Reserva de emergência', 'Renegociação de dívidas'].map(n => h('li', null, linkConceito(n)))),
+        h('p', null, 'E, como a maior lacuna está entre saber e praticar, o site oferece a trilha ', h('a', { href: '#/trilhas/dividas-sob-controle' }, 'Dívidas sob controle'), ' e as calculadoras de ', h('a', { href: '#/simuladores/reserva' }, 'reserva'), ' e de ', h('a', { href: '#/simuladores/divida' }, 'dívida'), '.'))),
+
+    h('section', { class: 'secao', 'aria-labelledby': 'tit-hipoteses' },
+      h('p', { class: 'sobretitulo' }, 'Hipóteses de trabalho'),
+      h('h2', { id: 'tit-hipoteses' }, 'O que esperávamos e o que os dados mostram'),
+      h('div', { class: 'tabela-rolavel' }, h('table', { class: 'tabela-simples' },
+        h('thead', null, h('tr', null, h('th', null, 'Hipótese'), h('th', null, 'Evidência'), h('th', null, 'Leitura preliminar'))),
+        h('tbody', null, P.hipoteses.map(x => h('tr', null, h('td', null, x.hipotese), h('td', null, x.evidencia), h('td', null, x.leitura))))))),
+  ];
+
+  main.replaceChildren(h('div', { class: 'container secao' },
+    h('p', { class: 'sobretitulo' }, 'Pesquisa · Educação financeira entre estudantes de graduação'),
+    h('h1', null, 'Resultados da pesquisa'),
+    h('p', { class: 'lead' }, 'O que descobrimos ao perguntar a estudantes de graduação o que sabem e o que fazem com o próprio dinheiro, em especial sobre reserva de emergência, e como é a vida financeira da família. Estes resultados orientam o conteúdo do glossário.'),
+    metricas,
+    sobreDados,
+    ...conteudo,
+    h('p', { class: 'fonte', style: 'margin-top:2rem' }, `Fonte: elaboração própria com dados da pesquisa (Google Forms, ${P.coleta}; n = ${P.n}). Resultados preliminares. Tabelas agregadas e código no `, D.projeto?.repositorio ? h('a', { href: D.projeto.repositorio, target: '_blank', rel: 'noopener' }, 'repositório do projeto') : 'repositório do projeto', '. Veja também ', h('a', { href: '#/sobre?secao=pesquisa' }, 'como a pesquisa foi feita'), '.')));
+}
+
 // ===== app.js =====
 // Ponto de entrada: carrega os dados, monta o topo, a busca global e o roteador.
 
@@ -2418,6 +2582,7 @@ let TITULO = 'Glossário da Economia – projeto acadêmico de extensão';
 // #/simuladores[/<id>]    simuladores
 // #/trilhas[/<id>]        trilhas de aprendizagem
 // #/quiz                  quiz
+// #/pesquisa              resultados do questionário (painel)
 // #/sobre                 metodologia e fontes
 // Links antigos continuam valendo: #juros → conceito; ?q=…&tema=… → glossário.
 function rota() {
@@ -2456,6 +2621,7 @@ function navegar() {
       case 'trilhas': paginaTrilhas(main, r.id); break;
       case 'quiz': paginaQuiz(main, r.params); break;
       case 'sobre': paginaSobre(main, r.params); break;
+      case 'pesquisa': paginaPesquisa(main); break;
       default: main.replaceChildren(h('div', { class: 'estreito secao' }, h('h1', null, 'Página não encontrada'), h('p', null, h('a', { href: '#/' }, 'Voltar ao início'))));
     }
   } catch (e) {

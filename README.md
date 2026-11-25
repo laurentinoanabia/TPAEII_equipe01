@@ -15,7 +15,7 @@ Projeto aplicado de extensão da disciplina **PSAE00320 – Técnicas de Pesquis
 
 ## Problema e demandante
 
-O CORECON-PB apoia o programa **"PB sem dívidas"** e precisa de materiais que levem conhecimento econômico e educação financeira à população, com acessibilidade.
+A demanda apresentada pelo CORECON-PB foi a necessidade de um **glossário econômico de fácil entendimento** para quem navega pelo site. O contexto é o de levar conhecimento econômico e educação financeira à população, com acessibilidade (o Conselho apoia o programa **"PB sem dívidas"**).
 
 O projeto tem **dois produtos complementares**:
 
@@ -39,11 +39,14 @@ requirements.txt           dependências dos scripts (pandas)
 index.html                 site do glossário (página única, sem dependências; lê data/*.json)
 site_unico/               versão do site em um único arquivo, com os dados embutidos (gerada; abre sem servidor)
 scripts/montar_site_unico.py  gera site_unico/ a partir de index.html e data/
+scripts/montar_painel_pesquisa.py  gera data/pesquisa.json a partir de data/processed/questionario/
 data/
   glossario.json           verbetes do glossário (lido pelo site e pelo notebook 03)
   trilhas.json, quiz.json  trilhas de aprendizagem e perguntas do quiz do site
   indicadores.json         faixa de indicadores do site (valores com data e fonte; atualizar à mão)
   projeto.json             dados institucionais exibidos no site (equipe, repositório)
+  pesquisa.json            números do painel "Resultados da pesquisa" (gerado por scripts/montar_painel_pesquisa.py)
+  processed/questionario/  tabelas agregadas do questionário (T1 a T11), sem dados individuais; células < 5 aparecem como "<5"
   raw/                     dados originais permitidos (ver data/raw/README.md)
   processed/               dados tratados e agregados, sem informação pessoal
 notebooks/

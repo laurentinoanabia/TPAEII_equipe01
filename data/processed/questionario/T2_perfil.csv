@@ -1,0 +1,24 @@
+﻿dimensao,categoria,n,pct
+Curso,Ciências Econômicas,32,53.3
+Curso,Demais cursos,28,46.7
+Período,1º ao 4º,55,91.7
+Período,5º ao 8º,<5,
+Período,9º ou mais,<5,
+Idade,18 a 20,48,80.0
+Idade,21 a 23,<5,
+Idade,24 a 26,0,0.0
+Idade,27 ou mais,8,13.3
+Ocupação,Só estuda,42,70.0
+Ocupação,Estuda e trabalha/estagia,18,30.0
+Ocupação,Outra,0,0.0
+Renda própria,Nenhuma,26,43.3
+Renda própria,Até 1 SM,14,23.3
+Renda própria,Mais de 1 até 2 SM,11,18.3
+Renda própria,Mais de 2 SM,5,8.3
+Renda própria,Prefere não responder,<5,
+Renda familiar,Até 1 SM,<5,
+Renda familiar,Mais de 1 até 3 SM,7,11.7
+Renda familiar,Mais de 3 até 6 SM,9,15.0
+Renda familiar,Mais de 6 SM,26,43.3
+Renda familiar,Não sabe,<5,
+Renda familiar,Prefere não responder,13,21.7
