@@ -8,11 +8,7 @@ Dados tratados e **agregados**, sem informação pessoal. Aqui podem ser version
 
 Regra para publicar uma tabela: células com menos de 5 respondentes devem ser agrupadas ou omitidas, para que ninguém possa ser reconhecido.
 
-## Questionário (`questionario/`)
-
-Tabelas agregadas T1 a T11 da análise da Entrega 6 (n = 60, respostas de 28/10 a 15/11/2026), geradas pelo script de análise da equipe a partir da exportação do Google Forms. Células com menos de 5 respondentes aparecem como `<5`. O site lê uma síntese delas em `data/pesquisa.json` (`scripts/montar_painel_pesquisa.py`).
-
-## Glossário (regenerado em 25/11/2026)
+## Conteúdo atual (regenerado em 25/11/2026)
 
 | Arquivo | Origem | Dado |
 |---|---|---|

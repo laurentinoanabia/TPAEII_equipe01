@@ -119,7 +119,7 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 |---|---|
 | Estrutura do repositório e plano de dados (Entrega 4) | Pronta, com o PDF `docs/E04_equipe01_plano_dados.pdf`; faltam o acesso do professor e o envio |
 | Glossário (site) | Versão atual no repositório desde 25/11/2026: 121 verbetes, todos com fonte; 12 de dívidas e 6 de planejamento financeiro; trilha "Dívidas sob controle". **Falta a revisão da equipe**: os verbetes aparecem como "Em revisão" até receberem `revisado` |
-| Questionário | 60 respostas, de 28/10 a 15/11/2026 (a coleta estava prevista de 01/11 a 20/11; uma nova exportação em 25/11 confirmou as mesmas 60). Tabelas agregadas em `data/processed/questionario/` e painel "Resultados da pesquisa" no site. **Pendente no notebook 03:** aceitar o separador `;` das respostas múltiplas e a redação da 2ª versão do formulário (hoje ele invalidaria respostas reais) |
+| Questionário | Formulário publicado no Google Forms (descrito em `docs/questionario.md`); coleta prevista de 01/11 a 20/11/2026. Há uma exportação das respostas no Drive da equipe; as respostas reais ainda não foram tratadas neste repositório |
 | Tratamento dos dados (Entrega 5) | Notebook executável e reprodutível; glossário tratado (dado real); regras do questionário e tradutor do formulário testados com dados sintéticos e com uma exportação simulada no formato do Forms, ainda não com respostas reais |
 
 ## Uso de inteligência artificial

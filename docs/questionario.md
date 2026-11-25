@@ -31,7 +31,7 @@ Diagnosticar quanto estudantes de graduação sabem e praticam de educação fin
 | Amostragem | Por conveniência (divulgação em turmas e canais dos cursos). **Não é representativa**; os resultados descrevem quem respondeu |
 | Aplicação | Google Forms, anônimo e voluntário; 8 páginas, 29 perguntas, todas obrigatórias, cerca de 8 minutos. O formulário não tem campo de e-mail |
 | Meta de respostas | **[a definir]** |
-| Período | Previsto: 01/11 a 20/11/2026, definido pela equipe em 27/10/2026. **Realizado:** respostas de 28/10 a 15/11/2026 (60 respostas; 7 antes de 01/11). O texto de algumas opções (a4, b1 e b7) foi alterado entre 02/11 e 05/11: 8 respostas na 1ª versão e 52 na 2ª |
+| Período | 01/11 a 20/11/2026, definido pela equipe em 27/10/2026 |
 | Referência metodológica | Estrutura em conhecimento, comportamento e atitude, inspirada no OECD/INFE Toolkit. As perguntas são **redação própria** da equipe |
 
 **Mudanças em relação ao rascunho de 27/10/2026**
