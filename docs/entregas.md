@@ -41,6 +41,12 @@ A equipe trocou o projeto das escolas por um **site de conhecimento para o COREC
 
 A equipe decidiu somar ao glossário uma **pesquisa com estudantes de graduação** sobre educação financeira: quantos entendem e aplicam reserva de emergência, qual a situação financeira da família e qual o nível de conhecimento das famílias. A pesquisa orienta quais termos o glossário prioriza. Instrumento em [`questionario.md`](questionario.md).
 
+## Painel "Resultados da pesquisa" no site (25/11/2026)
+
+- A demanda do CORECON-PB foi registrada nas palavras da equipe: um glossário econômico de fácil entendimento para quem navega pelo site.
+- Nova página `#/pesquisa` com as descobertas do questionário (n = 60, respostas de 28/10 a 15/11/2026): indicadores-resumo, cinco achados com gráficos de barras, quadro das hipóteses H1 a H4 e as limitações. Os resultados são apresentados como associações, e grupos com menos de 5 pessoas aparecem como "<5". A nota principal é a de 0 a 4 do plano de análise.
+- As tabelas agregadas estão em `data/processed/questionario/`, e `scripts/montar_painel_pesquisa.py` gera `data/pesquisa.json`.
+
 ## Reposicionamento do site e reforço do conteúdo (25/11/2026)
 
 - **Versão atual do site no repositório.** O site foi desenvolvido fora do repositório, com apoio de IA, a partir de dois prompts da equipe: um de escopo (enciclopédia em 7 níveis, simuladores, trilhas, quiz, fontes oficiais) e outro que o apresentava como projeto independente, sem vínculo com o CORECON-PB. Essa versão ("Opção B") foi trazida para `index.html` e `data/`.

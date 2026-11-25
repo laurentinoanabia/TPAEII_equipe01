@@ -15,7 +15,7 @@ Projeto aplicado de extensão da disciplina **PSAE00320 – Técnicas de Pesquis
 
 ## Problema e demandante
 
-O CORECON-PB apoia o programa **"PB sem dívidas"** e precisa de materiais que levem conhecimento econômico e educação financeira à população, com acessibilidade.
+A demanda apresentada pelo CORECON-PB foi a necessidade de um **glossário econômico de fácil entendimento** para quem navega pelo site. O contexto é o de levar conhecimento econômico e educação financeira à população, com acessibilidade (o Conselho apoia o programa **"PB sem dívidas"**).
 
 O projeto tem **dois produtos complementares**:
 
@@ -39,11 +39,14 @@ requirements.txt           dependências dos scripts (pandas)
 index.html                 site do glossário (página única, sem dependências; lê data/*.json)
 site_unico/               versão do site em um único arquivo, com os dados embutidos (gerada; abre sem servidor)
 scripts/montar_site_unico.py  gera site_unico/ a partir de index.html e data/
+scripts/montar_painel_pesquisa.py  gera data/pesquisa.json a partir de data/processed/questionario/
 data/
   glossario.json           verbetes do glossário (lido pelo site e pelo notebook 03)
   trilhas.json, quiz.json  trilhas de aprendizagem e perguntas do quiz do site
   indicadores.json         faixa de indicadores do site (valores com data e fonte; atualizar à mão)
   projeto.json             dados institucionais exibidos no site (equipe, repositório)
+  pesquisa.json            números do painel "Resultados da pesquisa" (gerado por scripts/montar_painel_pesquisa.py)
+  processed/questionario/  tabelas agregadas do questionário (T1 a T11), sem dados individuais; células < 5 aparecem como "<5"
   raw/                     dados originais permitidos (ver data/raw/README.md)
   processed/               dados tratados e agregados, sem informação pessoal
 notebooks/
@@ -116,7 +119,7 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 |---|---|
 | Estrutura do repositório e plano de dados (Entrega 4) | Pronta, com o PDF `docs/E04_equipe01_plano_dados.pdf`; faltam o acesso do professor e o envio |
 | Glossário (site) | Versão atual no repositório desde 25/11/2026: 121 verbetes, todos com fonte; 12 de dívidas e 6 de planejamento financeiro; trilha "Dívidas sob controle". **Falta a revisão da equipe**: os verbetes aparecem como "Em revisão" até receberem `revisado` |
-| Questionário | Formulário publicado no Google Forms (descrito em `docs/questionario.md`); coleta prevista de 01/11 a 20/11/2026. Há uma exportação das respostas no Drive da equipe; as respostas reais ainda não foram tratadas neste repositório |
+| Questionário | 60 respostas, de 28/10 a 15/11/2026 (a coleta estava prevista de 01/11 a 20/11; uma nova exportação em 25/11 confirmou as mesmas 60). Tabelas agregadas em `data/processed/questionario/` e painel "Resultados da pesquisa" no site. **Pendente no notebook 03:** aceitar o separador `;` das respostas múltiplas e a redação da 2ª versão do formulário (hoje ele invalidaria respostas reais) |
 | Tratamento dos dados (Entrega 5) | Notebook executável e reprodutível; glossário tratado (dado real); regras do questionário e tradutor do formulário testados com dados sintéticos e com uma exportação simulada no formato do Forms, ainda não com respostas reais |
 
 ## Uso de inteligência artificial

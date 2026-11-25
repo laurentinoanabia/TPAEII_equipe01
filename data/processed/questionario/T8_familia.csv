@@ -1,0 +1,20 @@
+﻿indicador,categoria,n,pct,base
+Conversam sobre dinheiro (d2),Nunca,8,13.3,60
+Conversam sobre dinheiro (d2),Às vezes,33,55.0,60
+Conversam sobre dinheiro (d2),Frequentemente,19,31.7,60
+Família controla orçamento (d3),Sim,42,70.0,60
+Família controla orçamento (d3),Não,14,23.3,60
+Família controla orçamento (d3),Não sabe,<5,,60
+Família tem reserva (d4),Sim,39,65.0,60
+Família tem reserva (d4),Não,7,11.7,60
+Família tem reserva (d4),Não sabe,14,23.3,60
+Família tem dívidas em atraso (d5),Sim,7,11.7,60
+Família tem dívidas em atraso (d5),Não,37,61.7,60
+Família tem dívidas em atraso (d5),Não sabe,14,23.3,60
+Família tem dívidas em atraso (d5),Prefere não responder,<5,,60
+"Conhecimento da família, 1 a 5 (d6)",1 – Nenhum,<5,,60
+"Conhecimento da família, 1 a 5 (d6)",2,13,21.7,60
+"Conhecimento da família, 1 a 5 (d6)",3,21,35.0,60
+"Conhecimento da família, 1 a 5 (d6)",4,16,26.7,60
+"Conhecimento da família, 1 a 5 (d6)",5 – Muito alto,7,11.7,60
+"Conhecimento da família, 1 a 5 (d6)",Não sabe,<5,,60

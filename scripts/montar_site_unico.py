@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-ARQUIVOS = ["glossario.json", "trilhas.json", "quiz.json", "indicadores.json", "projeto.json"]
+ARQUIVOS = ["glossario.json", "trilhas.json", "quiz.json", "indicadores.json", "projeto.json", "pesquisa.json"]
 MARCA = "const __DADOS = {};"
 
 html = (RAIZ / "index.html").read_text(encoding="utf-8")
