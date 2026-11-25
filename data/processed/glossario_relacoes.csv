@@ -1,15 +1,531 @@
 slug_origem,termo_origem,termo_destino,slug_destino,destino_existe,reciproca
-reserva-de-emergencia,Reserva de emergência,Orçamento pessoal,orcamento-pessoal,True,True
-reserva-de-emergencia,Reserva de emergência,Endividamento,endividamento,True,True
-reserva-de-emergencia,Reserva de emergência,Juros,juros,True,False
-orcamento-pessoal,Orçamento pessoal,Reserva de emergência,reserva-de-emergencia,True,True
-orcamento-pessoal,Orçamento pessoal,Endividamento,endividamento,True,True
-juros,Juros,Endividamento,endividamento,True,True
-juros,Juros,Inflação,inflacao,True,True
+acoes,Ações,Dividendos,dividendos,True,True
+acoes,Ações,Ibovespa,ibovespa,True,True
+acoes,Ações,P/L,p-l,True,False
+acoes,Ações,Valuation,valuation,True,False
+acoes,Ações,Volatilidade,volatilidade,True,True
+acoes,Ações,Diversificação,diversificacao,True,False
+acoes,Ações,Renda variável,renda-variavel,True,True
+alocacao-de-ativos,Alocação de ativos,Diversificação,diversificacao,True,True
+alocacao-de-ativos,Alocação de ativos,Risco e retorno,risco-e-retorno,True,True
+alocacao-de-ativos,Alocação de ativos,Renda fixa,renda-fixa,True,False
+alocacao-de-ativos,Alocação de ativos,Renda variável,renda-variavel,True,False
+alocacao-de-ativos,Alocação de ativos,ETFs,etfs,True,True
+arrecadacao-tributaria,Arrecadação tributária,Política fiscal,politica-fiscal,True,True
+arrecadacao-tributaria,Arrecadação tributária,Gastos públicos,gastos-publicos,True,True
+arrecadacao-tributaria,Arrecadação tributária,Resultado primário,resultado-primario,True,True
+arrecadacao-tributaria,Arrecadação tributária,PIB,pib,True,False
+balanca-comercial,Balança comercial,Balanço de pagamentos,balanco-de-pagamentos,True,True
+balanca-comercial,Balança comercial,Taxa de câmbio,taxa-de-cambio,True,True
+balanca-comercial,Balança comercial,PIB,pib,True,False
+balanco-de-pagamentos,Balanço de pagamentos,Balança comercial,balanca-comercial,True,True
+balanco-de-pagamentos,Balanço de pagamentos,Reservas internacionais,reservas-internacionais,True,True
+balanco-de-pagamentos,Balanço de pagamentos,Taxa de câmbio,taxa-de-cambio,True,False
+balanco-de-pagamentos,Balanço de pagamentos,Política cambial,politica-cambial,True,True
+banco-central-do-brasil,Banco Central do Brasil,Copom,copom,True,True
+banco-central-do-brasil,Banco Central do Brasil,Taxa Selic,taxa-selic,True,False
+banco-central-do-brasil,Banco Central do Brasil,Sistema Financeiro Nacional,sistema-financeiro-nacional,True,True
+banco-central-do-brasil,Banco Central do Brasil,Política monetária,politica-monetaria,True,True
+banco-central-do-brasil,Banco Central do Brasil,Reservas internacionais,reservas-internacionais,True,False
+bancos-comerciais,Bancos comerciais,Sistema Financeiro Nacional,sistema-financeiro-nacional,True,True
+bancos-comerciais,Bancos comerciais,Depósitos,depositos,True,True
+bancos-comerciais,Bancos comerciais,Crédito,credito,True,False
+bancos-comerciais,Bancos comerciais,Spread bancário,spread-bancario,True,True
+bancos-comerciais,Bancos comerciais,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,True
+bancos-de-investimento,Bancos de investimento,Bancos comerciais,bancos-comerciais,True,False
+bancos-de-investimento,Bancos de investimento,Ações,acoes,True,False
+bancos-de-investimento,Bancos de investimento,Debêntures,debentures,True,False
+bancos-de-investimento,Bancos de investimento,Sistema Financeiro Nacional,sistema-financeiro-nacional,True,False
+bdrs,BDRs,Ações,acoes,True,False
+bdrs,BDRs,Taxa de câmbio,taxa-de-cambio,True,False
+bdrs,BDRs,Diversificação,diversificacao,True,True
+bdrs,BDRs,ETFs,etfs,True,True
+bens-substitutos-e-complementares,Bens substitutos e complementares,Elasticidade,elasticidade,True,True
+bens-substitutos-e-complementares,Bens substitutos e complementares,Oferta e demanda,oferta-e-demanda,True,True
+cdb,CDB,CDI,cdi,True,True
+cdb,CDB,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,True
+cdb,CDB,Renda fixa,renda-fixa,True,True
+cdb,CDB,Juros pós-fixados,juros-pos-fixados,True,True
+cdb,CDB,LCI e LCA,lci-e-lca,True,True
+cdi,CDI,Taxa Selic,taxa-selic,True,False
+cdi,CDI,CDB,cdb,True,True
+cdi,CDI,Mercado interbancário,mercado-interbancario,True,True
+cdi,CDI,Juros pós-fixados,juros-pos-fixados,True,True
+cdi,CDI,LCI e LCA,lci-e-lca,True,True
+ciclos-economicos,Ciclos econômicos,Recessão,recessao,True,True
+ciclos-economicos,Ciclos econômicos,Crescimento econômico,crescimento-economico,True,True
+ciclos-economicos,Ciclos econômicos,PIB,pib,True,False
+ciclos-economicos,Ciclos econômicos,Política monetária,politica-monetaria,True,False
+ciclos-economicos,Ciclos econômicos,Política fiscal,politica-fiscal,True,False
+comissao-de-valores-mobiliarios-cvm,Comissão de Valores Mobiliários (CVM),Sistema Financeiro Nacional,sistema-financeiro-nacional,True,True
+comissao-de-valores-mobiliarios-cvm,Comissão de Valores Mobiliários (CVM),Ações,acoes,True,False
+comissao-de-valores-mobiliarios-cvm,Comissão de Valores Mobiliários (CVM),Debêntures,debentures,True,False
+comissao-de-valores-mobiliarios-cvm,Comissão de Valores Mobiliários (CVM),ETFs,etfs,True,False
+comissao-de-valores-mobiliarios-cvm,Comissão de Valores Mobiliários (CVM),FIIs,fiis,True,False
+concorrencia-perfeita,Concorrência perfeita,Monopólio,monopolio,True,True
+concorrencia-perfeita,Concorrência perfeita,Oligopólio,oligopolio,True,True
+concorrencia-perfeita,Concorrência perfeita,Custo marginal,custo-marginal,True,True
+concorrencia-perfeita,Concorrência perfeita,Equilíbrio de mercado,equilibrio-de-mercado,True,True
+conselho-monetario-nacional,Conselho Monetário Nacional,Sistema Financeiro Nacional,sistema-financeiro-nacional,True,True
+conselho-monetario-nacional,Conselho Monetário Nacional,Banco Central do Brasil,banco-central-do-brasil,True,False
+conselho-monetario-nacional,Conselho Monetário Nacional,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,False
+consumo-das-familias,Consumo das famílias,PIB,pib,True,True
+consumo-das-familias,Consumo das famílias,Investimento (FBCF),investimento-fbcf,True,True
+consumo-das-familias,Consumo das famílias,Taxa Selic,taxa-selic,True,False
+consumo-das-familias,Consumo das famílias,Endividamento,endividamento,True,False
+copom,Copom,Taxa Selic,taxa-selic,True,False
+copom,Copom,Banco Central do Brasil,banco-central-do-brasil,True,True
+copom,Copom,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,True
+copom,Copom,Expectativas inflacionárias,expectativas-inflacionarias,True,True
+copom,Copom,Política monetária,politica-monetaria,True,True
+credito,Crédito,Juros,juros,True,False
+credito,Crédito,Spread bancário,spread-bancario,True,False
+credito,Crédito,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+credito,Crédito,Endividamento,endividamento,True,False
+credito,Crédito,Inadimplência,inadimplencia,True,True
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Endividamento,endividamento,True,False
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Juros compostos,juros-compostos,True,False
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Inadimplência,inadimplencia,True,False
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Cheque especial,cheque-especial,True,True
+credito-rotativo-do-cartao,Crédito rotativo do cartão,Renegociação de dívidas,renegociacao-de-dividas,True,False
+crescimento-economico,Crescimento econômico,PIB,pib,True,True
+crescimento-economico,Crescimento econômico,Produtividade,produtividade,True,True
+crescimento-economico,Crescimento econômico,Investimento (FBCF),investimento-fbcf,True,True
+crescimento-economico,Crescimento econômico,Ciclos econômicos,ciclos-economicos,True,True
+curva-de-juros,Curva de juros,Taxa Selic,taxa-selic,True,False
+curva-de-juros,Curva de juros,Expectativas inflacionárias,expectativas-inflacionarias,True,True
+curva-de-juros,Curva de juros,Juros prefixados,juros-prefixados,True,True
+curva-de-juros,Curva de juros,Marcação a mercado,marcacao-a-mercado,True,True
+curva-de-juros,Curva de juros,Tesouro Direto,tesouro-direto,True,True
+custo-de-oportunidade,Custo de oportunidade,Juros,juros,True,False
+custo-de-oportunidade,Custo de oportunidade,Custo marginal,custo-marginal,True,True
+custo-de-oportunidade,Custo de oportunidade,Juros reais,juros-reais,True,False
+custo-efetivo-total-cet,Custo Efetivo Total (CET),Juros,juros,True,False
+custo-efetivo-total-cet,Custo Efetivo Total (CET),Endividamento,endividamento,True,True
+custo-efetivo-total-cet,Custo Efetivo Total (CET),Spread bancário,spread-bancario,True,True
+custo-efetivo-total-cet,Custo Efetivo Total (CET),Juros compostos,juros-compostos,True,False
+custo-marginal,Custo marginal,Utilidade marginal,utilidade-marginal,True,True
+custo-marginal,Custo marginal,Concorrência perfeita,concorrencia-perfeita,True,True
+custo-marginal,Custo marginal,Custo de oportunidade,custo-de-oportunidade,True,True
+custo-marginal,Custo marginal,Oferta e demanda,oferta-e-demanda,True,False
+debentures,Debêntures,Renda fixa,renda-fixa,True,True
+debentures,Debêntures,Juros reais,juros-reais,True,False
+debentures,Debêntures,IPCA,ipca,True,False
+debentures,Debêntures,Risco e retorno,risco-e-retorno,True,False
+debentures,Debêntures,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,False
+deflacao,Deflação,Inflação,inflacao,True,False
+deflacao,Deflação,Desinflação,desinflacao,True,True
+deflacao,Deflação,Recessão,recessao,True,False
+deflacao,Deflação,Juros reais,juros-reais,True,False
+depositos,Depósitos,Bancos comerciais,bancos-comerciais,True,True
+depositos,Depósitos,CDB,cdb,True,False
+depositos,Depósitos,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,True
+depositos,Depósitos,Liquidez,liquidez,True,True
+depositos,Depósitos,Caderneta de poupança,caderneta-de-poupanca,True,True
+desemprego,Desemprego,Taxa de participação,taxa-de-participacao,True,True
+desemprego,Desemprego,PIB,pib,True,False
+desemprego,Desemprego,Recessão,recessao,True,True
+desemprego,Desemprego,Produtividade,produtividade,True,False
+desemprego,Desemprego,Inflação,inflacao,True,False
+desinflacao,Desinflação,Inflação,inflacao,True,False
+desinflacao,Desinflação,Deflação,deflacao,True,True
+desinflacao,Desinflação,Taxa Selic,taxa-selic,True,False
+desinflacao,Desinflação,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,False
+diversificacao,Diversificação,Risco e retorno,risco-e-retorno,True,True
+diversificacao,Diversificação,Alocação de ativos,alocacao-de-ativos,True,True
+diversificacao,Diversificação,Volatilidade,volatilidade,True,True
+diversificacao,Diversificação,ETFs,etfs,True,True
+diversificacao,Diversificação,BDRs,bdrs,True,True
+divida-publica,Dívida pública,Política fiscal,politica-fiscal,True,True
+divida-publica,Dívida pública,Resultado primário,resultado-primario,True,True
+divida-publica,Dívida pública,Tesouro Direto,tesouro-direto,True,True
+divida-publica,Dívida pública,Juros reais,juros-reais,True,False
+divida-publica,Dívida pública,PIB,pib,True,False
+dividendos,Dividendos,Ações,acoes,True,True
+dividendos,Dividendos,LPA,lpa,True,True
+dividendos,Dividendos,Valuation,valuation,True,False
+dividendos,Dividendos,FIIs,fiis,True,True
+dolar,Dólar,Taxa de câmbio,taxa-de-cambio,True,True
+dolar,Dólar,Reservas internacionais,reservas-internacionais,True,True
+dolar,Dólar,Política cambial,politica-cambial,True,True
+elasticidade,Elasticidade,Oferta e demanda,oferta-e-demanda,True,True
+elasticidade,Elasticidade,Bens substitutos e complementares,bens-substitutos-e-complementares,True,True
+elasticidade,Elasticidade,Equilíbrio de mercado,equilibrio-de-mercado,True,True
+elasticidade,Elasticidade,Utilidade marginal,utilidade-marginal,True,True
 endividamento,Endividamento,Juros,juros,True,True
 endividamento,Endividamento,Orçamento pessoal,orcamento-pessoal,True,True
 endividamento,Endividamento,Reserva de emergência,reserva-de-emergencia,True,True
+endividamento,Endividamento,Superendividamento,superendividamento,True,True
+endividamento,Endividamento,Comprometimento de renda,comprometimento-de-renda,True,True
+endividamento,Endividamento,Inadimplência,inadimplencia,True,True
+endividamento,Endividamento,Renegociação de dívidas,renegociacao-de-dividas,True,True
+endividamento,Endividamento,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,True
+equilibrio-de-mercado,Equilíbrio de mercado,Oferta e demanda,oferta-e-demanda,True,True
+equilibrio-de-mercado,Equilíbrio de mercado,Elasticidade,elasticidade,True,True
+equilibrio-de-mercado,Equilíbrio de mercado,Concorrência perfeita,concorrencia-perfeita,True,True
+estagflacao,Estagflação,Inflação de custos,inflacao-de-custos,True,True
+estagflacao,Estagflação,Recessão,recessao,True,True
+estagflacao,Estagflação,Inflação,inflacao,True,False
+estagflacao,Estagflação,Política monetária,politica-monetaria,True,False
+etfs,ETFs,Diversificação,diversificacao,True,True
+etfs,ETFs,Ibovespa,ibovespa,True,True
+etfs,ETFs,Ações,acoes,True,False
+etfs,ETFs,BDRs,bdrs,True,True
+etfs,ETFs,Alocação de ativos,alocacao-de-ativos,True,True
+expectativas-inflacionarias,Expectativas inflacionárias,Inflação,inflacao,True,False
+expectativas-inflacionarias,Expectativas inflacionárias,Copom,copom,True,True
+expectativas-inflacionarias,Expectativas inflacionárias,Taxa Selic,taxa-selic,True,False
+expectativas-inflacionarias,Expectativas inflacionárias,Curva de juros,curva-de-juros,True,True
+expectativas-inflacionarias,Expectativas inflacionárias,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,True
+externalidades,Externalidades,Oferta e demanda,oferta-e-demanda,True,False
+externalidades,Externalidades,Política fiscal,politica-fiscal,True,False
+externalidades,Externalidades,Custo marginal,custo-marginal,True,False
+fiis,FIIs,Dividendos,dividendos,True,True
+fiis,FIIs,Renda variável,renda-variavel,True,True
+fiis,FIIs,IGP-M,igp-m,True,False
+fiis,FIIs,Taxa Selic,taxa-selic,True,False
+fiis,FIIs,Marcação a mercado,marcacao-a-mercado,True,False
+fluxo-de-caixa,Fluxo de caixa,Valuation,valuation,True,True
+fluxo-de-caixa,Fluxo de caixa,Valor intrínseco,valor-intrinseco,True,True
+fluxo-de-caixa,Fluxo de caixa,ROIC,roic,True,True
+fluxo-de-caixa,Fluxo de caixa,Orçamento pessoal,orcamento-pessoal,True,False
+fundo-garantidor-de-creditos-fgc,Fundo Garantidor de Créditos (FGC),CDB,cdb,True,True
+fundo-garantidor-de-creditos-fgc,Fundo Garantidor de Créditos (FGC),LCI e LCA,lci-e-lca,True,True
+fundo-garantidor-de-creditos-fgc,Fundo Garantidor de Créditos (FGC),Depósitos,depositos,True,True
+fundo-garantidor-de-creditos-fgc,Fundo Garantidor de Créditos (FGC),Bancos comerciais,bancos-comerciais,True,True
+fundo-garantidor-de-creditos-fgc,Fundo Garantidor de Créditos (FGC),Risco e retorno,risco-e-retorno,True,False
+gastos-publicos,Gastos públicos,Política fiscal,politica-fiscal,True,True
+gastos-publicos,Gastos públicos,Resultado primário,resultado-primario,True,True
+gastos-publicos,Gastos públicos,Arrecadação tributária,arrecadacao-tributaria,True,True
+gastos-publicos,Gastos públicos,Dívida pública,divida-publica,True,False
+hiperinflacao,Hiperinflação,Inflação,inflacao,True,False
+hiperinflacao,Hiperinflação,Inflação monetária,inflacao-monetaria,True,True
+hiperinflacao,Hiperinflação,Inflação inercial,inflacao-inercial,True,True
+hiperinflacao,Hiperinflação,Deflação,deflacao,True,False
+ibovespa,Ibovespa,Ações,acoes,True,True
+ibovespa,Ibovespa,ETFs,etfs,True,True
+ibovespa,Ibovespa,Diversificação,diversificacao,True,False
+igp-m,IGP-M,IPCA,ipca,True,True
+igp-m,IGP-M,Inflação,inflacao,True,False
+igp-m,IGP-M,Taxa de câmbio,taxa-de-cambio,True,False
+inadimplencia,Inadimplência,Endividamento,endividamento,True,True
+inadimplencia,Inadimplência,Spread bancário,spread-bancario,True,True
+inadimplencia,Inadimplência,Crédito,credito,True,True
+inadimplencia,Inadimplência,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+inadimplencia,Inadimplência,Juros de mora e multa,juros-de-mora-e-multa,True,True
+inadimplencia,Inadimplência,Renegociação de dívidas,renegociacao-de-dividas,True,True
+inadimplencia,Inadimplência,Cadastro Positivo,cadastro-positivo,True,True
+inadimplencia,Inadimplência,Registrato,registrato,True,True
 inflacao,Inflação,Juros,juros,True,True
 inflacao,Inflação,Taxa Selic,taxa-selic,True,True
+inflacao-acumulada,Inflação acumulada,Inflação,inflacao,True,False
+inflacao-acumulada,Inflação acumulada,IPCA,ipca,True,False
+inflacao-acumulada,Inflação acumulada,Poder de compra,poder-de-compra,True,True
+inflacao-acumulada,Inflação acumulada,Juros compostos,juros-compostos,True,True
+inflacao-de-custos,Inflação de custos,Inflação,inflacao,True,False
+inflacao-de-custos,Inflação de custos,Oferta e demanda,oferta-e-demanda,True,True
+inflacao-de-custos,Inflação de custos,Taxa de câmbio,taxa-de-cambio,True,False
+inflacao-de-custos,Inflação de custos,Estagflação,estagflacao,True,True
+inflacao-de-custos,Inflação de custos,Expectativas inflacionárias,expectativas-inflacionarias,True,False
+inflacao-de-demanda,Inflação de demanda,Inflação,inflacao,True,False
+inflacao-de-demanda,Inflação de demanda,Oferta e demanda,oferta-e-demanda,True,True
+inflacao-de-demanda,Inflação de demanda,Taxa Selic,taxa-selic,True,False
+inflacao-de-demanda,Inflação de demanda,Política monetária,politica-monetaria,True,False
+inflacao-de-demanda,Inflação de demanda,PIB,pib,True,False
+inflacao-inercial,Inflação inercial,Inflação,inflacao,True,False
+inflacao-inercial,Inflação inercial,Expectativas inflacionárias,expectativas-inflacionarias,True,False
+inflacao-inercial,Inflação inercial,IGP-M,igp-m,True,False
+inflacao-inercial,Inflação inercial,Hiperinflação,hiperinflacao,True,True
+inflacao-monetaria,Inflação monetária,Inflação,inflacao,True,False
+inflacao-monetaria,Inflação monetária,Hiperinflação,hiperinflacao,True,True
+inflacao-monetaria,Inflação monetária,Política monetária,politica-monetaria,True,False
+inflacao-monetaria,Inflação monetária,Liquidez,liquidez,True,False
+inpc,INPC,IPCA,ipca,True,True
+inpc,INPC,Inflação,inflacao,True,False
+inpc,INPC,Poder de compra,poder-de-compra,True,True
+investimento-fbcf,Investimento (FBCF),PIB,pib,True,True
+investimento-fbcf,Investimento (FBCF),Consumo das famílias,consumo-das-familias,True,True
+investimento-fbcf,Investimento (FBCF),Produtividade,produtividade,True,True
+investimento-fbcf,Investimento (FBCF),Taxa Selic,taxa-selic,True,False
+investimento-fbcf,Investimento (FBCF),Crescimento econômico,crescimento-economico,True,True
+investimentos,Investimentos,Renda fixa,renda-fixa,True,False
+investimentos,Investimentos,Renda variável,renda-variavel,True,False
+investimentos,Investimentos,Risco e retorno,risco-e-retorno,True,False
+investimentos,Investimentos,Diversificação,diversificacao,True,False
+investimentos,Investimentos,Reserva de emergência,reserva-de-emergencia,True,False
+ipca,IPCA,Inflação,inflacao,True,False
+ipca,IPCA,INPC,inpc,True,True
+ipca,IPCA,IGP-M,igp-m,True,True
+ipca,IPCA,Núcleos de inflação,nucleos-de-inflacao,True,True
+ipca,IPCA,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,True
+ipca,IPCA,Tesouro Direto,tesouro-direto,True,True
+juros,Juros,Endividamento,endividamento,True,True
+juros,Juros,Inflação,inflacao,True,True
+juros-compostos,Juros compostos,Juros,juros,True,False
+juros-compostos,Juros compostos,Juros simples,juros-simples,True,True
+juros-compostos,Juros compostos,Juros reais,juros-reais,True,False
+juros-compostos,Juros compostos,Inflação acumulada,inflacao-acumulada,True,True
+juros-compostos,Juros compostos,Endividamento,endividamento,True,False
+juros-nominais,Juros nominais,Juros reais,juros-reais,True,True
+juros-nominais,Juros nominais,Inflação,inflacao,True,False
+juros-nominais,Juros nominais,Juros,juros,True,False
+juros-pos-fixados,Juros pós-fixados,Juros prefixados,juros-prefixados,True,True
+juros-pos-fixados,Juros pós-fixados,CDI,cdi,True,True
+juros-pos-fixados,Juros pós-fixados,Taxa Selic,taxa-selic,True,False
+juros-pos-fixados,Juros pós-fixados,IPCA,ipca,True,False
+juros-pos-fixados,Juros pós-fixados,CDB,cdb,True,True
+juros-prefixados,Juros prefixados,Juros pós-fixados,juros-pos-fixados,True,True
+juros-prefixados,Juros prefixados,Tesouro Direto,tesouro-direto,True,True
+juros-prefixados,Juros prefixados,Marcação a mercado,marcacao-a-mercado,True,True
+juros-prefixados,Juros prefixados,Curva de juros,curva-de-juros,True,True
+juros-reais,Juros reais,Juros nominais,juros-nominais,True,True
+juros-reais,Juros reais,Inflação,inflacao,True,False
+juros-reais,Juros reais,Taxa Selic,taxa-selic,True,False
+juros-reais,Juros reais,Tesouro Direto,tesouro-direto,True,True
+juros-reais,Juros reais,Poder de compra,poder-de-compra,True,True
+juros-remuneratorios,Juros remuneratórios,Juros,juros,True,False
+juros-remuneratorios,Juros remuneratórios,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+juros-remuneratorios,Juros remuneratórios,Inadimplência,inadimplencia,True,False
+juros-remuneratorios,Juros remuneratórios,Juros de mora e multa,juros-de-mora-e-multa,True,True
+juros-simples,Juros simples,Juros compostos,juros-compostos,True,True
+juros-simples,Juros simples,Juros,juros,True,False
+lci-e-lca,LCI e LCA,CDB,cdb,True,True
+lci-e-lca,LCI e LCA,CDI,cdi,True,True
+lci-e-lca,LCI e LCA,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,True
+lci-e-lca,LCI e LCA,Renda fixa,renda-fixa,True,True
+liquidez,Liquidez,Reserva de emergência,reserva-de-emergencia,True,True
+liquidez,Liquidez,Depósitos,depositos,True,True
+liquidez,Liquidez,Mercado interbancário,mercado-interbancario,True,True
+liquidez,Liquidez,Risco e retorno,risco-e-retorno,True,False
+lpa,LPA,P/L,p-l,True,True
+lpa,LPA,VPA,vpa,True,True
+lpa,LPA,Dividendos,dividendos,True,True
+lpa,LPA,Ações,acoes,True,False
+marcacao-a-mercado,Marcação a mercado,Tesouro Direto,tesouro-direto,True,True
+marcacao-a-mercado,Marcação a mercado,Curva de juros,curva-de-juros,True,True
+marcacao-a-mercado,Marcação a mercado,Juros prefixados,juros-prefixados,True,True
+marcacao-a-mercado,Marcação a mercado,Volatilidade,volatilidade,True,True
+mercado-interbancario,Mercado interbancário,CDI,cdi,True,True
+mercado-interbancario,Mercado interbancário,Selic meta e Selic efetiva,selic-meta-e-selic-efetiva,True,True
+mercado-interbancario,Mercado interbancário,Liquidez,liquidez,True,True
+mercado-interbancario,Mercado interbancário,Bancos comerciais,bancos-comerciais,True,False
+monopolio,Monopólio,Oligopólio,oligopolio,True,True
+monopolio,Monopólio,Concorrência perfeita,concorrencia-perfeita,True,True
+monopolio,Monopólio,Elasticidade,elasticidade,True,False
+nucleos-de-inflacao,Núcleos de inflação,IPCA,ipca,True,True
+nucleos-de-inflacao,Núcleos de inflação,Inflação,inflacao,True,False
+nucleos-de-inflacao,Núcleos de inflação,Expectativas inflacionárias,expectativas-inflacionarias,True,False
+nucleos-de-inflacao,Núcleos de inflação,Copom,copom,True,False
+oferta-e-demanda,Oferta e demanda,Equilíbrio de mercado,equilibrio-de-mercado,True,True
+oferta-e-demanda,Oferta e demanda,Elasticidade,elasticidade,True,True
+oferta-e-demanda,Oferta e demanda,Bens substitutos e complementares,bens-substitutos-e-complementares,True,True
+oferta-e-demanda,Oferta e demanda,Inflação de demanda,inflacao-de-demanda,True,True
+oferta-e-demanda,Oferta e demanda,Inflação de custos,inflacao-de-custos,True,True
+oligopolio,Oligopólio,Monopólio,monopolio,True,True
+oligopolio,Oligopólio,Concorrência perfeita,concorrencia-perfeita,True,True
+oligopolio,Oligopólio,Spread bancário,spread-bancario,True,False
+orcamento-pessoal,Orçamento pessoal,Reserva de emergência,reserva-de-emergencia,True,True
+orcamento-pessoal,Orçamento pessoal,Endividamento,endividamento,True,True
+orcamento-pessoal,Orçamento pessoal,Despesas fixas e variáveis,despesas-fixas-e-variaveis,True,True
+orcamento-pessoal,Orçamento pessoal,Comprometimento de renda,comprometimento-de-renda,True,True
+orcamento-pessoal,Orçamento pessoal,Educação financeira,educacao-financeira,True,True
+orcamento-pessoal,Orçamento pessoal,Inflação,inflacao,True,False
+p-l,P/L,LPA,lpa,True,True
+p-l,P/L,Valuation,valuation,True,True
+p-l,P/L,P/VP,p-vp,True,True
+p-l,P/L,ROE,roe,True,False
+p-vp,P/VP,VPA,vpa,True,True
+p-vp,P/VP,P/L,p-l,True,True
+p-vp,P/VP,ROE,roe,True,True
+p-vp,P/VP,Valuation,valuation,True,True
+pib,PIB,PIB nominal e real,pib-nominal-e-real,True,True
+pib,PIB,PIB per capita,pib-per-capita,True,True
+pib,PIB,Crescimento econômico,crescimento-economico,True,True
+pib,PIB,Recessão,recessao,True,True
+pib,PIB,Consumo das famílias,consumo-das-familias,True,True
+pib,PIB,Investimento (FBCF),investimento-fbcf,True,True
+pib-nominal-e-real,PIB nominal e real,PIB,pib,True,True
+pib-nominal-e-real,PIB nominal e real,Inflação,inflacao,True,False
+pib-per-capita,PIB per capita,PIB,pib,True,True
+pib-per-capita,PIB per capita,Produtividade,produtividade,True,True
+pib-per-capita,PIB per capita,Crescimento econômico,crescimento-economico,True,False
+poder-de-compra,Poder de compra,Inflação,inflacao,True,False
+poder-de-compra,Poder de compra,Juros reais,juros-reais,True,True
+poder-de-compra,Poder de compra,Inflação acumulada,inflacao-acumulada,True,True
+poder-de-compra,Poder de compra,INPC,inpc,True,True
+politica-cambial,Política cambial,Taxa de câmbio,taxa-de-cambio,True,True
+politica-cambial,Política cambial,Reservas internacionais,reservas-internacionais,True,True
+politica-cambial,Política cambial,Balanço de pagamentos,balanco-de-pagamentos,True,True
+politica-cambial,Política cambial,Dólar,dolar,True,True
+politica-fiscal,Política fiscal,Resultado primário,resultado-primario,True,True
+politica-fiscal,Política fiscal,Dívida pública,divida-publica,True,True
+politica-fiscal,Política fiscal,Gastos públicos,gastos-publicos,True,True
+politica-fiscal,Política fiscal,Arrecadação tributária,arrecadacao-tributaria,True,True
+politica-fiscal,Política fiscal,Política monetária,politica-monetaria,True,True
+politica-monetaria,Política monetária,Taxa Selic,taxa-selic,True,False
+politica-monetaria,Política monetária,Copom,copom,True,True
+politica-monetaria,Política monetária,Política fiscal,politica-fiscal,True,True
+politica-monetaria,Política monetária,Regime de metas para a inflação,regime-de-metas-para-a-inflacao,True,True
+politica-monetaria,Política monetária,Banco Central do Brasil,banco-central-do-brasil,True,True
+precos-monitorados,Preços monitorados,IPCA,ipca,True,False
+precos-monitorados,Preços monitorados,Núcleos de inflação,nucleos-de-inflacao,True,False
+precos-monitorados,Preços monitorados,Inflação de custos,inflacao-de-custos,True,False
+produtividade,Produtividade,Crescimento econômico,crescimento-economico,True,True
+produtividade,Produtividade,PIB per capita,pib-per-capita,True,True
+produtividade,Produtividade,Investimento (FBCF),investimento-fbcf,True,True
+produtividade,Produtividade,Custo marginal,custo-marginal,True,False
+recessao,Recessão,PIB,pib,True,True
+recessao,Recessão,Ciclos econômicos,ciclos-economicos,True,True
+recessao,Recessão,Estagflação,estagflacao,True,True
+recessao,Recessão,Desemprego,desemprego,True,True
+regime-de-metas-para-a-inflacao,Regime de metas para a inflação,Copom,copom,True,True
+regime-de-metas-para-a-inflacao,Regime de metas para a inflação,Taxa Selic,taxa-selic,True,False
+regime-de-metas-para-a-inflacao,Regime de metas para a inflação,IPCA,ipca,True,True
+regime-de-metas-para-a-inflacao,Regime de metas para a inflação,Expectativas inflacionárias,expectativas-inflacionarias,True,True
+regime-de-metas-para-a-inflacao,Regime de metas para a inflação,Política monetária,politica-monetaria,True,True
+renda-fixa,Renda fixa,Tesouro Direto,tesouro-direto,True,False
+renda-fixa,Renda fixa,CDB,cdb,True,True
+renda-fixa,Renda fixa,LCI e LCA,lci-e-lca,True,True
+renda-fixa,Renda fixa,Debêntures,debentures,True,True
+renda-fixa,Renda fixa,Juros prefixados,juros-prefixados,True,False
+renda-fixa,Renda fixa,Juros pós-fixados,juros-pos-fixados,True,False
+renda-variavel,Renda variável,Ações,acoes,True,True
+renda-variavel,Renda variável,FIIs,fiis,True,True
+renda-variavel,Renda variável,ETFs,etfs,True,False
+renda-variavel,Renda variável,Volatilidade,volatilidade,True,False
+renda-variavel,Renda variável,Risco e retorno,risco-e-retorno,True,True
+reserva-de-emergencia,Reserva de emergência,Orçamento pessoal,orcamento-pessoal,True,True
+reserva-de-emergencia,Reserva de emergência,Endividamento,endividamento,True,True
+reserva-de-emergencia,Reserva de emergência,Juros,juros,True,False
+reserva-de-emergencia,Reserva de emergência,Liquidez,liquidez,True,True
+reserva-de-emergencia,Reserva de emergência,Caderneta de poupança,caderneta-de-poupanca,True,True
+reserva-de-emergencia,Reserva de emergência,Despesas fixas e variáveis,despesas-fixas-e-variaveis,True,True
+reservas-internacionais,Reservas internacionais,Balanço de pagamentos,balanco-de-pagamentos,True,True
+reservas-internacionais,Reservas internacionais,Taxa de câmbio,taxa-de-cambio,True,True
+reservas-internacionais,Reservas internacionais,Política cambial,politica-cambial,True,True
+reservas-internacionais,Reservas internacionais,Dólar,dolar,True,True
+resultado-primario,Resultado primário,Política fiscal,politica-fiscal,True,True
+resultado-primario,Resultado primário,Dívida pública,divida-publica,True,True
+resultado-primario,Resultado primário,Gastos públicos,gastos-publicos,True,True
+resultado-primario,Resultado primário,Arrecadação tributária,arrecadacao-tributaria,True,True
+risco-e-retorno,Risco e retorno,Volatilidade,volatilidade,True,True
+risco-e-retorno,Risco e retorno,Diversificação,diversificacao,True,True
+risco-e-retorno,Risco e retorno,Alocação de ativos,alocacao-de-ativos,True,True
+risco-e-retorno,Risco e retorno,Renda fixa,renda-fixa,True,False
+risco-e-retorno,Risco e retorno,Renda variável,renda-variavel,True,True
+roe,ROE,ROIC,roic,True,True
+roe,ROE,P/VP,p-vp,True,True
+roe,ROE,LPA,lpa,True,False
+roe,ROE,Valuation,valuation,True,True
+roic,ROIC,ROE,roe,True,True
+roic,ROIC,Valuation,valuation,True,True
+roic,ROIC,Fluxo de caixa,fluxo-de-caixa,True,True
+selic-meta-e-selic-efetiva,Selic meta e Selic efetiva,Taxa Selic,taxa-selic,True,False
+selic-meta-e-selic-efetiva,Selic meta e Selic efetiva,CDI,cdi,True,False
+selic-meta-e-selic-efetiva,Selic meta e Selic efetiva,Mercado interbancário,mercado-interbancario,True,True
+selic-meta-e-selic-efetiva,Selic meta e Selic efetiva,Copom,copom,True,False
+sistema-financeiro-nacional,Sistema Financeiro Nacional,Banco Central do Brasil,banco-central-do-brasil,True,True
+sistema-financeiro-nacional,Sistema Financeiro Nacional,Conselho Monetário Nacional,conselho-monetario-nacional,True,True
+sistema-financeiro-nacional,Sistema Financeiro Nacional,Bancos comerciais,bancos-comerciais,True,True
+sistema-financeiro-nacional,Sistema Financeiro Nacional,Comissão de Valores Mobiliários (CVM),comissao-de-valores-mobiliarios-cvm,True,True
+sistema-financeiro-nacional,Sistema Financeiro Nacional,Crédito,credito,True,False
+spread-bancario,Spread bancário,Juros,juros,True,False
+spread-bancario,Spread bancário,Taxa Selic,taxa-selic,True,False
+spread-bancario,Spread bancário,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,True
+spread-bancario,Spread bancário,Inadimplência,inadimplencia,True,True
+spread-bancario,Spread bancário,Bancos comerciais,bancos-comerciais,True,True
+taxa-de-cambio,Taxa de câmbio,Dólar,dolar,True,True
+taxa-de-cambio,Taxa de câmbio,Política cambial,politica-cambial,True,True
+taxa-de-cambio,Taxa de câmbio,Balança comercial,balanca-comercial,True,True
+taxa-de-cambio,Taxa de câmbio,Inflação,inflacao,True,False
+taxa-de-cambio,Taxa de câmbio,Reservas internacionais,reservas-internacionais,True,True
+taxa-de-cambio,Taxa de câmbio,Taxa Selic,taxa-selic,True,False
+taxa-de-participacao,Taxa de participação,Desemprego,desemprego,True,True
+taxa-de-participacao,Taxa de participação,Produtividade,produtividade,True,False
 taxa-selic,Taxa Selic,Juros,juros,True,False
 taxa-selic,Taxa Selic,Inflação,inflacao,True,True
+tesouro-direto,Tesouro Direto,Taxa Selic,taxa-selic,True,False
+tesouro-direto,Tesouro Direto,Juros prefixados,juros-prefixados,True,True
+tesouro-direto,Tesouro Direto,Juros reais,juros-reais,True,True
+tesouro-direto,Tesouro Direto,IPCA,ipca,True,True
+tesouro-direto,Tesouro Direto,Marcação a mercado,marcacao-a-mercado,True,True
+tesouro-direto,Tesouro Direto,Dívida pública,divida-publica,True,True
+tesouro-direto,Tesouro Direto,Curva de juros,curva-de-juros,True,True
+utilidade-marginal,Utilidade marginal,Custo marginal,custo-marginal,True,True
+utilidade-marginal,Utilidade marginal,Elasticidade,elasticidade,True,True
+utilidade-marginal,Utilidade marginal,Oferta e demanda,oferta-e-demanda,True,False
+valor-intrinseco,Valor intrínseco,Valuation,valuation,True,True
+valor-intrinseco,Valor intrínseco,Fluxo de caixa,fluxo-de-caixa,True,True
+valor-intrinseco,Valor intrínseco,P/L,p-l,True,False
+valuation,Valuation,Valor intrínseco,valor-intrinseco,True,True
+valuation,Valuation,Fluxo de caixa,fluxo-de-caixa,True,True
+valuation,Valuation,P/L,p-l,True,True
+valuation,Valuation,P/VP,p-vp,True,True
+valuation,Valuation,ROE,roe,True,True
+valuation,Valuation,ROIC,roic,True,True
+valuation,Valuation,Juros compostos,juros-compostos,True,False
+volatilidade,Volatilidade,Risco e retorno,risco-e-retorno,True,True
+volatilidade,Volatilidade,Diversificação,diversificacao,True,True
+volatilidade,Volatilidade,Marcação a mercado,marcacao-a-mercado,True,True
+volatilidade,Volatilidade,Ações,acoes,True,True
+vpa,VPA,P/VP,p-vp,True,True
+vpa,VPA,LPA,lpa,True,True
+vpa,VPA,ROE,roe,True,False
+superendividamento,Superendividamento,Endividamento,endividamento,True,True
+superendividamento,Superendividamento,Inadimplência,inadimplencia,True,False
+superendividamento,Superendividamento,Renegociação de dívidas,renegociacao-de-dividas,True,True
+superendividamento,Superendividamento,Comprometimento de renda,comprometimento-de-renda,True,True
+superendividamento,Superendividamento,Orçamento pessoal,orcamento-pessoal,True,False
+superendividamento,Superendividamento,Crédito rotativo do cartão,credito-rotativo-do-cartao,True,False
+renegociacao-de-dividas,Renegociação de dívidas,Inadimplência,inadimplencia,True,True
+renegociacao-de-dividas,Renegociação de dívidas,Superendividamento,superendividamento,True,True
+renegociacao-de-dividas,Renegociação de dívidas,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+renegociacao-de-dividas,Renegociação de dívidas,Orçamento pessoal,orcamento-pessoal,True,False
+renegociacao-de-dividas,Renegociação de dívidas,Endividamento,endividamento,True,True
+renegociacao-de-dividas,Renegociação de dívidas,Juros de mora e multa,juros-de-mora-e-multa,True,True
+cheque-especial,Cheque especial,Crédito rotativo do cartão,credito-rotativo-do-cartao,True,True
+cheque-especial,Cheque especial,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+cheque-especial,Cheque especial,Juros compostos,juros-compostos,True,False
+cheque-especial,Cheque especial,Reserva de emergência,reserva-de-emergencia,True,False
+cheque-especial,Cheque especial,Endividamento,endividamento,True,False
+juros-de-mora-e-multa,Juros de mora e multa,Inadimplência,inadimplencia,True,True
+juros-de-mora-e-multa,Juros de mora e multa,Juros remuneratórios,juros-remuneratorios,True,True
+juros-de-mora-e-multa,Juros de mora e multa,Juros compostos,juros-compostos,True,False
+juros-de-mora-e-multa,Juros de mora e multa,Renegociação de dívidas,renegociacao-de-dividas,True,True
+juros-de-mora-e-multa,Juros de mora e multa,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+registrato,Registrato,Renegociação de dívidas,renegociacao-de-dividas,True,False
+registrato,Registrato,Endividamento,endividamento,True,False
+registrato,Registrato,Cadastro Positivo,cadastro-positivo,True,True
+registrato,Registrato,Banco Central do Brasil,banco-central-do-brasil,True,False
+registrato,Registrato,Inadimplência,inadimplencia,True,True
+cadastro-positivo,Cadastro Positivo,Inadimplência,inadimplencia,True,True
+cadastro-positivo,Cadastro Positivo,Spread bancário,spread-bancario,True,False
+cadastro-positivo,Cadastro Positivo,Crédito,credito,True,False
+cadastro-positivo,Cadastro Positivo,Registrato,registrato,True,True
+emprestimo-consignado,Empréstimo consignado,Crédito,credito,True,False
+emprestimo-consignado,Empréstimo consignado,Comprometimento de renda,comprometimento-de-renda,True,True
+emprestimo-consignado,Empréstimo consignado,Custo Efetivo Total (CET),custo-efetivo-total-cet,True,False
+emprestimo-consignado,Empréstimo consignado,Renegociação de dívidas,renegociacao-de-dividas,True,False
+emprestimo-consignado,Empréstimo consignado,Spread bancário,spread-bancario,True,False
+comprometimento-de-renda,Comprometimento de renda,Endividamento,endividamento,True,True
+comprometimento-de-renda,Comprometimento de renda,Orçamento pessoal,orcamento-pessoal,True,True
+comprometimento-de-renda,Comprometimento de renda,Superendividamento,superendividamento,True,True
+comprometimento-de-renda,Comprometimento de renda,Empréstimo consignado,emprestimo-consignado,True,True
+comprometimento-de-renda,Comprometimento de renda,Inadimplência,inadimplencia,True,False
+despesas-fixas-e-variaveis,Despesas fixas e variáveis,Orçamento pessoal,orcamento-pessoal,True,True
+despesas-fixas-e-variaveis,Despesas fixas e variáveis,Comprometimento de renda,comprometimento-de-renda,True,False
+despesas-fixas-e-variaveis,Despesas fixas e variáveis,Reserva de emergência,reserva-de-emergencia,True,True
+despesas-fixas-e-variaveis,Despesas fixas e variáveis,Inflação,inflacao,True,False
+caderneta-de-poupanca,Caderneta de poupança,Depósitos,depositos,True,True
+caderneta-de-poupanca,Caderneta de poupança,Reserva de emergência,reserva-de-emergencia,True,True
+caderneta-de-poupanca,Caderneta de poupança,Taxa Selic,taxa-selic,True,False
+caderneta-de-poupanca,Caderneta de poupança,Juros reais,juros-reais,True,False
+caderneta-de-poupanca,Caderneta de poupança,Fundo Garantidor de Créditos (FGC),fundo-garantidor-de-creditos-fgc,True,False
+caderneta-de-poupanca,Caderneta de poupança,Tesouro Direto,tesouro-direto,True,False
+educacao-financeira,Educação financeira,Orçamento pessoal,orcamento-pessoal,True,True
+educacao-financeira,Educação financeira,Reserva de emergência,reserva-de-emergencia,True,False
+educacao-financeira,Educação financeira,Endividamento,endividamento,True,False
+educacao-financeira,Educação financeira,Juros compostos,juros-compostos,True,False
+educacao-financeira,Educação financeira,Inflação,inflacao,True,False
+educacao-financeira,Educação financeira,Diversificação,diversificacao,True,False

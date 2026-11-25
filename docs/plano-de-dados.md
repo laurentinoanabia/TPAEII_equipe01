@@ -1,7 +1,7 @@
 # Plano de dados (Entrega 4)
 
 **TPAE II – PSAE00320 · Equipe 01** · Ana Beatriz Laurentino, Arthur Almeida e Gabriel Pinheiro · Orientador: Alessio
-Demandante: CORECON-PB · Última atualização: 05/11/2026 (formulário publicado; ver seções 2, 4.2, 5 e 7)
+Demandante: CORECON-PB · Última atualização: 25/11/2026 (glossário: F2 e seção 4.1); 05/11/2026 (formulário publicado; seções 2, 4.2, 5 e 7)
 
 > Este plano cobre os **dois produtos** do projeto: (1) o glossário da economia (site) e (2) a pesquisa com estudantes de graduação sobre educação financeira. Itens marcados **[a confirmar]** dependem de decisão da equipe, do professor ou do CORECON-PB e não foram preenchidos por suposição.
 
@@ -21,7 +21,7 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 | # | Base | Instituição / link | Cobertura | Formato | Acesso | Licença | Data de acesso | Uso no projeto |
 |---|---|---|---|---|---|---|---|---|
 | F1 | Questionário próprio | Equipe 01 · Google Forms, formulário publicado (link em [`questionario.md`](questionario.md)) | Graduandos; o formulário aceita Ciências Econômicas, Administração, Ciências Contábeis e Outro (população definida em 27/10: Ciências Econômicas **[a confirmar]**) · coleta de 01/11 a 20/11/2026 | CSV exportado do Forms (texto das opções; o tratamento traduz para códigos) | Coleta própria, anônima e voluntária | Dados da equipe; divulgação **somente agregada** | 05/11/2026 (formulário lido e conferido; exportação de respostas ainda não tratada) | Base da pesquisa |
-| F2 | Verbetes do glossário | Elaboração da equipe · `data/glossario.json` | Termos escolhidos a partir da lista de demandas do CORECON-PB **[a confirmar a lista]** | JSON | Repositório | Autoria da equipe | 27/10/2026 | Conteúdo do site |
+| F2 | Verbetes do glossário | Elaboração da equipe · `data/glossario.json` | 121 verbetes (25/11/2026): núcleo de finanças pessoais ligado ao questionário (orçamento, dívidas, reserva) e temas de juros, inflação, Selic, macro, micro, sistema financeiro e investimentos. A lista de demandas do CORECON-PB (F3) continua **[a registrar]** | JSON | Repositório | Autoria da equipe, com apoio de IA; cada verbete cita sua fonte | 25/11/2026 | Conteúdo do site |
 | F3 | Lista de demandas do CORECON-PB | CORECON-PB (documento recebido pela equipe) | **[a registrar]** | **[a registrar]** | Documento institucional | **[a verificar]** se pode ser versionado; por padrão **não** vai ao repositório | **[a registrar]** | Origem dos termos do glossário |
 | F4 | Caderno de Cidadania Financeira | Banco Central do Brasil · <https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf> | Nacional · conceitos de educação e cidadania financeira | PDF | Público (web) | A verificar (documento ainda não aberto) | 27/10/2026 (link localizado, não aberto) | Conferência de conceitos dos verbetes |
 | F5 | Estratégia Nacional de Educação Financeira (ENEF) | Banco Central · <https://www.bcb.gov.br/pre/pef/PORT/enef.asp?frame=1> | Nacional | Página web | Público (web) | Sem aviso de licença na página; citar a fonte, não versionar | 27/10/2026 (página aberta) | Contexto institucional. A página descreve a ENEF (criada por decreto, ações gratuitas e de interesse público) e **não menciona reserva de emergência** |
@@ -51,7 +51,14 @@ Status geral (27/10/2026): as páginas de F5, F6 e F7 foram abertas e **nenhuma 
 | `exemplo` | Exemplo do cotidiano | Texto | — | Equipe |
 | `importa` | Por que o conceito é relevante | Texto | — | Equipe |
 | `relacionados` | Lista de termos relacionados | Lista de texto | — | Equipe |
-| `fonte` | Fonte usada para conferir o verbete (opcional) | Texto | — | Equipe |
+| `fonte` | Fonte usada para conferir o verbete (todos os verbetes têm desde 25/11/2026) | Texto | — | Equipe |
+| `subtema`, `nivel` | Subcategoria e nível (Básico, Intermediário, Avançado), usados nos filtros e trilhas | Texto (categórica) | — | Equipe |
+| `sinonimos` | Outros nomes que levam ao verbete na busca | Lista de texto | — | Equipe |
+| `referencias` | Fontes citadas (título, órgão, link quando houver) | Lista de objetos | — | Equipe |
+| `formulas` | Fórmulas usadas, com legenda | Lista de objetos | — | Equipe |
+| `aprofundamento` | Textos dos 7 níveis (simples, técnica, prática, impactos, exemplos, relações, mercado); trechos marcados como [fato], [interpretação] ou [exemplo] | Objeto | — | Equipe |
+| `simulador` | Simulador do site ligado ao verbete | Texto | — | Equipe |
+| `revisado`, `revisado_em` | Marca de revisão pela equipe (ainda não usada: todos aparecem como "Em revisão") | Lógico / data | — | Equipe |
 
 ### 4.2 Questionário (variáveis essenciais)
 

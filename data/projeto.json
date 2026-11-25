@@ -1,0 +1,43 @@
+{
+  "_leia_me": "Dados institucionais do site. Campos vazios ('') não aparecem no site. Nomes, curso e universidade vêm do README do repositório; área de interesse, apresentação e participação ficam para cada integrante preencher. Não use dados fictícios.",
+  "nome": "Glossário da Economia",
+  "assinatura": "Projeto acadêmico de extensão · UFPB",
+  "descricao_curta": "Plataforma de educação econômica e financeira criada por três estudantes de Ciências Econômicas da UFPB, a partir de uma demanda apresentada pelo CORECON-PB. Conteúdo de autoria da equipe, sem chancela do Conselho.",
+  "ano_inicio": "2026",
+  "contato": "",
+  "repositorio": "https://github.com/laurentinoanabia/TPAEII_equipe01",
+  "conteudo_revisado_em": "",
+  "nota_autoria": "Os conteúdos são de responsabilidade da equipe. Parte dos textos e do código foi produzida com apoio de ferramentas de inteligência artificial, e todo o material passa por revisão da equipe. Verbetes ainda não revisados ficam marcados como “em revisão”.",
+  "equipe": [
+    {
+      "nome": "Ana Beatriz Laurentino",
+      "curso": "Ciências Econômicas",
+      "universidade": "Universidade Federal da Paraíba (UFPB)",
+      "area_interesse": "",
+      "apresentacao": "",
+      "participacao": "",
+      "link": ""
+    },
+    {
+      "nome": "Arthur Almeida",
+      "curso": "Ciências Econômicas",
+      "universidade": "Universidade Federal da Paraíba (UFPB)",
+      "area_interesse": "",
+      "apresentacao": "",
+      "participacao": "",
+      "link": ""
+    },
+    {
+      "nome": "Gabriel Pinheiro",
+      "curso": "Ciências Econômicas",
+      "universidade": "Universidade Federal da Paraíba (UFPB)",
+      "area_interesse": "",
+      "apresentacao": "",
+      "participacao": "",
+      "link": ""
+    }
+  ],
+  "disciplina": "Técnicas de Pesquisa e Análise Econômica II (PSAE00320), 2026.2",
+  "demandante": "Conselho Regional de Economia da Paraíba (CORECON-PB)",
+  "questionario": "https://docs.google.com/forms/d/e/1FAIpQLSel8h8rKd4svyMe79V1ME_7TQSW466HPaT5WGMpb-kU3PNWgg/viewform"
+}

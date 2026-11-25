@@ -27,9 +27,9 @@ Domínio respeitado: d6_fam_conhecimento,OK,
 Domínio respeitado: e3_termo_prioritario,OK,
 Domínio respeitado: e2_usaria_glossario,OK,
 Glossário: hash do arquivo original inalterado (preservação),OK,
-Glossário: contagem preservada (bruto = tratado),OK,6 → 6
+Glossário: contagem preservada (bruto = tratado),OK,121 → 121
 "Glossário: 1 verbete por linha, slug único",OK,
-Glossário: relações = soma de n_relacionados,OK,14 relações
+Glossário: relações = soma de n_relacionados,OK,530 relações
 Glossário: tipos esperados,OK,
 Junção cobertura: contagem antes = linhas da tabela,OK,
 Questionário: funil fecha (bruto − duplicados − sem consentimento = base limpa),OK,63 − 3 − 4 = 56

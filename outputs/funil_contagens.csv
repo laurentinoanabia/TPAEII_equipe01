@@ -1,10 +1,10 @@
 base,etapa,linhas
-glossario,bruto,6
-glossario,após G2 (duplicidades),6
-glossario_relacoes,após G3 (explodir relacionados),14
-glossario_verbetes,após G4 (tabela final),6
+glossario,bruto,121
+glossario,após G2 (duplicidades),121
+glossario_relacoes,após G3 (explodir relacionados),530
+glossario_verbetes,após G4 (tabela final),121
 cobertura,pares item-verbete (antes da junção),19
-cobertura,pares item-verbete com verbete existente (depois da junção),15
+cobertura,pares item-verbete com verbete existente (depois da junção),19
 questionario,bruto,63
 questionario,após Q1 (envios duplicados),60
 questionario,após Q2 (consentimento),56
