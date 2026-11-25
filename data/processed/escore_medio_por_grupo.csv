@@ -1,0 +1,14 @@
+grupo,categoria,n,escore_medio
+a1_curso,administracao,<5,
+a1_curso,ciencias_contabeis,<5,
+a1_curso,ciencias_economicas,32,3.44
+a1_curso,outro,26,3.42
+a2_periodo,1_4,55,3.38
+a2_periodo,5_8,<5,
+a2_periodo,9_mais,<5,
+d2_fam_conversa,as_vezes,33,3.39
+d2_fam_conversa,frequente,19,3.32
+d2_fam_conversa,nunca,8,3.75
+c2_tem_reserva,nao,16,3.56
+c2_tem_reserva,parcial,25,3.32
+c2_tem_reserva,sim,19,3.42

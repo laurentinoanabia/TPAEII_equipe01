@@ -1,0 +1,24 @@
+﻿indicador,categoria,n,pct,base
+Planeja gastos (c1),Nunca,12,20.0,60
+Planeja gastos (c1),Às vezes,39,65.0,60
+Planeja gastos (c1),Sempre,9,15.0,60
+Tem reserva (c2),Sim,19,31.7,60
+Tem reserva (c2),Parcialmente,25,41.7,60
+Tem reserva (c2),Não,16,26.7,60
+Poupa todo mês (c6),Sim,32,53.3,60
+Poupa todo mês (c6),Às vezes,19,31.7,60
+Poupa todo mês (c6),Não,9,15.0,60
+Meses cobertos pela reserva (c3) – só quem tem reserva,Menos de 1 mês,11,25.0,44
+Meses cobertos pela reserva (c3) – só quem tem reserva,De 1 a 3 meses,19,43.2,44
+Meses cobertos pela reserva (c3) – só quem tem reserva,De 3 a 6 meses,9,20.5,44
+Meses cobertos pela reserva (c3) – só quem tem reserva,Mais de 6 meses,5,11.4,44
+"Onde guarda (c4, múltipla) – só quem tem reserva",Poupança,12,27.3,44
+"Onde guarda (c4, múltipla) – só quem tem reserva","Renda fixa (CDB, Tesouro)",28,63.6,44
+"Onde guarda (c4, múltipla) – só quem tem reserva",Conta corrente,10,22.7,44
+"Onde guarda (c4, múltipla) – só quem tem reserva",Dinheiro em casa,7,15.9,44
+"Onde guarda (c4, múltipla) – só quem tem reserva",Outro,6,13.6,44
+"Dívidas atuais (c5, múltipla)",Cartão de crédito,15,25.0,60
+"Dívidas atuais (c5, múltipla)",Empréstimo ou financiamento,5,8.3,60
+"Dívidas atuais (c5, múltipla)",Parcelas atrasadas,<5,,60
+"Dívidas atuais (c5, múltipla)",Nenhuma,38,63.3,60
+"Dívidas atuais (c5, múltipla)",Prefere não responder,<5,,60

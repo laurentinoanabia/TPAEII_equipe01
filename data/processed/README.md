@@ -15,8 +15,9 @@ Regra para publicar uma tabela: células com menos de 5 respondentes devem ser a
 | `glossario_verbetes.csv` | `data/glossario.json` | Real (121 verbetes; eram 6 na Entrega 5) |
 | `glossario_relacoes.csv` | `data/glossario.json` | Real |
 | `glossario_cobertura_questionario.csv` | Glossário × itens do questionário | Real |
+| `frequencias.csv`, `cruzamentos.csv`, `escore_distribuicao.csv`, `escore_medio_por_grupo.csv` | Questionário (60 respostas, 28/10 a 15/11/2026) | Real, agregado (células < 5 como `<5`); gerados em 25/11/2026 |
 
-As tabelas do questionário (`frequencias.csv`, `cruzamentos.csv` etc.) só aparecem aqui quando o notebook tratar o arquivo **real** `data/raw/respostas_questionario.csv`. O teste com dados sintéticos fica em `outputs/sintetico_teste/` e **nunca** em `data/processed/`.
+As tabelas do questionário (`frequencias.csv`, `cruzamentos.csv` etc.) só aparecem aqui quando o notebook tratar o arquivo **real** `data/raw/respostas_questionario.csv`. O teste com dados sintéticos fica em `outputs/sintetico_teste/` (só quando não há arquivo real) e **nunca** em `data/processed/`. As tabelas e figuras da análise da Entrega 6 ficam em `outputs/e06/`.
 
 Todos são gerados por `notebooks/03_obtencao_limpeza_tratamento.ipynb`; não edite à mão.
 
