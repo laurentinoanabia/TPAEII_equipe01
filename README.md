@@ -1,6 +1,8 @@
 # TPAEII_equipe01
 
-Projeto aplicado de extensão da disciplina **PSAE00320 – Técnicas de Pesquisa e Análise Econômica II** (Turma 01, 2026.2, UFPB), em parceria com o **CORECON-PB** (Conselho Regional de Economia da Paraíba).
+Projeto aplicado de extensão da disciplina **PSAE00320 – Técnicas de Pesquisa e Análise Econômica II** (Turma 01, 2026.2, UFPB), desenvolvido a partir de uma demanda apresentada pelo **CORECON-PB** (Conselho Regional de Economia da Paraíba).
+
+> **Autoria e vínculo.** O CORECON-PB apresentou a demanda. A pesquisa, o site e todo o conteúdo são de autoria da equipe; o site não é material oficial do Conselho, não usa a sua identidade visual e não tem a sua chancela.
 
 ## Equipe
 
@@ -17,7 +19,7 @@ O CORECON-PB apoia o programa **"PB sem dívidas"** e precisa de materiais que l
 
 O projeto tem **dois produtos complementares**:
 
-1. **Glossário da Economia** (site): termos da economia explicados em linguagem simples, para a população em geral.
+1. **Glossário da Economia** (site): plataforma de educação econômica e financeira em linguagem simples, com prioridade para orçamento, dívidas e reserva de emergência (os temas da pesquisa), e aprofundamento em juros, inflação, Selic, macroeconomia e investimentos. Tem enciclopédia, glossário A–Z, 10 simuladores, 9 trilhas e quiz.
 2. **Pesquisa com estudantes de graduação** (questionário publicado no [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSel8h8rKd4svyMe79V1ME_7TQSW466HPaT5WGMpb-kU3PNWgg/viewform)): diagnóstico de quanto os graduandos sabem e praticam de educação financeira (em especial reserva de emergência) e qual é o contexto financeiro e o nível de conhecimento de suas famílias. Os resultados orientam quais termos e temas o glossário deve priorizar.
 
 > **Histórico:** o projeto começou como educação financeira em escolas de João Pessoa (Entregas 1 a 3) e, em 22/10/2026, passou a ser o glossário. A pesquisa com graduandos foi incorporada em 27/10/2026. Veja [`docs/entregas.md`](docs/entregas.md).
@@ -34,9 +36,14 @@ Detalhes do instrumento: [`docs/questionario.md`](docs/questionario.md).
 README.md                  este arquivo
 .gitignore                 bloqueia dados brutos, credenciais e arquivos temporários
 requirements.txt           dependências dos scripts (pandas)
-index.html                 site do glossário (página única, sem dependências)
+index.html                 site do glossário (página única, sem dependências; lê data/*.json)
+site_unico/               versão do site em um único arquivo, com os dados embutidos (gerada; abre sem servidor)
+scripts/montar_site_unico.py  gera site_unico/ a partir de index.html e data/
 data/
-  glossario.json           verbetes do glossário (lido pelo site)
+  glossario.json           verbetes do glossário (lido pelo site e pelo notebook 03)
+  trilhas.json, quiz.json  trilhas de aprendizagem e perguntas do quiz do site
+  indicadores.json         faixa de indicadores do site (valores com data e fonte; atualizar à mão)
+  projeto.json             dados institucionais exibidos no site (equipe, repositório)
   raw/                     dados originais permitidos (ver data/raw/README.md)
   processed/               dados tratados e agregados, sem informação pessoal
 notebooks/
@@ -65,11 +72,17 @@ outputs/                   relatório de qualidade, funil, testes, livro de cód
 
 ## Como rodar
 
-**Site do glossário.** O site lê `data/glossario.json` com `fetch`, então precisa de um servidor local (abrir o arquivo direto no navegador não funciona):
+**Site do glossário.** O `index.html` lê os arquivos de `data/` com `fetch`, então precisa de um servidor local ou do GitHub Pages (abrir o arquivo direto no navegador não funciona):
 
 ```bash
 python3 -m http.server 8000
 # abra http://localhost:8000
+```
+
+Para uma versão que abre com dois cliques (sem servidor), gere o arquivo único depois de mudar `index.html` ou `data/`:
+
+```bash
+python3 scripts/montar_site_unico.py   # cria site_unico/glossario-da-economia.html
 ```
 
 **Validar o glossário** (campos obrigatórios, termos duplicados, links "Veja também" quebrados):
@@ -102,9 +115,13 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 | Parte | Situação |
 |---|---|
 | Estrutura do repositório e plano de dados (Entrega 4) | Pronta, com o PDF `docs/E04_equipe01_plano_dados.pdf`; faltam o acesso do professor e o envio |
-| Glossário (site) | Funcionando, com 6 verbetes de rascunho; faltam os demais termos |
-| Questionário | Formulário publicado no Google Forms (descrito em `docs/questionario.md`); respostas ainda não tratadas neste repositório |
+| Glossário (site) | Versão atual no repositório desde 25/11/2026: 121 verbetes, todos com fonte; 12 de dívidas e 6 de planejamento financeiro; trilha "Dívidas sob controle". **Falta a revisão da equipe**: os verbetes aparecem como "Em revisão" até receberem `revisado` |
+| Questionário | Formulário publicado no Google Forms (descrito em `docs/questionario.md`); coleta prevista de 01/11 a 20/11/2026. Há uma exportação das respostas no Drive da equipe; as respostas reais ainda não foram tratadas neste repositório |
 | Tratamento dos dados (Entrega 5) | Notebook executável e reprodutível; glossário tratado (dado real); regras do questionário e tradutor do formulário testados com dados sintéticos e com uma exportação simulada no formato do Forms, ainda não com respostas reais |
+
+## Uso de inteligência artificial
+
+Parte dos textos e do código do site foi produzida com apoio de ferramentas de inteligência artificial generativa, a partir de instruções escritas pela equipe, e o reposicionamento de 25/11/2026 também. As fontes de cada verbete estão no próprio verbete. Nenhum verbete está marcado como revisado: a revisão do conteúdo pela equipe é uma pendência (tarefa 12).
 
 ## Contato acadêmico
 

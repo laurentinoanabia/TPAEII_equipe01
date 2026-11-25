@@ -41,6 +41,14 @@ A equipe trocou o projeto das escolas por um **site de conhecimento para o COREC
 
 A equipe decidiu somar ao glossário uma **pesquisa com estudantes de graduação** sobre educação financeira: quantos entendem e aplicam reserva de emergência, qual a situação financeira da família e qual o nível de conhecimento das famílias. A pesquisa orienta quais termos o glossário prioriza. Instrumento em [`questionario.md`](questionario.md).
 
+## Reposicionamento do site e reforço do conteúdo (25/11/2026)
+
+- **Versão atual do site no repositório.** O site foi desenvolvido fora do repositório, com apoio de IA, a partir de dois prompts da equipe: um de escopo (enciclopédia em 7 níveis, simuladores, trilhas, quiz, fontes oficiais) e outro que o apresentava como projeto independente, sem vínculo com o CORECON-PB. Essa versão ("Opção B") foi trazida para `index.html` e `data/`.
+- **Posicionamento definido pela equipe.** O site é apresentado como produto da pesquisa: surgiu de uma demanda do CORECON-PB, é de autoria da equipe e não tem chancela do Conselho. Os textos de "Sobre", rodapé e metadados foram ajustados, e a página Sobre ganhou a seção "A pesquisa".
+- **Conteúdo reequilibrado.** Os prompts não pediam orçamento, dívidas nem reserva, e o site tinha 27 verbetes de investimentos contra 6 de dívidas e planejamento. Foram criados 11 verbetes (Superendividamento, Renegociação de dívidas, Cheque especial, Juros de mora e multa, Registrato, Cadastro Positivo, Empréstimo consignado, Comprometimento de renda, Despesas fixas e variáveis, Caderneta de poupança, Educação financeira), com fontes legais e oficiais, e reforçados Orçamento pessoal, Endividamento, Inadimplência, Reserva de emergência e Crédito rotativo. Todos os verbetes passaram a ter `fonte`. Nova trilha "Dívidas sob controle" e indicador de famílias endividadas (Peic/CNC, out/2026).
+- **Correções.** Quiz com 10 perguntas novas e posição da resposta certa equilibrada (antes, 53 de 67 respostas estavam na 2ª opção); "juros de mora" deixou de ser sinônimo de "juros remuneratórios"; mensagem da calculadora de dívida para quitações acima de 30 anos.
+- **Entrega 5 reexecutada.** O notebook 03 foi reexecutado com o glossário novo; as tabelas do glossário em `data/processed/` e os arquivos de `outputs/` foram regenerados. O PDF da Entrega 5 continua sendo o retrato de 05/11/2026 (6 verbetes).
+
 ## Entrega 5: obtenção, limpeza e tratamento (prazo sugerido 29/10/2026)
 
 Entregáveis do guia e onde estão:
@@ -55,7 +63,7 @@ Entregáveis do guia e onde estão:
 
 **Atualização de 05/11/2026 (formulário publicado).** O formulário do Google Forms foi publicado e lido. Ele difere do rascunho em três pontos (pergunta nova b7; termo e3 virou múltipla escolha; curso virou lista fechada) e, sobretudo, o Google Forms exporta o **texto** das opções, não códigos. O notebook passou a traduzir a exportação (`02a_formulario_google.py`), o mapa foi conferido contra o formulário publicado e foi testado com uma exportação simulada no formato do Forms, em uma cópia descartável, que ativa o caminho de dados reais.
 
-**Limite a declarar ao professor:** nenhuma exportação real de respostas foi tratada. A única base real é o glossário (6 verbetes de rascunho). Para o questionário, o notebook foi testado com dados sintéticos com defeitos plantados e com a exportação simulada. O PDF `docs/E04_equipe01_plano_dados.pdf` é o retrato de 27/10/2026 e não reflete o formulário publicado.
+**Limite a declarar ao professor:** nenhuma exportação real de respostas foi tratada. A única base real era o glossário (6 verbetes de rascunho em 05/11/2026; 121 desde 25/11/2026). Para o questionário, o notebook foi testado com dados sintéticos com defeitos plantados e com a exportação simulada. O PDF `docs/E04_equipe01_plano_dados.pdf` é o retrato de 27/10/2026 e não reflete o formulário publicado.
 
 ## Entrega 4: repositório e plano de dados
 

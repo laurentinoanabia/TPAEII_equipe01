@@ -44,7 +44,7 @@ Diagnosticar quanto estudantes de graduação sabem e praticam de educação fin
 
 ## 3. Termo de consentimento (primeira página)
 
-O texto de abertura do formulário informa: pesquisa feita por estudantes da UFPB na disciplina Técnicas de Pesquisa e Análise Econômica II, em parceria com o CORECON-PB, para orientar um glossário de economia aberto ao público; participação **voluntária**; pesquisa **anônima** (não pede nome, e-mail, CPF nem matrícula); perguntas sobre renda e dívidas com a opção "Prefiro não responder"; resultados divulgados **somente de forma agregada**; participação só de maiores de 18 anos; duração de cerca de 8 minutos; contato da equipe indicado no próprio formulário.
+O texto de abertura do formulário (reproduzido aqui como foi publicado) informa: pesquisa feita por estudantes da UFPB na disciplina Técnicas de Pesquisa e Análise Econômica II, em parceria com o CORECON-PB, para orientar um glossário de economia aberto ao público; participação **voluntária**; pesquisa **anônima** (não pede nome, e-mail, CPF nem matrícula); perguntas sobre renda e dívidas com a opção "Prefiro não responder"; resultados divulgados **somente de forma agregada**; participação só de maiores de 18 anos; duração de cerca de 8 minutos; contato da equipe indicado no próprio formulário.
 
 Pergunta obrigatória "Consentimento":
 
@@ -170,7 +170,9 @@ O mapa foi conferido contra o formulário publicado em 05/11/2026 (29 perguntas,
 
 ## 8. Conexão com o glossário
 
-Cada item de conhecimento corresponde a verbetes do glossário, o que permite priorizar os mais necessários. Situação em 05/11/2026 (o glossário tem 6 verbetes):
+> **Nota (25/11/2026).** O formulário usou a expressão "em parceria com o CORECON-PB". A equipe definiu depois que o projeto é apresentado como resposta a uma **demanda** do CORECON-PB, de autoria da equipe e sem chancela do Conselho. O relatório deve registrar essa diferença de redação.
+
+Cada item de conhecimento corresponde a verbetes do glossário, o que permite priorizar os mais necessários. Situação em 05/11/2026 (o glossário tinha 6 verbetes; em 25/11/2026 todos os verbetes abaixo existem, ver `data/processed/glossario_cobertura_questionario.csv`):
 
 | Item | Verbetes | Existem hoje? |
 |---|---|---|

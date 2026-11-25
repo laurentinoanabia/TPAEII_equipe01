@@ -8,11 +8,11 @@ Dados tratados e **agregados**, sem informação pessoal. Aqui podem ser version
 
 Regra para publicar uma tabela: células com menos de 5 respondentes devem ser agrupadas ou omitidas, para que ninguém possa ser reconhecido.
 
-## Conteúdo atual (Entrega 5)
+## Conteúdo atual (regenerado em 25/11/2026)
 
 | Arquivo | Origem | Dado |
 |---|---|---|
-| `glossario_verbetes.csv` | `data/glossario.json` | Real (6 verbetes de rascunho) |
+| `glossario_verbetes.csv` | `data/glossario.json` | Real (121 verbetes; eram 6 na Entrega 5) |
 | `glossario_relacoes.csv` | `data/glossario.json` | Real |
 | `glossario_cobertura_questionario.csv` | Glossário × itens do questionário | Real |
 
