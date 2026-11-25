@@ -48,7 +48,7 @@
   --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --larg: 76rem;
+  --larg: 80rem;
   --larg-texto: 44rem;
   --dur: .18s;
 }
@@ -74,9 +74,10 @@
 }
 
 /* Tamanho de letra ajustável (acessibilidade). Padrão: 18px, como no site original */
-html { font-size: 112.5%; scroll-behavior: smooth; scroll-padding-top: 8.5rem; -webkit-text-size-adjust: 100%; }
-html[data-fonte="p"] { font-size: 100%; }
-html[data-fonte="g"] { font-size: 125%; }
+html { font-size: 100%; scroll-behavior: smooth; scroll-padding-top: 8.5rem; -webkit-text-size-adjust: 100%; }
+html[data-fonte="p"] { font-size: 90%; }
+html[data-fonte="g"] { font-size: 112.5%; }
+html[data-fonte="gg"] { font-size: 125%; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -88,9 +89,9 @@ a { color: var(--marca); text-underline-offset: .18em; text-decoration-thickness
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--marca); outline-offset: 2px; border-radius: 4px; }
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; line-height: 1.2; margin: 0 0 .5rem; }
-h1 { font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.1rem); letter-spacing: -.02em; }
-h2 { font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem); }
-h3 { font-size: 1.2rem; }
+h1 { font-size: clamp(1.7rem, 1.25rem + 1.9vw, 2.5rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.25rem, 1.05rem + .7vw, 1.6rem); }
+h3 { font-size: 1.1rem; }
 p { margin: .35rem 0 .7rem; }
 .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .ic { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; vertical-align: -.2em; }
@@ -155,13 +156,13 @@ main { min-height: 70vh; outline: none; }
 main:focus, main:focus-visible { outline: none; }
 .container { max-width: var(--larg); margin: 0 auto; padding: 0 1rem; }
 .estreito { max-width: var(--larg-texto); margin: 0 auto; padding: 0 1rem; }
-.secao { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.secao { padding-top: 2.25rem; padding-bottom: 2.25rem; }
 .secao + .secao { padding-top: 0; }
 .cabeca-secao { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: .5rem 1rem; margin-bottom: 1.25rem; }
 .cabeca-secao p { margin: 0; color: var(--tinta-2); }
 .sobretitulo { font: 600 .72rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ouro); margin: 0 0 .65rem; display: flex; align-items: center; gap: .5rem; }
 .sobretitulo::before { content: ""; width: 1.4rem; height: 2px; background: currentColor; }
-.lead { font-size: 1.15rem; color: var(--tinta-2); max-width: 42rem; }
+.lead { font-size: 1.08rem; color: var(--tinta-2); max-width: 42rem; }
 .migalhas { font-size: .82rem; color: var(--tinta-3); display: flex; flex-wrap: wrap; gap: .35rem; margin: 1.5rem 0 1rem; }
 .migalhas a { color: var(--tinta-3); }
 .migalhas span[aria-hidden] { opacity: .5; }
@@ -269,7 +270,7 @@ label { font-weight: 600; font-size: .88rem; display: block; margin-bottom: .3re
 .abas [role="tab"][aria-selected="true"] .num { background: var(--marca); color: var(--marca-tinta); }
 .painel-aba { animation: entrar .28s ease; }
 .painel-aba h3 { font-size: 1.35rem; }
-.texto-longo { font-size: 1.02rem; line-height: 1.75; max-width: var(--larg-texto); }
+.texto-longo { font-size: 1rem; line-height: 1.75; max-width: var(--larg-texto); }
 .texto-longo p { margin: 0 0 1rem; }
 .bloco-sobre > h3 { margin-top: 1.75rem; }
 @keyframes entrar { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -2108,7 +2109,7 @@ function paginaInicio(main) {
       h('div', { class: 'cartao revelar', style: 'padding:clamp(1.25rem, 3vw, 2.25rem)' },
         h('div', { class: 'cabeca-secao' }, h('div', null, h('p', { class: 'sobretitulo' }, 'Sobre o projeto'), h('h2', { id: 'sobre-home' }, 'Um glossário feito por estudantes, a partir de uma demanda real')),
           h('span', { class: 'selo-independente' }, 'Autoria da equipe · sem chancela institucional')),
-        h('p', { class: 'lead', style: 'font-size:1.02rem' }, 'Criado por três estudantes de Ciências Econômicas da UFPB como projeto de extensão da disciplina Técnicas de Pesquisa e Análise Econômica II, a partir de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB). O conteúdo é escrito pela equipe e orientado por uma pesquisa com 60 estudantes de graduação sobre o que sabem e praticam de educação financeira. Não é material oficial do Conselho nem tem a sua chancela.'),
+        h('p', { class: 'lead', style: 'font-size:1.02rem' }, 'Criado por três estudantes de Ciências Econômicas da UFPB como projeto de extensão da disciplina Técnicas de Pesquisa e Análise Econômica II, a partir de uma demanda apresentada pelo Conselho Regional de Economia da Paraíba (CORECON-PB). O conteúdo é escrito pela equipe e orientado por uma pesquisa com estudantes de graduação sobre o que sabem e praticam de educação financeira. Não é material oficial do Conselho nem tem a sua chancela.'),
         h('div', { class: 'pilares' }, PILARES.slice(0, 3).map(([ic, t, d]) => h('div', { class: 'pilar' }, h('h3', null, icone(ic), t), h('p', null, d)))),
         h('p', { class: 'fonte' }, 'Para: qualquer pessoa que queira organizar a vida financeira e entender a economia, sem precisar ter estudado o assunto. Também serve a estudantes e a quem quer se aprofundar em economia e investimentos.'),
         h('div', { class: 'chips', style: 'margin-top:1rem' },
@@ -2333,7 +2334,7 @@ function paginaSobre(main, params = new URLSearchParams()) {
       h('table', { class: 'tabela-simples' }, h('tbody', null,
         [['Instrumento', 'Questionário no Google Forms, anônimo e voluntário, com termo de consentimento e 29 perguntas em cinco blocos: perfil, conhecimento, prática, família e interesse por temas do glossário'],
          ['Público', 'Estudantes de graduação maiores de 18 anos'],
-         ['Coleta', 'Respostas de 28 de outubro a 15 de novembro de 2026, com divulgação em turmas e grupos de cursos; 60 respondentes'],
+         ['Coleta', 'Respostas de 28 de outubro a 15 de novembro de 2026, com divulgação em turmas e grupos de cursos'],
          ['Amostra', 'Por conveniência: descreve quem respondeu e não permite generalizar para todos os estudantes'],
          ['Privacidade', 'Não pede nome, e-mail, CPF nem matrícula; os resultados são divulgados só de forma agregada']].map(([a, b]) => h('tr', null, h('th', { scope: 'row' }, a), h('td', null, b))))),
       h('h3', null, 'Como a pesquisa orienta o site'),
@@ -2421,9 +2422,10 @@ function paginaSobre(main, params = new URLSearchParams()) {
 // ===== pesquisa.js =====
 // Painel "Resultados da pesquisa": descobertas do questionário com estudantes de graduação.
 // Lê data/pesquisa.json (gerado por scripts/montar_painel_pesquisa.py a partir de tabelas agregadas).
-// Células com menos de 5 respondentes chegam com n = null e aparecem como "<5", sem barra.
+// Só percentuais: o site não mostra o total de respostas nem contagens absolutas.
+// Grupos muito pequenos (menos de 5 pessoas) chegam com pct = null e aparecem como "—", sem barra.
 
-const fmtPct = (x) => (x == null ? '<5' : num(x, 1) + '%');
+const fmtPct = (x) => (x == null ? '—' : num(x, 1) + '%');
 
 function barrasPesquisa(itens, opcoes = {}) {
   const cor = opcoes.cor || 'var(--s1)';
@@ -2431,11 +2433,11 @@ function barrasPesquisa(itens, opcoes = {}) {
   return h('div', { class: 'barras-h barras-pesquisa', role: 'list' }, itens.map(i => {
     const oculto = i.pct == null;
     const w = oculto ? 0 : Math.max(0, Math.min(100, i.pct));
-    const rotuloValor = oculto ? '<5' : `${num(i.pct, 1)}%`;
-    return h('div', { class: 'barra-h', role: 'listitem', 'aria-label': `${i.rotulo}: ${oculto ? 'menos de 5 respostas' : rotuloValor + (i.n != null ? ` (${i.n} de ${i.base})` : '')}` },
+    const rotuloValor = oculto ? '—' : `${num(i.pct, 1)}%`;
+    return h('div', { class: 'barra-h', role: 'listitem', 'aria-label': `${i.rotulo}: ${oculto ? 'grupo muito pequeno, não divulgado' : rotuloValor}` },
       h('span', null, i.rotulo),
       h('div', { class: 'trilho', 'aria-hidden': 'true' }, oculto ? null : h('span', { style: `left:0;width:${w}%;background:${destaque(i) ? 'var(--s2)' : cor}` })),
-      h('output', null, rotuloValor, i.n != null ? h('small', null, ` ${i.n}/${i.base}`) : null));
+      h('output', null, rotuloValor));
   }));
 }
 
@@ -2472,44 +2474,41 @@ function paginaPesquisa(main) {
   const pr = P.pratica, fa = P.familia, gl = P.glossario;
   const pegar = (lista, rot) => lista.find(x => x.rotulo === rot) || {};
   const reservaSim = pegar(pr.tem_reserva, 'Sim'), reservaParcial = pegar(pr.tem_reserva, 'Parcialmente');
-  const alguma = (reservaSim.n || 0) + (reservaParcial.n || 0);
-  const tresMeses = pr.cobertura.filter(c => /3 a 6|Mais de 6/.test(c.rotulo)).reduce((s, c) => s + (c.n || 0), 0);
   const cartao = pegar(pr.dividas, 'Cartão de crédito');
   const usaria = pegar(gl.usaria, 'Sim');
   const curtoNome = (r) => r.replace(/\s*\(b\d.*$/, '');
 
   const metricas = h('div', { class: 'metricas painel-kpis' },
-    [['Respondentes', String(P.n), true, `coleta de ${P.coleta}`],
-     ['Sabem o que é reserva de emergência', fmtPct(ac.b1?.pct), false, `${ac.b1?.n} de ${P.n}`],
-     ['Têm reserva que cobre 3 meses ou mais', fmtPct(100 * tresMeses / P.n), false, `${tresMeses} de ${P.n}`],
-     ['Têm dívida no cartão de crédito', fmtPct(cartao.pct), false, `${cartao.n} de ${P.n}`],
-     ['Usariam o glossário', fmtPct(usaria.pct), false, `${usaria.n} de ${P.n}; mais ${fmtPct(pegar(gl.usaria, 'Talvez').pct)} talvez`]]
+    [['Sabem o que é reserva de emergência', fmtPct(ac.b1?.pct), true, 'acertaram a definição'],
+     ['Têm reserva que cobre 3 meses ou mais', fmtPct(P.reserva_3meses_pct), false, `${fmtPct(P.reserva_alguma_pct)} têm alguma reserva`],
+     ['Têm dívida no cartão de crédito', fmtPct(cartao.pct), false, 'a dívida mais citada'],
+     ['Usariam o glossário', fmtPct(usaria.pct), false, `mais ${fmtPct(pegar(gl.usaria, 'Talvez').pct)} talvez`]]
       .map(([rot, val, dest, sub]) => h('div', { class: 'metrica' + (dest ? ' destaque' : '') }, h('small', null, rot), h('b', null, val), h('small', null, sub))));
 
   const sobreDados = h('div', { class: 'cartao painel-metodo' },
     h('h2', { id: 'sobre-dados', style: 'font-size:1.25rem' }, 'Sobre estes dados'),
     h('ul', null,
-      h('li', null, `${P.instrumento}, respondido por ${P.n} estudantes de graduação entre ${P.coleta}. A amostra é por conveniência (divulgação em turmas e grupos): os números descrevem quem respondeu e não representam todos os universitários.`),
+      h('li', null, `${P.instrumento}, respondido por estudantes de graduação entre ${P.coleta}. A amostra é pequena e por conveniência (divulgação em turmas e grupos): os percentuais descrevem quem respondeu e não representam todos os universitários. Diferenças de poucos pontos percentuais entre grupos não devem ser lidas como diferenças reais.`),
       h('li', null, 'Perfil: a maioria está no início do curso e tem de 18 a 20 anos; pouco mais da metade cursa Ciências Econômicas. Os "demais cursos" reúnem Administração, Ciências Contábeis e outros cursos, com poucos respondentes cada.'),
-      h('li', null, `O formulário teve a redação de algumas opções ajustada durante a coleta (${P.versoes_formulario.v1} respostas na primeira versão e ${P.versoes_formulario.v2} na segunda). As duas versões foram compatibilizadas, mas a pergunta sobre onde guardar a reserva deve ser lida com cautela.`),
-      h('li', null, 'Grupos com menos de 5 pessoas aparecem como "<5", sem percentual, para proteger o anonimato.'),
+      h('li', null, 'O formulário teve a redação de algumas opções ajustada no início da coleta; a maior parte das respostas veio da segunda versão. As duas versões foram compatibilizadas, mas a pergunta sobre onde guardar a reserva deve ser lida com cautela.'),
+      h('li', null, 'Grupos muito pequenos (menos de 5 pessoas) aparecem como "—", sem percentual, para proteger o anonimato.'),
       h('li', null, h('strong', null, 'Os resultados mostram associações, não causas.'), ' As respostas são autodeclaradas e coletadas uma única vez; o que se diz sobre a família é a percepção do estudante. Os testes estatísticos citados são exploratórios.')));
 
   const conteudo = [
     achado(1, 'Os conceitos básicos são conhecidos; juros compostos e onde guardar a reserva concentram os erros',
-      `Nove em cada dez respondentes acertam a definição de reserva de emergência e o efeito da diversificação. O menor acerto entre as perguntas que contam pontos é o de juros compostos: ${P.juros_simples_erro.n} pessoas (${num(P.juros_simples_erro.pct, 1)}%) ${P.juros_simples_erro.nota}. Na média, os respondentes acertam ${num(P.escore_medio, 2)} de 4 perguntas.`,
+      `Nove em cada dez respondentes acertam a definição de reserva de emergência e o efeito da diversificação. O menor acerto entre as perguntas que contam pontos é o de juros compostos: ${num(P.juros_simples_erro.pct, 1)}% ${P.juros_simples_erro.nota}. Na média, os respondentes acertam ${num(P.escore_medio, 2)} de 4 perguntas.`,
       'Para o glossário, explicar como os juros se acumulam numa dívida e onde e quanto guardar tende a ser mais útil do que repetir a definição de reserva. A maioria gabarita as quatro perguntas, o que limita a comparação entre grupos.',
       cartaoPainel('Acerto por pergunta', 'Percentual de respondentes que escolheram a resposta correta.',
-        barrasPesquisa(P.acertos.map(a => ({ rotulo: curtoNome(a.rotulo) + (a.pontua ? '' : ' *'), pct: a.pct, n: a.n, base: P.n })), { destaque: (i) => i.pct < 80 }),
+        barrasPesquisa(P.acertos.map(a => ({ rotulo: curtoNome(a.rotulo) + (a.pontua ? '' : ' *'), pct: a.pct })), { destaque: (i) => i.pct < 80 }),
         '* Não entra na nota de 0 a 4. Em laranja, acerto abaixo de 80%.'),
       cartaoPainel('Quantas das 4 perguntas cada pessoa acertou', 'Inflação, juros compostos, diversificação e definição de reserva.',
         barrasPesquisa(P.escore), `Média: ${num(P.escore_medio, 2)} de 4.`)),
 
     achado(2, 'Saber o que é reserva não acompanha tê-la',
-      `Enquanto ${fmtPct(ac.b1?.pct)} definem corretamente a reserva de emergência, ${fmtPct(reservaSim.pct)} dizem ter uma reserva completa e ${fmtPct(100 * tresMeses / P.n)} têm reserva que cobre 3 meses ou mais de gastos. Só ${fmtPct(pegar(pr.planeja, 'Sempre').pct)} planejam sempre os gastos do mês.`,
+      `Enquanto ${fmtPct(ac.b1?.pct)} definem corretamente a reserva de emergência, ${fmtPct(reservaSim.pct)} dizem ter uma reserva completa e ${fmtPct(P.reserva_3meses_pct)} têm reserva que cobre 3 meses ou mais de gastos. Só ${fmtPct(pegar(pr.planeja, 'Sempre').pct)} planejam sempre os gastos do mês.`,
       'Ter acertado as perguntas de conhecimento não diferencia quem tem reserva de quem não tem. Já os hábitos andam juntos: quem poupa todo mês e quem planeja os gastos relata ter reserva com mais frequência. Isso é associação: renda, idade e apoio da família podem influenciar tudo ao mesmo tempo.',
-      cartaoPainel('Tem reserva de emergência?', `Base: ${P.n} respondentes.`, barrasPesquisa(pr.tem_reserva)),
-      cartaoPainel('Quantos meses a reserva cobre', `Só quem tem reserva total ou parcial (${alguma} pessoas).`, barrasPesquisa(pr.cobertura)),
+      cartaoPainel('Tem reserva de emergência?', 'Percentual de todos os respondentes.', barrasPesquisa(pr.tem_reserva)),
+      cartaoPainel('Quantos meses a reserva cobre', `Só quem tem reserva total ou parcial (${fmtPct(P.reserva_alguma_pct)} dos respondentes).`, barrasPesquisa(pr.cobertura)),
       cartaoPainel('Planeja os gastos do mês?', null, barrasPesquisa(pr.planeja)),
       cartaoPainel('Dívidas hoje', 'Pode marcar mais de uma; os percentuais não somam 100%.', barrasPesquisa(pr.dividas, { cor: 'var(--s4)' }))),
 
@@ -2526,7 +2525,7 @@ function paginaPesquisa(main) {
       'A amostra de Economia concentra calouros, e os demais cursos são heterogêneos e foram agrupados. A diferença de autoconfiança não autoriza dizer que o curso a provoca.',
       cartaoPainel('Ciências Econômicas × demais cursos', null,
         h('table', { class: 'tabela-cenarios' },
-          h('thead', null, h('tr', null, h('th', null, ''), ...P.curso.map(c => h('th', null, `${c.rotulo} (n = ${c.n})`)))),
+          h('thead', null, h('tr', null, h('th', null, ''), ...P.curso.map(c => h('th', null, c.rotulo)))),
           h('tbody', null,
             h('tr', null, h('td', null, 'Nota média (0 a 4)'), ...P.curso.map(c => h('td', null, num(c.escore, 2)))),
             h('tr', null, h('td', null, 'Autoavaliação (1 a 5)'), ...P.curso.map(c => h('td', null, num(c.autoavaliacao, 2)))),
@@ -2559,7 +2558,7 @@ function paginaPesquisa(main) {
     metricas,
     sobreDados,
     ...conteudo,
-    h('p', { class: 'fonte', style: 'margin-top:2rem' }, `Fonte: elaboração própria com dados da pesquisa (Google Forms, ${P.coleta}; n = ${P.n}). Resultados preliminares. Tabelas agregadas e código no `, D.projeto?.repositorio ? h('a', { href: D.projeto.repositorio, target: '_blank', rel: 'noopener' }, 'repositório do projeto') : 'repositório do projeto', '. Veja também ', h('a', { href: '#/sobre?secao=pesquisa' }, 'como a pesquisa foi feita'), '.')));
+    h('p', { class: 'fonte', style: 'margin-top:2rem' }, `Fonte: elaboração própria com dados da pesquisa (Google Forms, ${P.coleta}). Resultados preliminares. Tabelas agregadas e código no `, D.projeto?.repositorio ? h('a', { href: D.projeto.repositorio, target: '_blank', rel: 'noopener' }, 'repositório do projeto') : 'repositório do projeto', '. Veja também ', h('a', { href: '#/sobre?secao=pesquisa' }, 'como a pesquisa foi feita'), '.')));
 }
 
 // ===== app.js =====
@@ -2653,7 +2652,7 @@ iconeTemaBotao();
 function navegarGraficos() { ultimaChave = ''; const y = scrollY; navegar(); scrollTo(0, y); }
 
 const btFonte = document.getElementById('btn-fonte');
-const TAMANHOS = ['', 'g', 'p'], NOMES = { '': 'normal', g: 'grande', p: 'pequena' };
+const TAMANHOS = ['', 'g', 'gg', 'p'], NOMES = { '': 'normal', g: 'grande', gg: 'muito grande', p: 'pequena' };
 btFonte.addEventListener('click', () => {
   const atual = raiz.dataset.fonte || ''; const prox = TAMANHOS[(TAMANHOS.indexOf(atual) + 1) % TAMANHOS.length];
   if (prox) raiz.dataset.fonte = prox; else delete raiz.dataset.fonte;

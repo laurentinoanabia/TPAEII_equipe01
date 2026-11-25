@@ -131,7 +131,7 @@ Em andamento. Entrega final com banca no CORECON-PB em **15/12/2026**.
 | Parte | Situação |
 |---|---|
 | Estrutura do repositório e plano de dados (Entrega 4) | Pronta, com o PDF `docs/E04_equipe01_plano_dados.pdf`; faltam o acesso do professor e o envio |
-| Glossário (site) | Versão atual no repositório desde 25/11/2026: 121 verbetes, todos com fonte; 12 de dívidas e 6 de planejamento financeiro; trilha "Dívidas sob controle". **Falta a revisão da equipe**: os verbetes aparecem como "Em revisão" até receberem `revisado` |
+| Glossário (site) | Publicado no GitHub Pages. 122 verbetes, todos com fonte; 13 de dívidas (incluindo "Dívida barata e dívida cara") e 6 de planejamento financeiro; trilha "Dívidas sob controle". **Falta a revisão da equipe**: os verbetes aparecem como "Em revisão" até receberem `revisado` |
 | Questionário | Coleta encerrada: **60 respostas, de 28/10 a 15/11/2026** (a coleta estava prevista até 20/11, mas a última resposta é de 15/11; base final conferida em 25/11/2026). O formulário foi editado durante a coleta (entre 02/11 e 05/11): 8 respostas na versão 1 e 52 na versão 2. Detalhes em `docs/questionario.md` |
 | Tratamento dos dados (Entregas 5 e 6) | Notebook 03 executado com as respostas reais em 25/11/2026: 60 → 60 linhas, 0 códigos inválidos, todos os testes de integridade OK; tabelas agregadas em `data/processed/`. Análise preliminar da Entrega 6 em `notebooks/04_analise_e06.py` → `outputs/e06/` (escore principal de 0 a 4, decisão da equipe em 25/11/2026) |
 

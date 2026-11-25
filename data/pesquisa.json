@@ -1,97 +1,68 @@
 {
-  "_leia_me": "Gerado por scripts/montar_painel_pesquisa.py a partir de data/processed/questionario/. Não edite à mão.",
-  "n": 60,
+  "_leia_me": "Gerado por scripts/montar_painel_pesquisa.py a partir de data/processed/questionario/. Não edite à mão. Só percentuais, sem contagens.",
   "coleta": "28/10 a 15/11/2026",
   "instrumento": "Questionário no Google Forms, anônimo e voluntário, 29 perguntas",
-  "versoes_formulario": {
-    "v1": 8,
-    "v2": 52
-  },
+  "reserva_alguma_pct": 73.3,
+  "reserva_3meses_pct": 23.3,
   "perfil": {
     "curso": [
       {
         "rotulo": "Ciências Econômicas",
-        "n": 32,
-        "pct": 53.3,
-        "base": 60
+        "pct": 53.3
       },
       {
         "rotulo": "Demais cursos",
-        "n": 28,
-        "pct": 46.7,
-        "base": 60
+        "pct": 46.7
       }
     ],
     "periodo": [
       {
         "rotulo": "1º ao 4º",
-        "n": 55,
-        "pct": 91.7,
-        "base": 60
+        "pct": 91.7
       },
       {
         "rotulo": "5º ao 8º",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       },
       {
         "rotulo": "9º ou mais",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ],
     "ocupacao": [
       {
         "rotulo": "Só estuda",
-        "n": 42,
-        "pct": 70.0,
-        "base": 60
+        "pct": 70.0
       },
       {
         "rotulo": "Estuda e trabalha/estagia",
-        "n": 18,
-        "pct": 30.0,
-        "base": 60
+        "pct": 30.0
       },
       {
         "rotulo": "Outra",
-        "n": 0,
-        "pct": 0.0,
-        "base": 60
+        "pct": 0.0
       }
     ],
     "renda_propria": [
       {
         "rotulo": "Nenhuma",
-        "n": 26,
-        "pct": 43.3,
-        "base": 60
+        "pct": 43.3
       },
       {
         "rotulo": "Até 1 SM",
-        "n": 14,
-        "pct": 23.3,
-        "base": 60
+        "pct": 23.3
       },
       {
         "rotulo": "Mais de 1 até 2 SM",
-        "n": 11,
-        "pct": 18.3,
-        "base": 60
+        "pct": 18.3
       },
       {
         "rotulo": "Mais de 2 SM",
-        "n": 5,
-        "pct": 8.3,
-        "base": 60
+        "pct": 8.3
       },
       {
         "rotulo": "Prefere não responder",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ]
   },
@@ -99,7 +70,6 @@
     {
       "rotulo": "Definição de reserva de emergência (b1)",
       "pct": 90.0,
-      "n": 54,
       "economia": 93.8,
       "demais": 85.7,
       "pontua": true
@@ -107,7 +77,6 @@
     {
       "rotulo": "Inflação e poder de compra (b3)",
       "pct": 86.7,
-      "n": 52,
       "economia": 81.2,
       "demais": 92.9,
       "pontua": true
@@ -115,7 +84,6 @@
     {
       "rotulo": "Juros compostos (b4)",
       "pct": 75.0,
-      "n": 45,
       "economia": 71.9,
       "demais": 78.6,
       "pontua": true
@@ -123,7 +91,6 @@
     {
       "rotulo": "Diversificação e risco (b5)",
       "pct": 90.0,
-      "n": 54,
       "economia": 96.9,
       "demais": 82.1,
       "pontua": true
@@ -131,47 +98,35 @@
     {
       "rotulo": "Local adequado da reserva (b7, não pontua)",
       "pct": 70.0,
-      "n": 42,
       "economia": 90.6,
       "demais": 46.4,
       "pontua": false
     }
   ],
   "juros_simples_erro": {
-    "n": 13,
     "pct": 21.7,
     "nota": "escolheram R$ 1.200, resultado de juros simples"
   },
   "escore": [
     {
       "rotulo": "0 acertos",
-      "n": null,
-      "pct": null,
-      "base": 60
+      "pct": null
     },
     {
       "rotulo": "1 acerto",
-      "n": null,
-      "pct": null,
-      "base": 60
+      "pct": null
     },
     {
       "rotulo": "2 acertos",
-      "n": 6,
-      "pct": 10.0,
-      "base": 60
+      "pct": 10.0
     },
     {
       "rotulo": "3 acertos",
-      "n": 13,
-      "pct": 21.7,
-      "base": 60
+      "pct": 21.7
     },
     {
       "rotulo": "4 acertos",
-      "n": 38,
-      "pct": 63.3,
-      "base": 60
+      "pct": 63.3
     }
   ],
   "escore_medio": 3.42,
@@ -179,151 +134,105 @@
     "tem_reserva": [
       {
         "rotulo": "Sim",
-        "n": 19,
-        "pct": 31.7,
-        "base": 60
+        "pct": 31.7
       },
       {
         "rotulo": "Parcialmente",
-        "n": 25,
-        "pct": 41.7,
-        "base": 60
+        "pct": 41.7
       },
       {
         "rotulo": "Não",
-        "n": 16,
-        "pct": 26.7,
-        "base": 60
+        "pct": 26.7
       }
     ],
     "cobertura": [
       {
         "rotulo": "Menos de 1 mês",
-        "n": 11,
-        "pct": 25.0,
-        "base": 44
+        "pct": 25.0
       },
       {
         "rotulo": "De 1 a 3 meses",
-        "n": 19,
-        "pct": 43.2,
-        "base": 44
+        "pct": 43.2
       },
       {
         "rotulo": "De 3 a 6 meses",
-        "n": 9,
-        "pct": 20.5,
-        "base": 44
+        "pct": 20.5
       },
       {
         "rotulo": "Mais de 6 meses",
-        "n": 5,
-        "pct": 11.4,
-        "base": 44
+        "pct": 11.4
       }
     ],
     "onde_guarda": [
       {
         "rotulo": "Poupança",
-        "n": 12,
-        "pct": 27.3,
-        "base": 44
+        "pct": 27.3
       },
       {
         "rotulo": "Renda fixa (CDB, Tesouro)",
-        "n": 28,
-        "pct": 63.6,
-        "base": 44
+        "pct": 63.6
       },
       {
         "rotulo": "Conta corrente",
-        "n": 10,
-        "pct": 22.7,
-        "base": 44
+        "pct": 22.7
       },
       {
         "rotulo": "Dinheiro em casa",
-        "n": 7,
-        "pct": 15.9,
-        "base": 44
+        "pct": 15.9
       },
       {
         "rotulo": "Outro",
-        "n": 6,
-        "pct": 13.6,
-        "base": 44
+        "pct": 13.6
       }
     ],
     "planeja": [
       {
         "rotulo": "Nunca",
-        "n": 12,
-        "pct": 20.0,
-        "base": 60
+        "pct": 20.0
       },
       {
         "rotulo": "Às vezes",
-        "n": 39,
-        "pct": 65.0,
-        "base": 60
+        "pct": 65.0
       },
       {
         "rotulo": "Sempre",
-        "n": 9,
-        "pct": 15.0,
-        "base": 60
+        "pct": 15.0
       }
     ],
     "poupa": [
       {
         "rotulo": "Sim",
-        "n": 32,
-        "pct": 53.3,
-        "base": 60
+        "pct": 53.3
       },
       {
         "rotulo": "Às vezes",
-        "n": 19,
-        "pct": 31.7,
-        "base": 60
+        "pct": 31.7
       },
       {
         "rotulo": "Não",
-        "n": 9,
-        "pct": 15.0,
-        "base": 60
+        "pct": 15.0
       }
     ],
     "dividas": [
       {
         "rotulo": "Cartão de crédito",
-        "n": 15,
-        "pct": 25.0,
-        "base": 60
+        "pct": 25.0
       },
       {
         "rotulo": "Empréstimo ou financiamento",
-        "n": 5,
-        "pct": 8.3,
-        "base": 60
+        "pct": 8.3
       },
       {
         "rotulo": "Parcelas atrasadas",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       },
       {
         "rotulo": "Nenhuma",
-        "n": 38,
-        "pct": 63.3,
-        "base": 60
+        "pct": 63.3
       },
       {
         "rotulo": "Prefere não responder",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ]
   },
@@ -331,117 +240,84 @@
     "conversa": [
       {
         "rotulo": "Nunca",
-        "n": 8,
-        "pct": 13.3,
-        "base": 60
+        "pct": 13.3
       },
       {
         "rotulo": "Às vezes",
-        "n": 33,
-        "pct": 55.0,
-        "base": 60
+        "pct": 55.0
       },
       {
         "rotulo": "Frequentemente",
-        "n": 19,
-        "pct": 31.7,
-        "base": 60
+        "pct": 31.7
       }
     ],
     "orcamento": [
       {
         "rotulo": "Sim",
-        "n": 42,
-        "pct": 70.0,
-        "base": 60
+        "pct": 70.0
       },
       {
         "rotulo": "Não",
-        "n": 14,
-        "pct": 23.3,
-        "base": 60
+        "pct": 23.3
       },
       {
         "rotulo": "Não sabe",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ],
     "reserva": [
       {
         "rotulo": "Sim",
-        "n": 39,
-        "pct": 65.0,
-        "base": 60
+        "pct": 65.0
       },
       {
         "rotulo": "Não",
-        "n": 7,
-        "pct": 11.7,
-        "base": 60
+        "pct": 11.7
       },
       {
         "rotulo": "Não sabe",
-        "n": 14,
-        "pct": 23.3,
-        "base": 60
+        "pct": 23.3
       }
     ],
     "reserva_estudante": [
       {
         "rotulo": "Família tem reserva",
-        "n": 33,
-        "pct": 84.6,
-        "base": 39
+        "pct": 84.6
       },
       {
         "rotulo": "Família não tem reserva",
-        "n": null,
-        "pct": null,
-        "base": 7
+        "pct": null
       },
       {
         "rotulo": "Não sabe se a família tem",
-        "n": 7,
-        "pct": 50.0,
-        "base": 14
+        "pct": 50.0
       }
     ],
     "poupa_por_conversa": [
       {
         "rotulo": "Conversam frequentemente",
-        "n": 16,
-        "pct": 84.2,
-        "base": 19
+        "pct": 84.2
       },
       {
         "rotulo": "Conversam às vezes",
-        "n": 13,
-        "pct": 39.4,
-        "base": 33
+        "pct": 39.4
       },
       {
         "rotulo": "Nunca conversam",
-        "n": null,
-        "pct": null,
-        "base": 8
+        "pct": null
       }
     ],
     "escore_por_conversa": [
       {
         "rotulo": "Conversam frequentemente",
-        "base": 19,
         "media": 3.32
       },
       {
         "rotulo": "Conversam às vezes",
-        "base": 33,
         "media": 3.39
       },
       {
         "rotulo": "Nunca conversam",
-        "base": 8,
         "media": 3.75
       }
     ]
@@ -449,13 +325,11 @@
   "curso": [
     {
       "rotulo": "Ciências Econômicas",
-      "n": 32,
       "escore": 3.44,
       "autoavaliacao": 3.47
     },
     {
       "rotulo": "Demais cursos",
-      "n": 28,
       "escore": 3.39,
       "autoavaliacao": 2.75
     }
@@ -468,153 +342,105 @@
     "temas": [
       {
         "rotulo": "Investimentos",
-        "n": 40,
-        "pct": 66.7,
-        "base": 60
+        "pct": 66.7
       },
       {
         "rotulo": "Inflação e Selic",
-        "n": 25,
-        "pct": 41.7,
-        "base": 60
+        "pct": 41.7
       },
       {
         "rotulo": "Reserva de emergência",
-        "n": 20,
-        "pct": 33.3,
-        "base": 60
+        "pct": 33.3
       },
       {
         "rotulo": "Impostos",
-        "n": 20,
-        "pct": 33.3,
-        "base": 60
+        "pct": 33.3
       },
       {
         "rotulo": "Orçamento",
-        "n": 18,
-        "pct": 30.0,
-        "base": 60
+        "pct": 30.0
       },
       {
         "rotulo": "Crédito e juros",
-        "n": 18,
-        "pct": 30.0,
-        "base": 60
+        "pct": 30.0
       },
       {
         "rotulo": "Dívidas e renegociação",
-        "n": 14,
-        "pct": 23.3,
-        "base": 60
+        "pct": 23.3
       },
       {
         "rotulo": "Outro",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ],
     "termo": [
       {
         "rotulo": "Orçamento pessoal",
-        "n": 16,
-        "pct": 26.7,
-        "base": 60
+        "pct": 26.7
       },
       {
         "rotulo": "Diversificação",
-        "n": 13,
-        "pct": 21.7,
-        "base": 60
+        "pct": 21.7
       },
       {
         "rotulo": "Inflação",
-        "n": 11,
-        "pct": 18.3,
-        "base": 60
+        "pct": 18.3
       },
       {
         "rotulo": "Taxa Selic",
-        "n": 10,
-        "pct": 16.7,
-        "base": 60
+        "pct": 16.7
       },
       {
         "rotulo": "Renda fixa",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       },
       {
         "rotulo": "Juros compostos",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       },
       {
         "rotulo": "Endividamento",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       },
       {
         "rotulo": "Nenhum deles",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ],
     "usaria": [
       {
         "rotulo": "Sim",
-        "n": 38,
-        "pct": 63.3,
-        "base": 60
+        "pct": 63.3
       },
       {
         "rotulo": "Talvez",
-        "n": 18,
-        "pct": 30.0,
-        "base": 60
+        "pct": 30.0
       },
       {
         "rotulo": "Não",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ],
     "contato": [
       {
         "rotulo": "Internet e redes sociais",
-        "n": 47,
-        "pct": 78.3,
-        "base": 60
+        "pct": 78.3
       },
       {
         "rotulo": "Escola",
-        "n": 30,
-        "pct": 50.0,
-        "base": 60
+        "pct": 50.0
       },
       {
         "rotulo": "Curso ou faculdade",
-        "n": 27,
-        "pct": 45.0,
-        "base": 60
+        "pct": 45.0
       },
       {
         "rotulo": "Família",
-        "n": 23,
-        "pct": 38.3,
-        "base": 60
+        "pct": 38.3
       },
       {
         "rotulo": "Nunca teve",
-        "n": null,
-        "pct": null,
-        "base": 60
+        "pct": null
       }
     ]
   },
